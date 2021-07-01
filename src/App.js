@@ -44,6 +44,7 @@ export default function Example() {
                     src={brand}
                     alt="candles"
                   />
+                  <p>soyaCandles</p>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
@@ -74,7 +75,7 @@ export default function Example() {
                 </button>
 
                 {/* Profile dropdown */}
-                <Menu as="div" className="ml-3 relative">
+                {/*<Menu as="div" className="ml-3 relative">
                   {({ open }) => (
                     <>
                       <div>
@@ -144,7 +145,7 @@ export default function Example() {
                       </Transition>
                     </>
                   )}
-                </Menu>
+                </Menu>*/}
               </div>
             </div>
           </div>
