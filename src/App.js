@@ -35,7 +35,7 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <svg
-                    className="stroke-current text-gray-400 block lg:hidden h-8 w-auto"
+                    className="block lg:hidden h-8 w-auto"
                     src={brand}
                     alt="candles"
                   />
