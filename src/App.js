@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import brand from './pics/candles.png'
+import main1Mobile from './pictures/home/main1-mobile.jpg'
 
 const navigation = [
   { name: 'Główna', href: '#', current: true },
@@ -16,6 +17,8 @@ function classNames(...classes) {
 
 export default function Example() {
   return (
+    <div className="wrapper">
+    <header>
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
@@ -53,7 +56,7 @@ export default function Example() {
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current ? 'border-2 border-gray-900 text-black' : 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline',
+                          item.current ? 'border-2 border-gray-900 text-black' : 'text-black  hover:text-gray-700 hover:underline',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
@@ -97,5 +100,8 @@ export default function Example() {
         </>
       )}
     </Disclosure>
+    </header>
+    <main></main>
+    </div>
   )
 }
