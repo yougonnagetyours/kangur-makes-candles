@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/react/outline'
-import brand from './pics/candles.svg'
+import brand from './pics/candles.png'
 
 const navigation = [
   { name: 'Główna', href: '#', current: true },
@@ -35,7 +35,7 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <img
-                    className="text-gray-400 block lg:hidden h-8 w-auto"
+                    className="invert block lg:hidden h-8 w-auto"
                     src={brand}
                     alt="candles"
                   />
