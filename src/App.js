@@ -16,6 +16,7 @@ function classNames(...classes) {
 
 export default function App() {
   return (
+    <div>
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
@@ -97,5 +98,6 @@ export default function App() {
         </>
       )}
     </Disclosure>
+    </div>
   )
 }
