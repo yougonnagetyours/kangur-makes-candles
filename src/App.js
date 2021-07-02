@@ -8,6 +8,15 @@ export default function App() {
   return (
     <div>
       <Nav />
+      <main>
+        {/* Here are components which are switched by react router */}
+        {/* <MainSite /> */}
+        {/* <Products /> */}
+        {/* <Shop /> */}
+        {/* <Contact /> */}
+      </main>
+      {/* <Products /> */}
+      {/* <Footer /> */}
     </div>
   )
 }
