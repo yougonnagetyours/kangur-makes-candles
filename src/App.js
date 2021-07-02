@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import brand from './pics/candles.png'
-import main1Mobile from './pics/main1-mobile.jpg'
+//import main1Mobile from './pics/main1-mobile.jpg'
 
 const navigation = [
   { name: 'Główna', href: '#', current: true },
