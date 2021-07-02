@@ -1,4 +1,4 @@
-import Nav from './components/nav.js'
+import React from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { BellIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
@@ -16,9 +16,9 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function App() {
+
+export default function Nav() {
   return (
-    <div>
     <Disclosure as="nav" className="bg-white">
       {({ open }) => (
         <>
@@ -100,7 +100,5 @@ export default function App() {
         </>
       )}
     </Disclosure>
-    <Nav />
-    </div>
-  )
+  );
 }
