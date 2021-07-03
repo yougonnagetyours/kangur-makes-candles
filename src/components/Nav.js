@@ -1,7 +1,7 @@
 import React from 'react'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { BellIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
+import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import brand from '../pics/candles.png'
 
 const navigation = [
@@ -69,7 +69,7 @@ export default function Nav() {
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button className="bg-white p-1 rounded-full text-black">
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <SearchIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
                 <button className="bg-white p-1 rounded-full text-black focus:outline-none">
                   <span className="sr-only">View notifications</span>
