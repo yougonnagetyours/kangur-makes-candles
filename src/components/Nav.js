@@ -46,7 +46,7 @@ export default function Nav() {
                     src={brand}
                     alt="candles"
                   />
-                  <p>soyaCandles</p>
+                  <p className="tracking-wider mx-2">soyaCandles</p>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">

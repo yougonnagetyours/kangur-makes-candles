@@ -16,8 +16,9 @@ export default function App() {
               src={main1Mobile} 
               alt="candles" 
             />
-            <p>Witaj w soyaCandles</p>
           </div>
+          <p className="text-4xl m-auto my-3 tracking-wider">Witaj w soyaCandles</p>
+          
         </div>
         {/* <MainSite /> */}
         {/* <Shop /> */}
