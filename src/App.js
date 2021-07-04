@@ -9,19 +9,20 @@ export default function App() {
       <Nav />
       <main>
         {/* Here are components which are switched by react router */}
-        <div className="">
+        <div className="1strow box-border mx-6">
           <div className="">
             <img 
-              className="" 
+              className="block" 
               src={main1Mobile} 
               alt="candles" 
             />
+            <p>Witaj w soyaCandles</p>
           </div>
         </div>
         {/* <MainSite /> */}
-        {/* --> <Shop /> */}
+        {/* <Shop /> */}
         {/* <Products /> */}
-        {/* <Shop />     */}
+        {/* <About />     */}
         {/* <Contact />  */}
       </main>
       {/* <Footer /> */}

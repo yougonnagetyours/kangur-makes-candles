@@ -5,7 +5,7 @@ import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/
 import brand from '../pics/candles.png'
 
 const navigation = [
-  { name: 'Sklep', href: '#', current: true },
+  { name: 'Sklep', href: '#', current: false },
   { name: 'Produkty', href: '#', current: false },
   { name: 'O nas', href: '#', current: false },
   { name: 'Kontakt', href: '#', current: false },
