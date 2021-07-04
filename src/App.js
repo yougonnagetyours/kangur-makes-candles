@@ -9,10 +9,10 @@ export default function App() {
       <Nav />
       <main>
         {/* Here are components which are switched by react router */}
-        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-          <div className="main1Container">
+        <div className="">
+          <div className="">
             <img 
-              className="block lg:hidden h-8 w-auto" 
+              className="" 
               src={main1Mobile} 
               alt="candles" 
             />
