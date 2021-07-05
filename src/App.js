@@ -17,7 +17,7 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <p className="text-2x1 sm:text-4xl my-3 tracking-wider">Witaj w soyaCandles</p>
+          <p className="text-3xl sm:text-4xl my-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
         {/* <MainSite /> */}
         {/* <Shop /> */}
