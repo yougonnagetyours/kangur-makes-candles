@@ -23,29 +23,29 @@ export default function App() {
           </div>
           <p className="text-2xl sm:text-4xl my-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
-        <div className="2ndrow flex flex-wrap justify-between box-border mx-6 my-6 ">
-          <div className="border-2 border-black rounded w-2/5 pr-1 pb-2">
+        <div className="2ndrow flex flex-wrap justify-around box-border mx-6 my-6 ">
+          <div className="border border-black rounded w-2/5 p-5">
             <img 
               className="block" 
               src={candle1} 
               alt="candles" 
             />
           </div>
-          <div className="border-2 border-black rounded w-2/5 pl-1 pb-2">
+          <div className="border border-black rounded w-2/5 p-5">
             <img 
               className="block" 
               src={candle2} 
               alt="candles" 
             />
           </div>
-          <div className="border-2 border-black rounded w-2/5 pr-1 pb-2">
+          <div className="border border-black rounded w-2/5 p-5">
             <img 
               className="block" 
               src={candle3} 
               alt="candles" 
             />
           </div>
-          <div className="border-2 border-black rounded w-2/5 pl-1 pb-2">
+          <div className="border border-black rounded w-2/5 p-5">
             <img 
               className="block" 
               src={candle4} 
