@@ -19,7 +19,7 @@ export default function App() {
           </div>
           <p className="text-2xl sm:text-4xl mt-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
-        <div className="2ndrow flex justify-between box-border mx-6 ">
+        <div className="2ndrow flex flex-wrap justify-between box-border mx-6 ">
           <div className="w-1/2 mr-1">
             <img 
               className="block" 
