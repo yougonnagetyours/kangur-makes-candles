@@ -27,7 +27,7 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 pl-1">
             <img 
               className="block" 
               src={main1Mobile} 
@@ -41,7 +41,7 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 pl-1">
             <img 
               className="block" 
               src={main1Mobile} 
