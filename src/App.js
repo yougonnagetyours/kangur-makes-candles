@@ -19,8 +19,8 @@ export default function App() {
           </div>
           <p className="text-2xl sm:text-4xl mt-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
-        <div className="2ndrow flex flex-wrap justify-between mx-6 ">
-          <div className="w-1/2">
+        <div className="2ndrow flex flex-wrap justify-between box-content mx-6 ">
+          <div className="w-1/2 mr-1">
             <img 
               className="block" 
               src={main1Mobile} 
@@ -34,7 +34,7 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <div className="w-1/2">
+          <div className="w-1/2 mr-1">
             <img 
               className="block" 
               src={main1Mobile} 
