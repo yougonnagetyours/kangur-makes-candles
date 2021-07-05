@@ -10,14 +10,14 @@ export default function App() {
       <main>
         {/* Here are components which are switched by react router */}
         <div className="1strow box-border mx-6 lg:flex">
-          <div className="lg:mr-2">
+          <div className="lg:mr-3">
             <img 
               className="block" 
               src={main1Mobile} 
               alt="candles" 
             />
           </div>
-          <p className="text-xl sm:text-4xl my-3 tracking-wider">Witaj w soyaCandles</p>
+          <p className="text-2x1 sm:text-4xl my-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
         {/* <MainSite /> */}
         {/* <Shop /> */}
