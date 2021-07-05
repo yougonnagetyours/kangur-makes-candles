@@ -31,7 +31,7 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <div className="border-2w-1/2 pl-1 pb-2">
+          <div className="border-2 w-1/2 pl-1 pb-2">
             <img 
               className="block" 
               src={candle2} 
