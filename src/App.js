@@ -13,7 +13,7 @@ export default function App() {
       <Nav />
       <main>
         {/* Here are components which are switched by react router */}
-        <div className="1strow box-border mb-10 lg:flex lg:mb:20">
+        <div className="1strow box-border mb-10 lg:flex lg:mb-20">
           <div className="lg:mr-3">
             <img 
               className="block" 
