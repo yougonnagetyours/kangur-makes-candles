@@ -21,7 +21,10 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <p className="text-2xl sm:text-4xl mx-6 my-10 tracking-wider">Witaj w soyaCandles</p>
+          <div>
+            <p className="text-2xl sm:text-4xl mx-6 my-10 tracking-wider">Witaj w soyaCandles</p>
+            <p className="text-sm sm:text-xl mx-6 my-10 tracking-wider">Poznaj nasze produkty</p>
+          </div>
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           <div className="border border-black w-2/5 p-5 mb-6">
