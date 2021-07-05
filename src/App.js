@@ -19,7 +19,7 @@ export default function App() {
           </div>
           <p className="text-2xl sm:text-4xl mt-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
-        <div className="2ndrow box-border mx-6 lg:flex">
+        <div className="2ndrow flex box-border mx-6 ">
           <div className="w-1/2">
             <img 
               className="block" 
