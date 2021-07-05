@@ -1,6 +1,10 @@
-import React from 'react';
+import React from 'react'
 import Nav from './components/Nav.js'
 import main1Mobile from './pics/main1-mobile.jpg'
+import candle1 from './pics/candle1.jpg'
+import candle2 from './pics/candle2.jpg'
+import candle3 from './pics/candle3.jpg'
+import candle4 from './pics/candle4.jpg'
 
 
 export default function App() {
@@ -23,28 +27,28 @@ export default function App() {
           <div className="w-1/2 pr-1 pb-2">
             <img 
               className="block" 
-              src={main1Mobile} 
+              src={candle1} 
               alt="candles" 
             />
           </div>
           <div className="w-1/2 pl-1 pb-2">
             <img 
               className="block" 
-              src={main1Mobile} 
+              src={candle2} 
               alt="candles" 
             />
           </div>
           <div className="w-1/2 pr-1 pb-2">
             <img 
               className="block" 
-              src={main1Mobile} 
+              src={candle3} 
               alt="candles" 
             />
           </div>
           <div className="w-1/2 pl-1 pb-2">
             <img 
               className="block" 
-              src={main1Mobile} 
+              src={candle4} 
               alt="candles" 
             />
           </div>
