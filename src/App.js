@@ -9,7 +9,7 @@ export default function App() {
       <Nav />
       <main>
         {/* Here are components which are switched by react router */}
-        <div className="1strow box-border mx-6">
+        <div className="1strow box-border mx-6 lg:flex">
           <div className="">
             <img 
               className="block" 
@@ -18,7 +18,6 @@ export default function App() {
             />
           </div>
           <p className="text-4xl m-auto my-3 tracking-wider">Witaj w soyaCandles</p>
-          
         </div>
         {/* <MainSite /> */}
         {/* <Shop /> */}
