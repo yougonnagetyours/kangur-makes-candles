@@ -13,7 +13,7 @@ export default function App() {
       <Nav />
       <main>
         {/* Here are components which are switched by react router */}
-        <div className="1strow box-border mb-3 lg:flex">
+        <div className="1strow box-border mb-6 lg:flex">
           <div className="lg:mr-3">
             <img 
               className="block" 
@@ -21,7 +21,7 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <p className="text-2xl sm:text-4xl my-6 tracking-wider">Witaj w soyaCandles</p>
+          <p className="text-2xl sm:text-4xl mx-6 my-6 tracking-wider">Witaj w soyaCandles</p>
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           <div className="border border-black w-2/5 p-5 mb-6">
