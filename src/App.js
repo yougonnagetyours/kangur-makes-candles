@@ -20,28 +20,28 @@ export default function App() {
           <p className="text-2xl sm:text-4xl mt-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
         <div className="2ndrow flex flex-wrap justify-between box-border mx-6 ">
-          <div className="w-1/2 mr-1">
+          <div className="w-1/2">
             <img 
               className="block" 
               src={main1Mobile} 
               alt="candles" 
             />
           </div>
-          <div className="w-1/2 ml-1">
+          <div className="w-1/2">
             <img 
               className="block" 
               src={main1Mobile} 
               alt="candles" 
             />
           </div>
-          <div className="w-1/2 mr-1">
+          <div className="w-1/2">
             <img 
               className="block" 
               src={main1Mobile} 
               alt="candles" 
             />
           </div>
-          <div className="w-1/2 ml-1">
+          <div className="w-1/2">
             <img 
               className="block" 
               src={main1Mobile} 
