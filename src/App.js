@@ -23,7 +23,7 @@ export default function App() {
           </div>
           <div className="mt-6">
             <p className="text-2xl sm:text-4xl mx-6 tracking-wider">Witaj w soyaCandles</p>
-            <p className="text-sm sm:text-xl mx-6 tracking-wider">Poznaj nasze produkty</p>
+            <p className="text-sm sm:text-xl mx-6 tracking-wider">Poznaj produkty bamburcia</p>
           </div>
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 my-6 ">
