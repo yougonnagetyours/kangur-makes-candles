@@ -17,7 +17,7 @@ export default function App() {
               alt="candles" 
             />
           </div>
-          <p className="text-2xl sm:text-4xl mt-3 tracking-wider">Witaj w soyaCandles</p>
+          <p className="text-2xl sm:text-4xl my-3 tracking-wider">Witaj w soyaCandles</p>
         </div>
         <div className="2ndrow flex flex-wrap justify-between box-border mx-6 ">
           <div className="w-1/2 pr-1 pb-2">
