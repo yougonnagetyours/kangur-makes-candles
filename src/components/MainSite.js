@@ -10,24 +10,12 @@ const candles = [
   { src: candle2 },
   { src: candle3 },
   { src: candle4 },
-  { src: candle2 },
-  { src: candle1 },
-  { src: candle4 },
-  { src: candle3 },
-  { src: candle1 },
-  { src: candle2 },
-  { src: candle3 },
-  { src: candle4 },
-  { src: candle2 },
-  { src: candle1 },
-  { src: candle4 },
-  { src: candle3 },
 ]
 
 export default function MainSite() {
   return (
-<div className="1strow box-border mb-10 lg:flex lg:mb-20">
-        <div>  
+      <div>  
+        <div className="1strow box-border mb-10 lg:flex lg:mb-20">
           <div className="lg:mr-3">
             <img 
               className="block" 
@@ -50,6 +38,15 @@ export default function MainSite() {
               />
             </div>
           ))}  
+        </div>
+        <div className="3rdrow box-border mb-10 lg:flex lg:mb-20">
+          <div className="lg:mr-3">
+            <img 
+              className="block" 
+              src={main1Mobile} //change photo
+              alt="candles" 
+            />
+          </div>
         </div>
       </div>    
   );
