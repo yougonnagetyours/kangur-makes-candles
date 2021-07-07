@@ -5,6 +5,13 @@ import candle2 from '../pics/candle2.jpg'
 import candle3 from '../pics/candle3.jpg'
 import candle4 from '../pics/candle4.jpg'
 
+const candles = [
+  { src: 'candle1' },
+  { src: 'candle2' },
+  { src: 'candle3' },
+  { src: 'candle4' }
+]
+
 export default function MainSite() {
   return (
 <div className="1strow box-border mb-10 lg:flex lg:mb-20">
@@ -23,32 +30,13 @@ export default function MainSite() {
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           <div className="border border-black w-2/5 p-5 mb-6">
-            <img 
-              className="block" 
-              src={candle1} 
-              alt="candles" 
-            />
-          </div>
-          <div className="border border-black w-2/5 p-5 mb-6">
-            <img 
-              className="block" 
-              src={candle2} 
-              alt="candles" 
-            />
-          </div>
-          <div className="border border-black w-2/5 p-5 mb-6">
-            <img 
-              className="block" 
-              src={candle3} 
-              alt="candles" 
-            />
-          </div>
-          <div className="border border-black w-2/5 p-5 mb-6">
-            <img 
-              className="block" 
-              src={candle4} 
-              alt="candles" 
-            />
+            {candles.map((candle) => (
+              <img 
+                className="block" 
+                src={candle.src} 
+                alt="candles" 
+              />
+            ))}
           </div>
         </div>
       </div>    
