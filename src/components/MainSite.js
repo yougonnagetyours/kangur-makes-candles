@@ -29,15 +29,15 @@ export default function MainSite() {
           </div>
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 my-6 ">
-          <div className="border border-black w-2/5 p-5 mb-6">
-            {candles.map((candle) => (
+          {candles.map((candle) => (
+            <div className="border border-black w-2/5 p-5 mb-6">
               <img 
                 className="block" 
                 src={candle.src} 
                 alt="candles" 
               />
-            ))}
-          </div>
+            </div>
+          ))}  
         </div>
       </div>    
   );
