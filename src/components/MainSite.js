@@ -6,10 +6,10 @@ import candle3 from '../pics/candle3.jpg'
 import candle4 from '../pics/candle4.jpg'
 
 const candles = [
-  { src: 'candle1' },
-  { src: 'candle2' },
-  { src: 'candle3' },
-  { src: 'candle4' }
+  { src: candle1 },
+  { src: candle2 },
+  { src: candle3 },
+  { src: candle4 }
 ]
 
 export default function MainSite() {
