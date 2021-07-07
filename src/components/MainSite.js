@@ -1,8 +1,8 @@
 import React from 'react'
-import candle1 from './pics/candle1.jpg'
-import candle2 from './pics/candle2.jpg'
-import candle3 from './pics/candle3.jpg'
-import candle4 from './pics/candle4.jpg'
+import candle1 from '../pics/candle1.jpg'
+import candle2 from '../pics/candle2.jpg'
+import candle3 from '../pics/candle3.jpg'
+import candle4 from '../pics/candle4.jpg'
 
 export default function MainSite() {
   return (
