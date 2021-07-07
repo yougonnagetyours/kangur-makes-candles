@@ -9,7 +9,11 @@ const candles = [
   { src: candle1 },
   { src: candle2 },
   { src: candle3 },
-  { src: candle4 }
+  { src: candle4 },
+  { src: candle2 },
+  { src: candle1 },
+  { src: candle4 },
+  { src: candle3 },
 ]
 
 export default function MainSite() {
