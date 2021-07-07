@@ -1,5 +1,6 @@
 import React from 'react'
 import Nav from './components/Nav.js'
+import MainSite from './components/MainSite.js'
 import main1Mobile from './pics/main1-mobile.jpg'
 import candle1 from './pics/candle1.jpg'
 import candle2 from './pics/candle2.jpg'
@@ -56,7 +57,7 @@ export default function App() {
             />
           </div>
         </div>
-        {/* <MainSite /> */}
+        <MainSite />
         {/* <Shop /> */}
         {/* <Products /> */}
         {/* <About />     */}
