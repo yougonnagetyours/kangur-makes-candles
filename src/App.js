@@ -10,7 +10,7 @@ export default function App() {
       <main>
         {/* Here are components which are switched by react router */}
         <MainSite />
-        {/* <Shop /> */}
+        <Shop />
         {/* <Products /> */}
         {/* <About />     */}
         {/* <Contact />  */}
