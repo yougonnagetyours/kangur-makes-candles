@@ -41,7 +41,7 @@ export default function MainSite() {
           ))}  
         </div>
         <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
-          <div className="lg:mr-3 max-w-screen-md">
+          <div className="lg:mr-3 max-w-screen-lg">
             <img 
               className="block" 
               src={main2} 
@@ -49,8 +49,8 @@ export default function MainSite() {
             />
           </div>
           <div className="mt-6">
-            <p className="text-2xl sm:text-4xl text-right lg:text-left mx-6 tracking-wider">Naturalne składniki</p>
-            <p className="text-sm sm:text-xl text-right lg:text-left mx-6 tracking-wider">To cos co wyróżnia soyaCandles</p>
+            <p className="text-2xl sm:text-4xl mx-6 tracking-wider">Naturalne składniki</p>
+            <p className="text-sm sm:text-xl mx-6 tracking-wider">To cos co wyróżnia soyaCandles</p>
           </div>
         </div>
       </div>    
