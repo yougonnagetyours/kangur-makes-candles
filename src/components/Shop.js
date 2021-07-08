@@ -5,7 +5,7 @@ import candle3 from '../pics/candle3.jpg'
 import candle4 from '../pics/candle4.jpg'
 
 const candles = [
-  { src: candle1 },
+  { src: candle1, price:"50 zł" },
   { src: candle2 },
   { src: candle3 },
   { src: candle4 },
@@ -26,8 +26,11 @@ export default function Shop() {
                 <p className="text-center">50 zł</p>
               </div>
               <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-1/2">
+                <p className="text-center">Do koszyka</p>
+              </div>
+              <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-1/2">
                 <p className="text-center">Kup teraz</p>
-              </div>  
+              </div>   
             </div>
           ))}  
         </div>
