@@ -23,10 +23,10 @@ export default function Shop() {
                 alt="candles" 
               />
               <div className="my-2">
-                <p className="mx-auto">50 zł</p>
+                <p className="text-center">50 zł</p>
               </div>
-              <div className="my-2">
-                <p className="text-center border border-black cursor-pointer">Kup teraz</p>
+              <div className="mx-auto my-2 py-2 border border-black cursor-pointer w-1/2">
+                <p className="text-center">Kup teraz</p>
               </div>  
             </div>
           ))}  
