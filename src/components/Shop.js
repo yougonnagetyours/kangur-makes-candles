@@ -22,8 +22,12 @@ export default function Shop() {
                 src={candle.src} 
                 alt="candles" 
               />
-              <p className="mx-auto my-2">50 zł</p>
-              <p className="mx-auto my-2 border border-black cursor-pointer">Kup teraz</p>
+              <div className="my-2">
+                <p className="mx-auto">50 zł</p>
+              </div>
+              <div className="my-2 border border-black cursor-pointer">
+                <p className="mx-auto">Kup teraz</p>
+              </div>  
             </div>
           ))}  
         </div>
