@@ -22,10 +22,10 @@ export default function Shop() {
                 src={candle.src} 
                 alt="candles" 
               />
-              <div className="my-2">
+              <div className="mt-4 mb-2">
                 <p className="text-center">50 zł</p>
               </div>
-              <div className="mx-auto my-2 py-2 border border-black cursor-pointer w-1/2">
+              <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-1/2">
                 <p className="text-center">Kup teraz</p>
               </div>  
             </div>
