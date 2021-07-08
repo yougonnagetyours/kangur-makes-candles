@@ -25,8 +25,8 @@ export default function Shop() {
               <div className="my-2">
                 <p className="mx-auto">50 zł</p>
               </div>
-              <div className="my-2 border border-black cursor-pointer">
-                <p className="mx-auto">Kup teraz</p>
+              <div className="relative my-2">
+                <p className="absolute left-2/4 border border-black cursor-pointer">Kup teraz</p>
               </div>  
             </div>
           ))}  
