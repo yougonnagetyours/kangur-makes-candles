@@ -40,8 +40,8 @@ export default function MainSite() {
             </div>
           ))}  
         </div>
-        <div className="3rdrow box-border mb-10 lg:flex lg:mb-20">
-          <div className="lg:mr-3">
+        <div className="3rdrow box-border mb-10 max-w-screen-sm lg:flex lg:mb-20">
+          <div className="lg:mr-3 lg:order-last">
             <img 
               className="block" 
               src={main2} 
