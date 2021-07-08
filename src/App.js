@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from './components/Nav.js'
 import MainSite from './components/MainSite.js'
+import Shop from './components/Shop.js'
 
 
 export default function App() {
