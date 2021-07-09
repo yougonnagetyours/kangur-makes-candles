@@ -18,7 +18,7 @@ export default function Shop() {
           {candles.map((candle) => (
             <div className="border border-black w-10/12 p-12 mb-6">
               <img 
-                className={(candle.src == candle1) ? "block w-10/12" : "block"} 
+                className={(candle.src == candle1) ? "block" : "block w-8/12"} 
                 src={candle.src} 
                 alt="candles" 
               />
