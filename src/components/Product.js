@@ -12,8 +12,8 @@ const product = { src: candle1, title:"Let's stay home", price:"49,90 zł", desc
 export default function Product() {
   return (
       <div>  
-        <div className="box-border mx-2.5 my-6 ">
-            <div className="border border-black w-10/12 p-12 mb-6">
+        <div className="box-border mx-auto my-6 ">
+            <div className="border border-black w-10/12 p-6 mx-auto mb-6">
               <img 
                 className="block w-4/6 mx-auto"
                 src={product.src} 
@@ -24,7 +24,7 @@ export default function Product() {
               <p className="text-center font-medium tracking-wider">{product.title}</p>
             </div>
             <div className="mt-6 mb-2">
-              <p className="text-center font-medium tracking-wider">{product.description}</p>
+              <p className="text-center tracking-wider">{product.description}</p>
             </div>
             <div className="mt-2 mb-4">
               <p className="text-center tracking-wider">{product.price}</p>
