@@ -7,12 +7,12 @@ const candles = [
 
 const productDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 
-const product = { src: candle1, title:"Let's stay home", price:"49,90 zł", description:"productDescription" } 
+const product = { src: candle1, title:"Let's stay home", price:"49,90 zł", description: productDescription } 
 
 export default function Product() {
   return (
       <div>  
-        <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
+        <div className="box-border mx-2.5 my-6 ">
             <div className="border border-black w-10/12 p-12 mb-6">
               <img 
                 className="block w-4/6 mx-auto"
@@ -20,7 +20,7 @@ export default function Product() {
                 alt="candles" 
               />
             </div>  
-            <div className="mt-6 mb-2">
+            <div className="">
               <p className="text-center font-medium tracking-wider">{product.title}</p>
             </div>
             <div className="mt-6 mb-2">
