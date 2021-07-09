@@ -1,5 +1,5 @@
 import React from 'react'
-import Shop from './components/Shop.js'
+import Shop from '../components/Shop.js'
 import main1 from '../pics/main1.jpg'
 import main2 from '../pics/main2.jpg'
 import candle1 from '../pics/candle1.jpg'
