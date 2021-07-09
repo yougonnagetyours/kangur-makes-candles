@@ -10,10 +10,10 @@ export default function App() {
       <Nav />
       <main>
         {/* Here are components which are switched by react router */}
-        <MainSite />
-        <Shop />
-        {/* <Products /> */}
-        {/* <About />     */}
+        {/*<MainSite />*/}
+        {/*<Shop />      */}
+        <Product />
+        {/* <About />    */}
         {/* <Contact />  */}
       </main>
       {/* <Footer /> */}
