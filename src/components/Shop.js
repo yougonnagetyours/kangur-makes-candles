@@ -16,7 +16,7 @@ export default function Shop() {
       <div>  
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           {candles.map((candle) => (
-            <div className={(candle.src == candle1) ? "border border-black w-10/12 p-12 mb-6" : "border border-black w-10/12 p-24 mb-6"}>
+            <div className={(candle.src == candle1) ? "border border-black w-10/12 p-12 mb-6" : "border border-black w-8/12 p-12 mb-6"}>
               <img 
                 className="block" 
                 src={candle.src} 
