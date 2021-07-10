@@ -13,17 +13,25 @@ import {
 
 export default function App() {
   return (
-    <div>
+    <Router>
       <Nav />
+      <Switch>
+          <Route path="/product">
+            <Product />
+          </Route>
+          <Route path="/">
+            <MainSite />
+          </Route>
+      </Switch>
       <main>
         {/* Here are components which are switched by react router */}
-        <MainSite />
+        {/*<MainSite />  */}
         {/*<Shop />      */}
         {/*<Product />   */}
         {/* <About />    */}
         {/* <Contact />  */}
       </main>
       {/* <Footer /> */}
-    </div>
+    </Router>
   )
 }
