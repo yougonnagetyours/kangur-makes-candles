@@ -3,6 +3,12 @@ import Nav from './components/Nav.js'
 import MainSite from './components/MainSite.js'
 import Shop from './components/Shop.js'
 import Product from './components/Product.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
 
 export default function App() {
@@ -11,9 +17,9 @@ export default function App() {
       <Nav />
       <main>
         {/* Here are components which are switched by react router */}
-        {/*<MainSite />*/}
+        <MainSite />
         {/*<Shop />      */}
-        <Product />
+        {/*<Product />   */}
         {/* <About />    */}
         {/* <Contact />  */}
       </main>

@@ -3,6 +3,12 @@ import { Fragment } from 'react'
 import { Disclosure } from '@headlessui/react'
 import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import brand from '../pics/candles.png'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
 const navigation = [
   { name: 'Sklep', href: '#', current: false },

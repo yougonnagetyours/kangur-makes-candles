@@ -1,5 +1,11 @@
 import React from 'react'
 import candle1 from '../pics/candle1.jpg'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
 
 const candles = [
   { src: candle1, title:"Let's stay home", price:"49,90 zł", description:"Lorem" },
