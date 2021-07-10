@@ -19,15 +19,17 @@ const candles = [
 
 export default function Shop() {
   return (
-      <div>  
+      <Router>  
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           {candles.map((candle) => (
             <div className="border border-black w-10/12 p-12 mb-6">
+              <Link to="/product">
               <img 
                 className={(candle.src == candle1) ? "block" : "block w-4/6 mx-auto"} 
                 src={candle.src} 
                 alt="candles" 
               />
+              </Link>
               <div className="mt-6 mb-2">
                 <p className="text-center font-medium tracking-wider">{candle.title}</p>
               </div>
@@ -43,6 +45,6 @@ export default function Shop() {
             </div>
           ))}  
         </div>
-      </div>    
+      </Router>    
   );
 }
