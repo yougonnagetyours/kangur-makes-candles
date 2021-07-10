@@ -1,4 +1,5 @@
 import React from 'react'
+import Product from '../components/Product.js'
 import candle1 from '../pics/candle1.jpg'
 import candle2 from '../pics/candle2.jpg'
 import candle3 from '../pics/candle3.jpg'

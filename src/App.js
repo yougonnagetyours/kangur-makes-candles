@@ -3,6 +3,7 @@ import Nav from './components/Nav.js'
 import MainSite from './components/MainSite.js'
 import Shop from './components/Shop.js'
 import Product from './components/Product.js'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,6 +16,7 @@ export default function App() {
   return (
     <Router>
       <Nav />
+      <Link to="/product">Product</Link>
       <Switch>
           <Route path="/product">
             <Product />
