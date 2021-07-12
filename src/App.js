@@ -3,6 +3,7 @@ import Nav from './components/Nav.js'
 import MainSite from './components/MainSite.js'
 import Shop from './components/Shop.js'
 import Product from './components/Product.js'
+import Footer from './components/Footer.js'
 
 import {
   BrowserRouter as Router,
