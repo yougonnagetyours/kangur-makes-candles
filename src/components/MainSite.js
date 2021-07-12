@@ -56,8 +56,8 @@ export default function MainSite() {
             />
           </div>
           <div className="mt-6">
-            <p className="text-2xl sm:text-4xl mx-6 tracking-wider">Naturalne składniki</p>
-            <p className="text-sm sm:text-xl mx-6 tracking-wider">To coś co wyróżnia soyaCandles</p>
+            <p className="text-2xl sm:text-4xl mx-6 tracking-widest">Naturalne składniki</p>
+            <p className="text-sm font-light sm:text-xl mx-6 tracking-widest">To coś co wyróżnia soyaCandles</p>
           </div>
         </div>
         <ShopPreview />
