@@ -34,7 +34,7 @@ export default function App() {
         {/* <About />    */}
         {/* <Contact />  */}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   )
 }
