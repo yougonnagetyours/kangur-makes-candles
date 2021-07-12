@@ -43,8 +43,8 @@ export default function ShopPrewiew() {
               </div> 
             </div>
           ))}
-          <div className="mx-auto text-lg -mt-12 mb-4 py-2 cursor-pointer w-auto">
-            <p className="text-center tracking-wider">Więcej produktów</p>
+          <div className="mx-auto text-lg -mt-16 mb-4 py-2 cursor-pointer w-auto">
+            <p className="text-center tracking-wider border-b">Więcej produktów</p>
           </div>    
         </div>
       </Router>    
