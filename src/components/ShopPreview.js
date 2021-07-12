@@ -30,10 +30,10 @@ export default function ShopPrewiew() {
                 />
               </div>
               <div className="mt-6 mb-2">
-                <p className="text-center font-medium tracking-wider">{candle.title}</p>
+                <p className="text-center text-xl tracking-widest">{candle.title}</p>
               </div>
               <div className="mt-2 mb-4">
-                <p className="text-center tracking-wider">{candle.price}</p>
+                <p className="text-center text-base tracking-widest">{candle.price}</p>
               </div>
               <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto">
                 <p className="text-center tracking-wider">Do koszyka</p>
