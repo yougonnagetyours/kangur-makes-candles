@@ -23,10 +23,10 @@ export default function Shop() {
       <Router>  
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           {candles.map((candle) => (
-            <div className="w-10/12 p-12 mb-6">
+            <div className="w-10/12 mb-20">
               <div className="border border-black">
                 <img 
-                  className={(candle.src == candle1) ? "block" : "block w-4/6 mx-auto"} 
+                  className={(candle.src == candle1) ? "block" : "block w-4/6 mx-auto p-6"} 
                   src={candle.src} 
                   alt="candles" 
                 />
