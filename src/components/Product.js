@@ -28,7 +28,7 @@ export default function Product() {
             </div>  
             <div className="mt-4 md:mx-16">
               <div className="mt-3">
-                <p className="text-left text-xl uppercase tracking-widest">{product.title}</p>
+                <p className="text-left text-xl tracking-widest">{product.title}</p>
               </div>
               <div className="mt-3">
                 <p className="text-left text-base tracking-widest">{product.price}</p>

@@ -1,5 +1,5 @@
 import React from 'react'
-import Shop from '../components/Shop.js'
+import ShopPreview from '../components/ShopPreview.js'
 import main1 from '../pics/main1.jpg'
 import main2 from '../pics/main2.jpg'
 import candle1 from '../pics/candle1.jpg'
@@ -60,7 +60,16 @@ export default function MainSite() {
             <p className="text-sm sm:text-xl mx-6 tracking-wider">To coś co wyróżnia soyaCandles</p>
           </div>
         </div>
-        <Shop />
+        <ShopPreview />
+        <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
+          <div className="lg:mr-3 max-w-screen-lg">
+            <img 
+              className="block" 
+              src={main2} 
+              alt="candles" 
+            />
+          </div>
+        </div>
       </div>    
   );
 }
