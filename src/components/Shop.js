@@ -32,16 +32,16 @@ export default function Shop() {
                 />
               </div>
               <div className="mt-6 mb-2">
-                <p className="text-center font-medium tracking-widest">{candle.title}</p>
+                <p className="text-center font-medium tracking-wider">{candle.title}</p>
               </div>
               <div className="mt-2 mb-4">
-                <p className="text-center tracking-widest">{candle.price}</p>
+                <p className="text-center tracking-wider">{candle.price}</p>
               </div>
               <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto">
-                <p className="text-center tracking-widest">Do koszyka</p>
+                <p className="text-center tracking-wider">Do koszyka</p>
               </div>
               <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto">
-                <p className="text-center tracking-widest">Kup teraz</p>
+                <p className="text-center tracking-wider">Kup teraz</p>
               </div>   
             </div>
           ))}  
