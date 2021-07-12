@@ -2,6 +2,7 @@ import React from 'react'
 import ShopPreview from '../components/ShopPreview.js'
 import main1 from '../pics/main1.jpg'
 import main2 from '../pics/main2.jpg'
+import main3 from '../pics/main3.jpg'
 import candle1 from '../pics/candle1.jpg'
 import candle2 from '../pics/candle2.jpg'
 import candle3 from '../pics/candle3.jpg'
@@ -65,7 +66,7 @@ export default function MainSite() {
           <div className="">
             <img 
               className="block" 
-              src={main2} 
+              src={main3} 
               alt="candles" 
             />
           </div>
