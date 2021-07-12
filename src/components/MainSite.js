@@ -56,12 +56,12 @@ export default function MainSite() {
             />
           </div>
           <div className="mt-6">
-            <p className="text-2xl sm:text-4xl mx-6 tracking-widest">Naturalne składniki</p>
-            <p className="text-sm font-light sm:text-xl mx-6 tracking-widest">To coś co wyróżnia soyaCandles</p>
+            <p className="text-2xl sm:text-4xl mx-6 mt-3 tracking-widest">Naturalne składniki</p>
+            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">To coś co wyróżnia soyaCandles</p>
           </div>
         </div>
         <ShopPreview />
-        <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
+        <div className="4throw box-border lg:flex lg:flex-row-reverse lg:mb-20">
           <div className="lg:mr-3 max-w-screen-lg">
             <img 
               className="block" 
