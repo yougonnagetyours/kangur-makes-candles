@@ -28,13 +28,13 @@ export default function Product() {
             </div>  
             <div className="mt-4 md:mx-16">
               <div className="mt-3">
-                <p className="text-left text-xl tracking-wider">{product.title}</p>
+                <p className="text-left text-xl uppercase tracking-widest">{product.title}</p>
               </div>
               <div className="mt-3">
-                <p className="text-center text-lg tracking-wider">{product.price}</p>
+                <p className="text-left text-base tracking-widest">{product.price}</p>
               </div>
               <div className="mt-5">
-                <p className="text-justify text-sm tracking-widest">{product.description}</p>
+                <p className="text-justify text-sm font-light tracking-widest">{product.description}</p>
               </div>           
             </div>
             <div className="mt-4 sm:flex sm:justify-between md:px-60">
