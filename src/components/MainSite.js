@@ -61,8 +61,8 @@ export default function MainSite() {
           </div>
         </div>
         <ShopPreview />
-        <div className="4throw box-border lg:flex lg:flex-row-reverse lg:mb-20">
-          <div className="lg:mr-3 max-w-screen-lg">
+        <div className="4throw box-border">
+          <div className="">
             <img 
               className="block" 
               src={main2} 

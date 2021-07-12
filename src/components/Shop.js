@@ -26,23 +26,23 @@ export default function Shop() {
             <div className="w-10/12 mb-20">
               <div className="border border-black">
                 <img 
-                  className={(candle.src == candle1) ? "block" : "block w-4/6 mx-auto p-6"} 
+                  className="block w-4/6 mx-auto p-6"
                   src={candle.src} 
                   alt="candles" 
                 />
               </div>
               <div className="mt-6 mb-2">
-                <p className="text-center font-medium tracking-wider">{candle.title}</p>
+                <p className="text-center text-base tracking-widest">{candle.title}</p>
               </div>
-              <div className="mt-2 mb-4">
-                <p className="text-center tracking-wider">{candle.price}</p>
+              <div className="mt-3 mb-4">
+                <p className="text-center text-base tracking-widest">{candle.price}</p>
               </div>
-              <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto">
+              <div className="mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
                 <p className="text-center tracking-wider">Do koszyka</p>
               </div>
               <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto">
                 <p className="text-center tracking-wider">Kup teraz</p>
-              </div>   
+              </div> 
             </div>
           ))}  
         </div>
