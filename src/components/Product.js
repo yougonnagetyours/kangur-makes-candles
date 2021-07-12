@@ -27,15 +27,15 @@ export default function Product() {
               />
             </div>  
             <div className="mt-4 md:mx-16">
-              <div className="mt-2">
-                <p className="text-center text-2xl font-medium tracking-wider">{product.title}</p>
+              <div className="mt-3">
+                <p className="text-left text-xl tracking-wider">{product.title}</p>
               </div>
-              <div className="mt-2">
-                <p className="text-justify text-sm tracking-wider">{product.description}</p>
+              <div className="mt-3">
+                <p className="text-center text-lg tracking-wider">{product.price}</p>
               </div>
-              <div className="mt-2">
-                <p className="text-center font-medium tracking-wider">{product.price}</p>
-              </div>
+              <div className="mt-5">
+                <p className="text-justify text-sm tracking-widest">{product.description}</p>
+              </div>           
             </div>
             <div className="mt-4 sm:flex sm:justify-between md:px-60">
               <div className="mt-2 mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto sm:flex-grow sm:mr-4">
