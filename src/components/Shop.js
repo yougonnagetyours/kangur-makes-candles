@@ -26,7 +26,7 @@ export default function Shop() {
             <div className="border border-black w-10/12 p-12 mb-6">
               <Link to="/product">
               <img 
-                className={(candle.src == candle1) ? "block" : "block w-4/6 mx-auto"} 
+                className={(candle.src === candle1) ? "block" : "block w-4/6 mx-auto"} 
                 src={candle.src} 
                 alt="candles" 
               />
