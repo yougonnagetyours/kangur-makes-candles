@@ -17,15 +17,6 @@ export default function App() {
   return (
     <Router>
       <Nav />
-      <Link to="/product">Product</Link>
-      <Switch>
-          <Route path="/product">
-            <Product />
-          </Route>
-          <Route path="/">
-            <MainSite />
-          </Route>
-      </Switch>
       <main>
         {/* Here are components which are switched by react router */}
         {/*<MainSite />  */}
@@ -33,6 +24,8 @@ export default function App() {
         {/*<Product />   */}
         {/* <About />    */}
         {/* <Contact />  */}
+        <Route path="/" exact component={MainSite} />
+        <Route path="/product" component={Product} />
       </main>
       <Footer />
     </Router>
