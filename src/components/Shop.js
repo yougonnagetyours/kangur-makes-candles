@@ -19,8 +19,7 @@ const candles = [
 ]
 
 export default function Shop() {
-  return (
-      <Router>  
+  return ( 
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           {candles.map((candle) => (
             <div className="w-10/12 mb-20">
@@ -47,7 +46,6 @@ export default function Shop() {
               </div> 
             </div>
           ))}  
-        </div>
-      </Router>    
+        </div>  
   );
 }
