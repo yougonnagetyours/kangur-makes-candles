@@ -11,10 +11,9 @@ import {
 } from "react-router-dom"
 
 const navigation = [
-  { name: 'Sklep', href: '#', current: false },
-  { name: 'Produkty', href: '#', current: false },
-  { name: 'O nas', href: '#', current: false },
-  { name: 'Kontakt', href: '#', current: false },
+  { name: 'Sklep', path: '/shop', current: false },
+  { name: 'O nas', path: '#', current: false },
+  { name: 'Kontakt', path: '#', current: false },
 ]
 
 function classNames(...classes) {
@@ -54,22 +53,23 @@ export default function Nav() {
                       alt="candles"
                     />
                     <p className="tracking-wider mx-2">soyaCandles</p>
-                </div>
+                  </div>
                 </Link>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current ? 'border-2 border-gray-900 text-black' : 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline',
-                          'px-3 py-2 rounded-md text-sm tracking-widest'
-                        )}
-                        aria-current={item.current ? 'page' : undefined}
-                      >
-                        {item.name}
-                      </a>
+                      <Link to={item.path}>
+                        <div
+                          key={item.name}
+                          className={classNames(
+                            item.current ? 'border-2 border-gray-900 text-black' : 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline',
+                            'px-3 py-2 rounded-md text-sm tracking-widest'
+                          )}
+                          aria-current={item.current ? 'page' : undefined}
+                        >
+                          {item.name}
+                        </div>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -90,17 +90,18 @@ export default function Nav() {
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'underline text-black' : 'text-black',
-                    'block px-3 py-2 rounded-md text-base tracking-widest'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
-                >
-                  {item.name}
-                </a>
+                <Link to={item.path}>
+                  <div
+                    key={item.name}
+                    className={classNames(
+                      item.current ? 'underline text-black' : 'text-black',
+                      'block px-3 py-2 rounded-md text-base tracking-widest'
+                    )}
+                    aria-current={item.current ? 'page' : undefined}
+                  >
+                    {item.name}
+                  </div>
+                </Link>
               ))}
             </div>
           </Disclosure.Panel>
