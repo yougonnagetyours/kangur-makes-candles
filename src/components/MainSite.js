@@ -1,7 +1,8 @@
 import React from 'react'
-import Shop from '../components/Shop.js'
+import ShopPreview from '../components/ShopPreview.js'
 import main1 from '../pics/main1.jpg'
 import main2 from '../pics/main2.jpg'
+import main3 from '../pics/main3.jpg'
 import candle1 from '../pics/candle1.jpg'
 import candle2 from '../pics/candle2.jpg'
 import candle3 from '../pics/candle3.jpg'
@@ -32,8 +33,8 @@ export default function MainSite() {
             />
           </div>
           <div className="mt-6">
-            <p className="text-2xl sm:text-4xl mx-6 tracking-wider">Witaj w soyaCandles</p>
-            <p className="text-sm sm:text-xl mx-6 tracking-wider">Poznaj produkty bamburcia</p>
+            <p className="text-2xl sm:text-4xl mx-6 mt-3 tracking-widest">Witaj w soyaCandles</p>
+            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">Poznaj produkty bamburcia</p>
           </div>
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 my-6 ">
@@ -56,11 +57,20 @@ export default function MainSite() {
             />
           </div>
           <div className="mt-6">
-            <p className="text-2xl sm:text-4xl mx-6 tracking-wider">Naturalne składniki</p>
-            <p className="text-sm sm:text-xl mx-6 tracking-wider">To coś co wyróżnia soyaCandles</p>
+            <p className="text-2xl sm:text-4xl mx-6 mt-3 tracking-widest">Naturalne składniki</p>
+            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">To coś co wyróżnia soyaCandles</p>
           </div>
         </div>
-        <Shop />
+        <ShopPreview />
+        <div className="4throw box-border">
+          <div className="">
+            <img 
+              className="block" 
+              src={main3} 
+              alt="candles" 
+            />
+          </div>
+        </div>
       </div>    
   );
 }
