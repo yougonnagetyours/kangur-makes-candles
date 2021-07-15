@@ -14,7 +14,7 @@ export default function Footer() {
       <div>
         <div className="my-3 w-full h-6 flex justify-center">
           <img 
-              className="block mr-1" 
+              className="block mr-3" 
               src={insta} 
               alt="candles" 
             />
