@@ -18,7 +18,7 @@ const product = { src: candle1, title:"Let's stay home", price:"49,90 zł", desc
 export default function Product() {
   return (
       <div>  
-        <div className="box-border mt-4 px-10 sm:px-28 md:px-0 lg:px-60">
+        <div className="box-border mt-4 mb-6 px-10 sm:px-28 md:px-0 lg:px-60">
             <div className="border border-black md:mx-60">
               <img 
                 className="block mx-auto"
@@ -37,7 +37,7 @@ export default function Product() {
                 <p className="text-justify text-sm font-light tracking-widest">{product.description}</p>
               </div>           
             </div>
-            <div className="mt-4 sm:flex sm:justify-between md:px-60">
+            <div className="mt-8 sm:flex sm:justify-between md:px-60">
               <div className="mt-2 mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto sm:flex-grow sm:mr-4">
                 <p className="text-center tracking-wider">Do koszyka</p>
               </div>
