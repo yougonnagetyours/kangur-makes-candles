@@ -13,16 +13,16 @@ export default function Footer() {
   return (
       <div>
         <div className="my-3 w-full h-6 flex justify-center">
-          <a href="https://www.instagram.com/?hl=en" className="block mr-6">
+          <a href="https://www.instagram.com/?hl=en" className="block mr-6 bg-gray-400">
             <img 
-                className="block" 
+                className="block w-full" 
                 src={insta} 
                 alt="candles" 
               />
           </a>
-          <a href="https://www.facebook.com/" className="block">
+          <a href="https://www.facebook.com/" className="block bg-gray-500">
             <img 
-                className="block" 
+                className="block w-full" 
                 src={fb} 
                 alt="candles" 
               />  
