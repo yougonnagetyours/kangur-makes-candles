@@ -12,7 +12,7 @@ import {
 export default function Footer() {
   return (
       <div>
-        <div className="my-3 w-full h-7 flex justify-center">
+        <div className="my-3 w-full h-6 flex justify-center">
           <img 
               className="block mr-1" 
               src={insta} 

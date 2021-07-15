@@ -62,7 +62,7 @@ export default function MainSite() {
           </div>
         </div>
         <ShopPreview />
-        <div className="4throw box-border">
+        <div className="4throw box-border mb-6">
           <div className="">
             <img 
               className="block" 
