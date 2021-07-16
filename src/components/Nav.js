@@ -23,6 +23,7 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
+    <div>
     <Disclosure as="nav" className="bg-white fixed top-0 right-0 w-full sm:static">
       {({ open }) => (
         <>
@@ -116,5 +117,7 @@ export default function Nav() {
         </>
       )}
     </Disclosure>
+    <div className="h-3"></div>
+    </div>
   );
 }
