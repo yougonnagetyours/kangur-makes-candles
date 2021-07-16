@@ -23,7 +23,7 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
-    <Disclosure as="nav" className="bg-white fixed w-full sm:static">
+    <Disclosure as="nav" className="bg-white fixed top-0 right-0 w-full sm:static">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
