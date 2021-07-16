@@ -23,7 +23,7 @@ function classNames(...classes) {
 
 export default function Nav() {
   return (
-    <Disclosure as="nav" className="bg-white fixed sm:static">
+    <Disclosure as="nav" className="bg-white fixed w-full sm:static">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -86,25 +86,33 @@ export default function Nav() {
               </div>
             </div>
           </div>
-
-          <Disclosure.Panel className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navigation.map((item) => (
-                <Link to={item.path}>
-                  <div
-                    key={item.name}
-                    className={classNames(
-                      item.current ? 'underline text-black' : 'text-black',
-                      'block px-3 py-2 rounded-md text-base tracking-widest'
-                    )}
-                    aria-current={item.current ? 'page' : undefined}
-                  >
-                    {item.name}
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </Disclosure.Panel>
+          <Transition
+              enter="transition duration-100 ease-out"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-75 ease-out"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+          >
+            <Disclosure.Panel className="sm:hidden">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                {navigation.map((item) => (
+                  <Link to={item.path}>
+                    <div
+                      key={item.name}
+                      className={classNames(
+                        item.current ? 'underline text-black' : 'text-black',
+                        'block px-3 py-2 rounded-md text-base tracking-widest'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                     {item.name}
+                    </div>
+                 </Link>
+               ))}
+              </div>
+            </Disclosure.Panel>
+          </Transition>
         </>
       )}
     </Disclosure>
