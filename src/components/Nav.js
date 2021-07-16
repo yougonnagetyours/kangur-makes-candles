@@ -117,7 +117,7 @@ export default function Nav() {
         </>
       )}
     </Disclosure>
-    <div className="h-3"></div>
+    <div className="h-16 sm:hidden"></div>
     </div>
   );
 }
