@@ -1,6 +1,6 @@
 import React from 'react'
 import { Fragment } from 'react'
-import { Disclosure } from '@headlessui/react'
+import { Disclosure, Transition } from '@headlessui/react'
 import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import brand from '../pics/candles.png'
 import {
