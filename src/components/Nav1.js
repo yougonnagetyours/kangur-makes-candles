@@ -44,8 +44,10 @@ export default function Nav1() {
             <div className="px-1 py-1 ">
               {navigation.map((item) =>(
                 <Menu.Item>
-                  <Link to={item.path}>
+                  {/*<Link to={item.path}>*/}
                     <div
+                      as='Link'
+                      to='item.path'
                       key={item.name}
                       className={classNames(
                         item.current ? 'underline text-black' : 'text-black',
@@ -55,7 +57,7 @@ export default function Nav1() {
                     >
                      {item.name}
                     </div>
-                  </Link>
+                  {/*</Link>*/}
                 </Menu.Item>
               ))}
                {/*<Menu.Item>
