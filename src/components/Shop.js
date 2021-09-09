@@ -13,7 +13,7 @@ import {
 
 const candles = [
   { src: candle1, title:"Let's stay home", price:"49,90 zł" },
-  { src: candle2, title:"Bitch.. You Got This!", price:"34,90 zł"  },
+  { src: candle2, title:"Bitch.. You Got This!", price:"34,99 zł"  },
   { src: candle3, title:"salt sea", price:"52,90 zł"  },
   { src: candle4, title:"Urban | 01", price:"50,00 zł"  },
 ]
