@@ -31,8 +31,6 @@ export default function Nav1() {
           </Menu.Button>
         </div>
 
-        //Brand, desktop menu options and search and cart icon
-
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
@@ -44,7 +42,7 @@ export default function Nav1() {
         >
           <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
-              {navigation.map((item) =>{
+              {navigation.map((item) =>(
                 <Menu.Item>
                   <Link to={item.path}>
                     <div
@@ -59,7 +57,7 @@ export default function Nav1() {
                     </div>
                   </Link>
                 </Menu.Item>
-              })}
+              )}
                {/*<Menu.Item>
                  {({ active }) => (
             //       <button*
