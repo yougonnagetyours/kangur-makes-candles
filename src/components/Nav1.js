@@ -46,7 +46,7 @@ export default function Nav1() {
                 <Menu.Item>
                   {/*<Link to={item.path}>*/}
                     <div
-                      as='Link'
+                      as={Link}
                       to='item.path'
                       key={item.name}
                       className={classNames(
