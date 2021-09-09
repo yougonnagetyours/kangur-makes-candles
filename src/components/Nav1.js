@@ -1,8 +1,9 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment, useEffect, useRef, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
+import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 
-export default function Example() {
+export default function Nav1() {
   return (
     <div className="w-56 text-right fixed top-16">
       <Menu as="div" className="relative inline-block text-left">
