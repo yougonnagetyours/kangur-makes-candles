@@ -57,7 +57,7 @@ export default function Nav1() {
                     </div>
                   </Link>
                 </Menu.Item>
-              )}
+              ))}
                {/*<Menu.Item>
                  {({ active }) => (
             //       <button*
