@@ -3,6 +3,16 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 
+const navigation = [
+  { name: 'Sklep', path: '/shop', current: false },
+  { name: 'O nas', path: '#', current: false },
+  { name: 'Kontakt', path: '#', current: false },
+]
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 export default function Nav1() {
   return (
     <div className="w-56 text-right fixed top-16">
@@ -19,6 +29,9 @@ export default function Nav1() {
                   )}
           </Menu.Button>
         </div>
+
+        //Brand, desktop menu options and search and cart icon
+
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
@@ -30,96 +43,112 @@ export default function Nav1() {
         >
           <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    className={`${
-                      active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                    } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                  >
-                    {active ? (
-                      <EditActiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <EditInactiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    )}
-                    Edit
-                  </button>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    className={`${
-                      active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                    } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                  >
-                    {active ? (
-                      <DuplicateActiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <DuplicateInactiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    )}
-                    Duplicate
-                  </button>
-                )}
-              </Menu.Item>
-            </div>
-            <div className="px-1 py-1">
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    className={`${
-                      active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                    } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                  >
-                    {active ? (
-                      <ArchiveActiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <ArchiveInactiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    )}
-                    Archive
-                  </button>
-                )}
-              </Menu.Item>
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    className={`${
-                      active ? 'bg-violet-500 text-white' : 'text-gray-900'
-                    } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                  >
-                    {active ? (
-                      <MoveActiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    ) : (
-                      <MoveInactiveIcon
-                        className="w-5 h-5 mr-2"
-                        aria-hidden="true"
-                      />
-                    )}
-                    Move
-                  </button>
-                )}
-              </Menu.Item>
+              {navigation.map((item) =>{
+                <Menu.Item>
+                  <Link to={item.path}>
+                    <div
+                      key={item.name}
+                      className={classNames(
+                        item.current ? 'underline text-black' : 'text-black',
+                        'block px-3 py-2 rounded-md text-base tracking-widest'
+                      )}
+                      aria-current={item.current ? 'page' : undefined}
+                    >
+                     {item.name}
+                    </div>
+                  </Link>
+                </Menu.Item>
+              })}
+               {/*<Menu.Item>
+                 {({ active }) => (
+            //       <button*
+            //         className={`${
+            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
+            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+            //       >
+            //         {active ? (
+            //           <EditActiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         ) : (
+            //           <EditInactiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         )}
+            //         Edit
+            //       </button>
+            //     )}
+            //   </Menu.Item>
+            //   <Menu.Item>
+            //     {({ active }) => (
+            //       <button
+            //         className={`${
+            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
+            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+            //       >
+            //         {active ? (
+            //           <DuplicateActiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         ) : (
+            //           <DuplicateInactiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         )}
+            //         Duplicate
+            //       </button>
+            //     )}
+            //   </Menu.Item>
+            // </div>
+            // <div className="px-1 py-1">
+            //   <Menu.Item>
+            //     {({ active }) => (
+            //       <button
+            //         className={`${
+            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
+            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+            //       >
+            //         {active ? (
+            //           <ArchiveActiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         ) : (
+            //           <ArchiveInactiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         )}
+            //         Archive
+            //       </button>
+            //     )}
+            //   </Menu.Item>
+            //   <Menu.Item>
+            //     {({ active }) => (
+            //       <button
+            //         className={`${
+            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
+            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
+            //       >
+            //         {active ? (
+            //           <MoveActiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         ) : (
+            //           <MoveInactiveIcon
+            //             className="w-5 h-5 mr-2"
+            //             aria-hidden="true"
+            //           />
+            //         )}
+            //         Move
+            //       </button>
+            //     )}
+            //   </Menu.Item>*/}
             </div>
           </Menu.Items>
         </Transition>
