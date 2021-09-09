@@ -16,8 +16,8 @@ function classNames(...classes) {
 
 export default function Nav1() {
   return (
-    <div className="w-56 text-right fixed top-16">
-      <Menu as="div" className="relative inline-block text-left">
+    <div className="">
+      <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
         {({ open }) => (
         <>  
         <div className="sm:hidden">
