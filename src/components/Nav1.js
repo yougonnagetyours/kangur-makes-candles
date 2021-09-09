@@ -7,10 +7,11 @@ export default function Nav1() {
   return (
     <div className="w-56 text-right fixed top-16">
       <Menu as="div" className="relative inline-block text-left">
+        {({ open }) => (
         <div className="sm:hidden">
           <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
             <span className="sr-only">Open main menu</span>
-                  {active ? (
+                  {open ? (
                     <XIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
                     <MenuIcon className="block h-6 w-6" aria-hidden="true" />
@@ -121,6 +122,7 @@ export default function Nav1() {
             </div>
           </Menu.Items>
         </Transition>
+        )}
       </Menu>
     </div>
   )
