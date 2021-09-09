@@ -19,7 +19,6 @@ import ShopPrewiew from './components/ShopPreview.js'
 export default function App() {
   return (
     <Router>
-      <div className="fixed w-full h-16" />
       <Nav1 />
       <main>
         {/* Here are components which are switched by react router */}

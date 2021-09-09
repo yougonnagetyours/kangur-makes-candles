@@ -24,6 +24,7 @@ const candles = [
 export default function MainSite() {
   return (
       <div>  
+        <div className="fixed w-full h-16" />
         <div className="1strow box-border mb-10 lg:flex lg:mb-20">
           <div className="lg:mr-3">
             <img 
