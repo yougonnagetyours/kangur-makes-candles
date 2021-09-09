@@ -20,7 +20,9 @@ export default function Nav1() {
       <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
         {({ open }) => (
         <>  
-        <div className="sm:hidden">
+        <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="relative flex items-center justify-between h-16">
+        <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
             <span className="sr-only">Open main menu</span>
                   {open ? (
@@ -31,6 +33,8 @@ export default function Nav1() {
           </Menu.Button>
         </div>
 
+        </div>
+        </div>
         <Transition
           as={Fragment}
           enter="transition ease-out duration-100"
@@ -40,6 +44,7 @@ export default function Nav1() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
+        
           <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
               {navigation.map((item) =>(
