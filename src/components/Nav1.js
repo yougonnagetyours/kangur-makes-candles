@@ -71,12 +71,13 @@ export default function Nav1() {
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button className="bg-white p-1 rounded-full text-black">
-                  <span className="sr-only">View notifications</span>
+                  <span className="sr-only">Szukaj</span>
                   <SearchIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
                 <button className="bg-white p-1 rounded-full text-black focus:outline-none">
-                  <span className="sr-only">View notifications</span>
+                  <span className="sr-only">Zobacz koszyk</span>
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
+                  (0)
                 </button>
               </div>
 
@@ -92,7 +93,7 @@ export default function Nav1() {
           leaveTo="transform opacity-0 scale-95"
         >
         
-          <Menu.Items className="absolute right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute left-0 w-full mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="px-1 py-1 ">
               {navigation.map((item) =>(
                 <Menu.Item>
