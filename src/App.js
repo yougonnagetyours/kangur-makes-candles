@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import Nav from './components/Nav.js'
+import Nav1 from './components/Nav1.js'
 import MainSite from './components/MainSite.js'
 import Shop from './components/Shop.js'
 import Product from './components/Product.js'
@@ -18,7 +19,7 @@ import ShopPrewiew from './components/ShopPreview.js'
 export default function App() {
   return (
     <Router>
-      <Nav />
+      <Nav1 />
       <main>
         {/* Here are components which are switched by react router */}
         {/*<MainSite />  */}
