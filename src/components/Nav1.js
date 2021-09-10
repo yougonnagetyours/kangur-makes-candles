@@ -24,7 +24,8 @@ export default function Nav1() {
       <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
         {({ open }) => (
         <>  
-        <div className={open ? "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8" : "border-b max-w-7xl mx-auto px-2 sm:px-6 lg:px-8"}>
+        // <div className={open ? "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8" : "border-b max-w-7xl mx-auto px-2 sm:px-6 lg:px-8"}>
+        <div className={classNames(open ? "" : "border-b", "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8")}>
         <div className="relative flex items-center justify-between h-16">
         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <Menu.Button className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
