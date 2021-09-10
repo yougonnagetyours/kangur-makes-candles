@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom"
 import brand from '../pics/candles.png'
-import Footer from './Footer.js'
+//import Footer from './Footer.js'
 
 const navigation = [
   { name: 'Sklep', path: '/shop', current: false },
@@ -94,7 +94,7 @@ export default function Nav1() {
           leaveTo="transform opacity-0 scale-95"
         >
         
-          <Menu.Items className="absolute left-0 w-full origin-top-right bg-white divide-y divide-gray-100 text-center focus:outline-none">
+          <Menu.Items className="absolute left-0 w-full origin-top-right py-20 bg-white divide-y divide-gray-100 text-center focus:outline-none">
             <div className="px-1 py-1 ">
               {navigation.map((item) =>(
                 <Menu.Item>
@@ -112,7 +112,24 @@ export default function Nav1() {
                   </Link>
                 </Menu.Item>
               ))}
-              <Footer />
+              <div>
+                <div className="my-3 w-full h-6 flex justify-center">
+                  <a href="https://www.instagram.com/?hl=en" className="block mr-6">
+                    <img 
+                      className="block h-full" 
+                      src={insta} 
+                      alt="candles" 
+                    />
+                  </a>
+                  <a href="https://www.facebook.com/" className="block">
+                  <img 
+                      className="block h-full" 
+                      src={fb} 
+                      alt="candles" 
+                    />  
+                  </a> 
+                </div>  
+              </div>    
             </div>
           </Menu.Items>
         </Transition>
