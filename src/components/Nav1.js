@@ -97,7 +97,7 @@ export default function Nav1() {
         >
         
           <Menu.Items className="absolute left-0 w-full origin-top-right py-12 bg-white divide-y divide-gray-100 text-center focus:outline-none">
-            <div className="px-1 py-1 ">
+            <div className="px-1 py-1 border-b">
               {navigation.map((item) =>(
                 <Menu.Item>
                   <Link to={item.path}>
