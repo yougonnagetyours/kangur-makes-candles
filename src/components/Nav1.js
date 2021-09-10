@@ -3,6 +3,8 @@ import { Fragment, useEffect, useRef, useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom"
+import insta from '../pics/instagram.png'
+import fb from '../pics/facebook.png'
 import brand from '../pics/candles.png'
 //import Footer from './Footer.js'
 

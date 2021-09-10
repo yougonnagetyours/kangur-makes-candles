@@ -1,12 +1,7 @@
 import React from 'react'
 import insta from '../pics/instagram.png'
 import fb from '../pics/facebook.png'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"
+
 
 
 export default function Footer() {
