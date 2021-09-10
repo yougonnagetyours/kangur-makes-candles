@@ -18,7 +18,7 @@ function classNames(...classes) {
 
 export default function Nav1() {
   return (
-    <div className="">
+    <div className="border-b">
       <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
         {({ open }) => (
         <>  
