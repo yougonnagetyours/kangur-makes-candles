@@ -24,7 +24,7 @@ export default function Nav1() {
       <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
         {({ open }) => (
         <>  
-        <div className={classNames(open ? "" : "border-b border-black", "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8")}>
+        <div className={classNames(open ? "" : "border-b-2", "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8")}>
         <div className="relative flex items-center justify-between h-16">
         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <Menu.Button className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -97,7 +97,7 @@ export default function Nav1() {
         >
         
           <Menu.Items className="absolute left-0 w-full origin-top-right bg-white divide-y divide-gray-100 text-center focus:outline-none">
-            <div className="px-1 py-12 border-b border-black">
+            <div className="px-1 py-12 border-b-2">
               {navigation.map((item) =>(
                 <Menu.Item>
                   <Link to={item.path}>
