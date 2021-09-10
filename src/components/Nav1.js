@@ -97,7 +97,6 @@ export default function Nav1() {
           <Menu.Items className="absolute left-0 w-full origin-top-right bg-white divide-y divide-gray-100 text-center focus:outline-none">
             <div className="px-1 py-1 ">
               {navigation.map((item) =>(
-                <>
                 <Menu.Item>
                   <Link to={item.path}>
                     <div
@@ -112,99 +111,8 @@ export default function Nav1() {
                     </div>
                   </Link>
                 </Menu.Item>
-                <Footer />
-                </>
               ))}
-               {/*<Menu.Item>
-                 {({ active }) => (
-            //       <button*
-            //         className={`${
-            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
-            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-            //       >
-            //         {active ? (
-            //           <EditActiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         ) : (
-            //           <EditInactiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         )}
-            //         Edit
-            //       </button>
-            //     )}
-            //   </Menu.Item>
-            //   <Menu.Item>
-            //     {({ active }) => (
-            //       <button
-            //         className={`${
-            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
-            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-            //       >
-            //         {active ? (
-            //           <DuplicateActiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         ) : (
-            //           <DuplicateInactiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         )}
-            //         Duplicate
-            //       </button>
-            //     )}
-            //   </Menu.Item>
-            // </div>
-            // <div className="px-1 py-1">
-            //   <Menu.Item>
-            //     {({ active }) => (
-            //       <button
-            //         className={`${
-            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
-            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-            //       >
-            //         {active ? (
-            //           <ArchiveActiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         ) : (
-            //           <ArchiveInactiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         )}
-            //         Archive
-            //       </button>
-            //     )}
-            //   </Menu.Item>
-            //   <Menu.Item>
-            //     {({ active }) => (
-            //       <button
-            //         className={`${
-            //           active ? 'bg-violet-500 text-white' : 'text-gray-900'
-            //         } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-            //       >
-            //         {active ? (
-            //           <MoveActiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         ) : (
-            //           <MoveInactiveIcon
-            //             className="w-5 h-5 mr-2"
-            //             aria-hidden="true"
-            //           />
-            //         )}
-            //         Move
-            //       </button>
-            //     )}
-            //   </Menu.Item>*/}
+              <Footer />
             </div>
           </Menu.Items>
         </Transition>
