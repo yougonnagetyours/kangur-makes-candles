@@ -4,6 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom"
 import brand from '../pics/candles.png'
+import Footer from './components/Footer.js'
 
 const navigation = [
   { name: 'Sklep', path: '/shop', current: false },
@@ -96,6 +97,7 @@ export default function Nav1() {
           <Menu.Items className="absolute left-0 w-full origin-top-right bg-white divide-y divide-gray-100 text-center focus:outline-none">
             <div className="px-1 py-1 ">
               {navigation.map((item) =>(
+                <>
                 <Menu.Item>
                   <Link to={item.path}>
                     <div
@@ -110,6 +112,8 @@ export default function Nav1() {
                     </div>
                   </Link>
                 </Menu.Item>
+                <Footer />
+                </>
               ))}
                {/*<Menu.Item>
                  {({ active }) => (
