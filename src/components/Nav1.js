@@ -20,7 +20,7 @@ function classNames(...classes) {
 
 export default function Nav1() {
   return (
-    <div className="border-b">
+    <div className="">
       <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
         {({ open }) => (
         <>  
@@ -96,7 +96,7 @@ export default function Nav1() {
           leaveTo="transform opacity-0 scale-95"
         >
         
-          <Menu.Items className="absolute left-0 w-full origin-top-right py-20 bg-white divide-y divide-gray-100 text-center focus:outline-none">
+          <Menu.Items className="absolute left-0 w-full origin-top-right py-16 bg-white divide-y divide-gray-100 border-b text-center focus:outline-none">
             <div className="px-1 py-1 ">
               {navigation.map((item) =>(
                 <Menu.Item>
@@ -105,7 +105,7 @@ export default function Nav1() {
                       key={item.name}
                       className={classNames(
                         item.current ? 'underline text-black' : 'text-black',
-                        'block px-3 py-2 rounded-md text-base tracking-widest'
+                        'block px-5 py-2 rounded-md text-base tracking-widest'
                       )}
                       aria-current={item.current ? 'page' : undefined}
                     >
@@ -115,7 +115,7 @@ export default function Nav1() {
                 </Menu.Item>
               ))}
               <div>
-                <div className="my-3 w-full h-6 flex justify-center">
+                <div className="my-5 w-full h-6 flex justify-center">
                   <a href="https://www.instagram.com/?hl=en" className="block mr-6">
                     <img 
                       className="block h-full" 
@@ -142,224 +142,3 @@ export default function Nav1() {
   )
 }
 
-// function EditInactiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path
-//         d="M4 13V16H7L16 7L13 4L4 13Z"
-//         fill="#EDE9FE"
-//         stroke="#A78BFA"
-//         strokeWidth="2"
-//       />
-//     </svg>
-//   )
-// }
-
-// function EditActiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path
-//         d="M4 13V16H7L16 7L13 4L4 13Z"
-//         fill="#8B5CF6"
-//         stroke="#C4B5FD"
-//         strokeWidth="2"
-//       />
-//     </svg>
-//   )
-// }
-
-// function DuplicateInactiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path
-//         d="M4 4H12V12H4V4Z"
-//         fill="#EDE9FE"
-//         stroke="#A78BFA"
-//         strokeWidth="2"
-//       />
-//       <path
-//         d="M8 8H16V16H8V8Z"
-//         fill="#EDE9FE"
-//         stroke="#A78BFA"
-//         strokeWidth="2"
-//       />
-//     </svg>
-//   )
-// }
-
-// function DuplicateActiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path
-//         d="M4 4H12V12H4V4Z"
-//         fill="#8B5CF6"
-//         stroke="#C4B5FD"
-//         strokeWidth="2"
-//       />
-//       <path
-//         d="M8 8H16V16H8V8Z"
-//         fill="#8B5CF6"
-//         stroke="#C4B5FD"
-//         strokeWidth="2"
-//       />
-//     </svg>
-//   )
-// }
-
-// function ArchiveInactiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <rect
-//         x="5"
-//         y="8"
-//         width="10"
-//         height="8"
-//         fill="#EDE9FE"
-//         stroke="#A78BFA"
-//         strokeWidth="2"
-//       />
-//       <rect
-//         x="4"
-//         y="4"
-//         width="12"
-//         height="4"
-//         fill="#EDE9FE"
-//         stroke="#A78BFA"
-//         strokeWidth="2"
-//       />
-//       <path d="M8 12H12" stroke="#A78BFA" strokeWidth="2" />
-//     </svg>
-//   )
-// }
-
-// function ArchiveActiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <rect
-//         x="5"
-//         y="8"
-//         width="10"
-//         height="8"
-//         fill="#8B5CF6"
-//         stroke="#C4B5FD"
-//         strokeWidth="2"
-//       />
-//       <rect
-//         x="4"
-//         y="4"
-//         width="12"
-//         height="4"
-//         fill="#8B5CF6"
-//         stroke="#C4B5FD"
-//         strokeWidth="2"
-//       />
-//       <path d="M8 12H12" stroke="#A78BFA" strokeWidth="2" />
-//     </svg>
-//   )
-// }
-
-// function MoveInactiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path d="M10 4H16V10" stroke="#A78BFA" strokeWidth="2" />
-//       <path d="M16 4L8 12" stroke="#A78BFA" strokeWidth="2" />
-//       <path d="M8 6H4V16H14V12" stroke="#A78BFA" strokeWidth="2" />
-//     </svg>
-//   )
-// }
-
-// function MoveActiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <path d="M10 4H16V10" stroke="#C4B5FD" strokeWidth="2" />
-//       <path d="M16 4L8 12" stroke="#C4B5FD" strokeWidth="2" />
-//       <path d="M8 6H4V16H14V12" stroke="#C4B5FD" strokeWidth="2" />
-//     </svg>
-//   )
-// }
-
-// function DeleteInactiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <rect
-//         x="5"
-//         y="6"
-//         width="10"
-//         height="10"
-//         fill="#EDE9FE"
-//         stroke="#A78BFA"
-//         strokeWidth="2"
-//       />
-//       <path d="M3 6H17" stroke="#A78BFA" strokeWidth="2" />
-//       <path d="M8 6V4H12V6" stroke="#A78BFA" strokeWidth="2" />
-//     </svg>
-//   )
-// }
-
-// function DeleteActiveIcon(props) {
-//   return (
-//     <svg
-//       {...props}
-//       viewBox="0 0 20 20"
-//       fill="none"
-//       xmlns="http://www.w3.org/2000/svg"
-//     >
-//       <rect
-//         x="5"
-//         y="6"
-//         width="10"
-//         height="10"
-//         fill="#8B5CF6"
-//         stroke="#C4B5FD"
-//         strokeWidth="2"
-//       />
-//       <path d="M3 6H17" stroke="#C4B5FD" strokeWidth="2" />
-//       <path d="M8 6V4H12V6" stroke="#C4B5FD" strokeWidth="2" />
-//     </svg>
-//   )
-// }
