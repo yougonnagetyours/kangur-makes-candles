@@ -4,7 +4,7 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/outline'
 import { Link } from "react-router-dom"
 import brand from '../pics/candles.png'
-import Footer from './components/Footer.js'
+import Footer from './Footer.js'
 
 const navigation = [
   { name: 'Sklep', path: '/shop', current: false },
