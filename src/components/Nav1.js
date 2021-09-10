@@ -99,6 +99,7 @@ export default function Nav1() {
           <Menu.Items className="absolute left-0 w-full origin-top-right bg-white divide-y divide-gray-100 text-center focus:outline-none">
             <div className={open ? "border-b" : "", "px-1 py-12 border-b"}>
             {({open}) => (
+              <>
               {navigation.map((item) =>(
                 <Menu.Item>
                   <Link to={item.path}>
@@ -133,6 +134,7 @@ export default function Nav1() {
                   </a> 
                 </div>  
               </div> 
+              </>
             )}
             </div>
           </Menu.Items>
