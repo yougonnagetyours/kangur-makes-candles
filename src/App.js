@@ -22,12 +22,6 @@ export default function App() {
       <div className="w-full h-16" />
       <Nav1 />
       <main>
-        {/* Here are components which are switched by react router */}
-        {/*<MainSite />  */}
-        {/*<Shop />      */}
-        {/*<Product />   */}
-        {/* <About />    */}
-        {/* <Contact />  */}
         <Fragment>
           <ScrollToTop />
           <Switch>
