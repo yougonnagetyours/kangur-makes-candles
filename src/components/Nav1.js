@@ -4,7 +4,7 @@ import { SearchIcon, MenuIcon, XIcon, ShoppingCartIcon } from '@heroicons/react/
 import { Link } from "react-router-dom"
 import insta from '../pics/instagram.png'
 import fb from '../pics/facebook.png'
-import brand from '../pics/candles.png'
+import brand from '../pics/kangaroo.png'
 //import Footer from './Footer.js'
 
 const navigation = [
