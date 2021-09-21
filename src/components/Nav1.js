@@ -49,7 +49,7 @@ export default function Nav1() {
                       src={brand}
                       alt="candles"
                     />
-                    <p className="tracking-wider mx-2">soyaCandles</p>
+                    <p className="tracking-wider mx-2">kangurMakesCandles</p>
                   </div>
                 </Link>
                 <div className="hidden sm:block sm:ml-6">
