@@ -49,7 +49,9 @@ export default function Nav1() {
                       src={brand}
                       alt="candles"
                     />
-                    <p className="tracking-wider mx-2">kangurMakesCandles</p>
+                    <p className="tracking-wider mx-2">Kangur</p>
+                    <br />
+                    <p className="tracking-wider mx-2">MakesCandles</p>
                   </div>
                 </Link>
                 <div className="hidden sm:block sm:ml-6">
