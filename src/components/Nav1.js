@@ -40,7 +40,7 @@ export default function Nav1() {
                 <Link to="/">
                   <div className="flex-shrink-0 flex items-center">
                     <img
-                      className="block lg:hidden h-8 w-auto"
+                      className="block lg:hidden h-12 w-auto"
                       src={brand}
                       alt="candles"
                     />
