@@ -50,8 +50,8 @@ export default function Nav1() {
                       alt="candles"
                     />
                     <div className="text-containerr">
-                      <p className="tracking-wider font-poiret-one">Kangur</p>
-                      <p className="tracking-wider font-poiret-one">MakesCandles</p>
+                      <p className="tracking-wider font-poiret-one font-bold">Kangur</p>
+                      <p className="tracking-wider font-poiret-one font-bold">MakesCandles</p>
                     </div>
                   </div>
                 </Link>
