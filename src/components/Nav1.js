@@ -100,22 +100,23 @@ export default function Nav1() {
         
           <Menu.Items className="absolute left-0 w-full origin-top-right bg-white divide-y divide-gray-100 text-center focus:outline-none">
             <div className="px-1 py-12 border-b">
-              {navigation.map((item) =>(
-                <Menu.Item>
-                  <Link to={item.path}>
-                    <div
-                      key={item.name}
-                      className={classNames(
-                        item.current ? 'underline text-black' : 'text-black',
-                        'block px-2 py-5 rounded-md text-base tracking-widest'
-                      )}
-                      aria-current={item.current ? 'page' : undefined}
-                    >
-                     {item.name}
-                    </div>
-                  </Link>
-                </Menu.Item>
-              ))}
+              <div>
+                {navigation.map((item) =>(
+                  <Menu.Item>
+                    <Link to={item.path}>
+                      <div
+                        key={item.name}
+                        className={classNames(
+                          item.current ? 'underline text-black' : 'text-black',
+                         'block px-2 py-5 rounded-md text-base tracking-widest'
+                        )}
+                        aria-current={item.current ? 'page' : undefined}
+                      >
+                       {item.name}
+                      </div>
+                    </Link>
+                  </Menu.Item>
+                ))}
               </div>
               <div>
                 <div className="my-5 w-full h-6 flex justify-center">
@@ -135,7 +136,7 @@ export default function Nav1() {
                   </a> 
                 </div>  
               </div>    
-            
+            </div>
           </Menu.Items>
         </Transition>
         </>
