@@ -116,6 +116,7 @@ export default function Nav1() {
                   </Link>
                 </Menu.Item>
               ))}
+              </div>
               <div>
                 <div className="my-5 w-full h-6 flex justify-center">
                   <a href="https://www.instagram.com/?hl=en" className="block mr-6">
@@ -134,7 +135,7 @@ export default function Nav1() {
                   </a> 
                 </div>  
               </div>    
-            </div>
+            
           </Menu.Items>
         </Transition>
         </>
