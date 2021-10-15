@@ -24,7 +24,7 @@ export default function Footer() {
            </a> 
         </div>  
         <div className="my-3 text-center">
-          <p className="text-sm font-light tracking-widest">@2021, soyaCandles</p>
+          <p className="text-sm font-light tracking-widest">@2021, KangurMakesCandles</p>
         </div>
       </div>    
   );

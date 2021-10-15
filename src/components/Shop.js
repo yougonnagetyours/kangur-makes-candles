@@ -31,8 +31,8 @@ export default function Shop() {
             />
           </div>
           <div className="mt-6">
-            <p className="text-2xl sm:text-4xl mx-6 mt-3 tracking-widest">Naturalne składniki</p>
-            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">To coś co wyróżnia soyaCandles</p>
+            <p className="text-2xl sm:text-4xl mx-6 mt-3 tracking-widest">Sklep</p>
+            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">Poszukaj dla siebie coś odpowiedniego</p>
           </div>
         </div> 
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
