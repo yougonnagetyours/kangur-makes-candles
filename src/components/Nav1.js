@@ -75,10 +75,6 @@ export default function Nav1() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button className="bg-white p-1 rounded-full text-black">
-                  <span className="sr-only">Szukaj</span>
-                  <SearchIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
                 <button className="flex bg-white p-1 rounded-full text-black focus:outline-none">
                   <span className="sr-only">Zobacz koszyk</span>
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
