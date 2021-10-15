@@ -7,9 +7,6 @@ import candle1 from '../pics/candle1.jpg'
 import candle2 from '../pics/candle2.jpg'
 import candle3 from '../pics/candle3.jpg'
 import candle4 from '../pics/candle4.jpg'
-
-import img1 from '../pics/pics'
-
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,7 +29,7 @@ export default function MainSite() {
           <div className="lg:mr-3">
             <img 
               className="block" 
-              src={img1} 
+              src={main1} 
               alt="candles" 
             />
           </div>
