@@ -35,8 +35,8 @@ export default function MainSite() {
           </div>
           <div className="mt-6">
             <p className="text-2xl sm:text-4xl mx-6 mt-3 tracking-widest">Witaj w soyaCandles</p>
-            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">Poznaj produkty bamburcia</p>
-            <div className="mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
+            {/*<p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">Poznaj produkty bamburcia</p>*/}
+            <div className="mx-6 mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
                 <p className="text-center tracking-wider">Poznaj produkty bamburcia</p>
             </div>
           </div>
