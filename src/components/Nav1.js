@@ -40,7 +40,7 @@ export default function Nav1() {
                 <Link to="/">
                   <div className="flex-shrink-0 flex items-center">
                     <img
-                      className="block lg:hidden h-12 w-auto"
+                      className="block lg:hidden h-10 w-auto"
                       src={brand}
                       alt="candles"
                     />
@@ -49,7 +49,7 @@ export default function Nav1() {
                       src={brand}
                       alt="candles"
                     />
-                    <div className="text-containerr ml-2">
+                    <div className="text-containerr ml-2  h-10">
                       <p className="tracking-wider font-poiret-one font-bold">Kangur</p>
                       <p className="tracking-wider font-poiret-one font-bold">MakesCandles</p>
                     </div>
