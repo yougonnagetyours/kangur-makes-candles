@@ -49,9 +49,9 @@ export default function Nav1() {
                       src={brand}
                       alt="candles"
                     />
-                    <div className="text-containerr ml-2  h-6">
-                      <p className="tracking-wider font-poiret-one font-bold">Kangur</p>
-                      <p className="tracking-wider font-poiret-one font-bold">MakesCandles</p>
+                    <div className="text-containerr ml-2">
+                      <p className="text-sm tracking-wider font-poiret-one font-bold">Kangur</p>
+                      <p className="text-sm tracking-wider font-poiret-one font-bold">MakesCandles</p>
                     </div>
                   </div>
                 </Link>
