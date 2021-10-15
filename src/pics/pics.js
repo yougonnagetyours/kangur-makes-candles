@@ -1,3 +1,3 @@
-import img1 from './main3'
+import img1 from './main3.jpg'
 
 export {img1}
