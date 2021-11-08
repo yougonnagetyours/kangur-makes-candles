@@ -16,7 +16,7 @@ import {
 //import ShopPrewiew from './components/ShopPreview.js'
 
 
-export default function App() {
+function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
@@ -52,3 +52,5 @@ export default function App() {
     </Router>
   )
 }
+
+export default App;
