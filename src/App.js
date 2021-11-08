@@ -4,7 +4,7 @@ import Nav1 from './components/Navbar/Nav1.js'
 import MainSite from './components/MainSite/MainSite.js'
 import Shop from './components/Shop/Shop.js'
 import ProductDetails from './components/ProductDetails/ProductDetails'
-import Cart from './components/Cart/Cart'
+import Cart from './components/Cart/Cart.js'
 import Footer from './components/Footer/Footer.js'
 import ScrollToTop from './components/scrollToTop.js'
 
@@ -79,15 +79,10 @@ function App() {
             <Route path="/shop">
               <Shop products={products} />
             </Route>
-            <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={""} />}></Route>
-            <Route path="/cart">
-              <Cart 
-                cart={cart}
-                handleUpdateCartQty={handleUpdateCartQty}
-                handleRemoveFromCart={handleRemoveFromCart}
-                handleEmptyCart={handleEmptyCart} 
-              />
+            <Route exact path="/cart">
+              <Cart />
             </Route>
+            <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={""} />}></Route> 
           </Switch>
         </Fragment>
       </main>
