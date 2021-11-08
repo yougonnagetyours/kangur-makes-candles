@@ -1,6 +1,6 @@
 import React from 'react'
-import insta from '../pics/instagram.png'
-import fb from '../pics/facebook.png'
+import insta from '../../pics/instagram.png'
+import fb from '../../pics/facebook.png'
 
 
 

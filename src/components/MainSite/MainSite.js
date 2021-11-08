@@ -1,12 +1,12 @@
 import React from 'react'
 
-import main1 from '../pics/main1.jpg'
-import main2 from '../pics/main2.jpg'
-import main3 from '../pics/main3.jpg'
-import candle1 from '../pics/candle1.jpg'
-import candle2 from '../pics/candle2.jpg'
-import candle3 from '../pics/candle3.jpg'
-import candle4 from '../pics/candle4.jpg'
+import main1 from '../../pics/main1.jpg'
+import main2 from '../../pics/main2.jpg'
+import main3 from '../../pics/main3.jpg'
+import candle1 from '../../pics/candle1.jpg'
+import candle2 from '../../pics/candle2.jpg'
+import candle3 from '../../pics/candle3.jpg'
+import candle4 from '../../pics/candle4.jpg'
 import {
   BrowserRouter as Router,
   Switch,
@@ -36,9 +36,11 @@ export default function MainSite() {
           <div className="mt-6">
             <p className="text-2xl sm:text-4xl mx-6 mt-6 tracking-widest">Naturalne składniki</p>
             <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">To coś co wyróżnia KangurMakesCandles</p>
-            <div className="mx-6 mt-6 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
-                <p className="text-center tracking-wider">Poznaj nasze produkty</p>
-            </div>
+            <Link to="/shop">
+              <div className="mx-6 mt-6 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
+                  <p className="text-center tracking-wider">Poznaj nasze produkty</p>
+              </div>
+            </Link>
           </div>
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 mt-10 mb-6 ">

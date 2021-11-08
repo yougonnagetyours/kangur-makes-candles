@@ -1,9 +1,5 @@
 import React from 'react'
 import Product from './Product/Product.js'
-import candle1 from '../../pics/candle1.jpg'
-import candle2 from '../../pics/candle2.jpg'
-import candle3 from '../../pics/candle3.jpg'
-import candle4 from '../../pics/candle4.jpg'
 import main2 from '../../pics/main2.jpg'
 import {
   BrowserRouter as Router,

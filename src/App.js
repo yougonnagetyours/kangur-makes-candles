@@ -1,10 +1,10 @@
 import React, { Fragment, useState, useEffect } from 'react'
 import { commerce } from './lib/commerce'
-import Nav1 from './components/Nav1.js'
-import MainSite from './components/MainSite.js'
+import Nav1 from './components/Navbar/Nav1.js'
+import MainSite from './components/MainSite/MainSite.js'
 import Shop from './components/Shop/Shop.js'
 import ProductDetails from './components/ProductDetails/ProductDetails'
-import Footer from './components/Footer.js'
+import Footer from './components/Footer/Footer.js'
 import ScrollToTop from './components/scrollToTop.js'
 
 import {
