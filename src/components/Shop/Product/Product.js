@@ -19,9 +19,6 @@ const Product = ({ product }) => {
         <div className="mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
            <p className="text-center tracking-wider">Do koszyka</p>
         </div>
-        <div className="mx-auto my-2 py-2 border-2 border-black cursor-pointer w-auto">
-          <p className="text-center tracking-wider">Kup teraz</p>
-        </div> 
       </div>
   )
 }

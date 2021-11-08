@@ -34,9 +34,10 @@ export default function MainSite() {
             />
           </div>
           <div className="mt-6">
-            <p className="text-2xl sm:text-4xl mx-6 mt-6 tracking-widest">Witaj w soyaCandles</p>
+            <p className="text-2xl sm:text-4xl mx-6 mt-6 tracking-widest">Naturalne składniki</p>
+            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">To coś co wyróżnia KangurMakesCandles</p>
             <div className="mx-6 mt-6 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
-                <p className="text-center tracking-wider">Poznaj produkty bamburcia</p>
+                <p className="text-center tracking-wider">Poznaj nasze produkty</p>
             </div>
           </div>
         </div>

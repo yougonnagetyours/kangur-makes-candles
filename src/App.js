@@ -3,7 +3,7 @@ import { commerce } from './lib/commerce'
 import Nav1 from './components/Nav1.js'
 import MainSite from './components/MainSite.js'
 import Shop from './components/Shop/Shop.js'
-import Product from './components/ProductDetails.js'
+import ProductDetails from './components/ProductDetails/ProductDetails'
 import Footer from './components/Footer.js'
 import ScrollToTop from './components/scrollToTop.js'
 
@@ -45,6 +45,7 @@ function App() {
             <Route path="/shop">
               <Shop products={products} />
             </Route>
+            <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={""} />}></Route>
           </Switch>
         </Fragment>
       </main>

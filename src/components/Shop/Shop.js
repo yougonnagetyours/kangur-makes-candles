@@ -12,13 +12,6 @@ import {
   Link
 } from "react-router-dom"
 
-const candles = [
-  { src: candle1, title:"Let's stay home", price:"49,90 zł" },
-  { src: candle2, title:"Bitch.. You Got This!", price:"34,99 zł"  },
-  { src: candle3, title:"salt sea", price:"52,90 zł"  },
-  { src: candle4, title:"Urban | 01", price:"50,00 zł"  },
-]
-
 const Shop = ({ products }) => {
   return (
     <>
@@ -38,7 +31,7 @@ const Shop = ({ products }) => {
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           {products.map((product) => (
             <div className="w-10/12 mb-20" item key={product.id}>
-              <Link to="/product">
+              <Link to={`/${product.id}`}>
                 <Product product={product} onAddToCart={""} />
               </Link>
             </div>
