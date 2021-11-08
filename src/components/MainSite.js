@@ -1,5 +1,5 @@
 import React from 'react'
-import ShopPreview from '../components/ShopPreview.js'
+
 import main1 from '../pics/main1.jpg'
 import main2 from '../pics/main2.jpg'
 import main3 from '../pics/main3.jpg'
@@ -64,7 +64,7 @@ export default function MainSite() {
             <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">To coś co wyróżnia soyaCandles</p>
           </div>
         </div>
-        <ShopPreview />
+        {/*<ShopPreview />*/}
         <div className="4throw box-border mb-8">
           <div className="">
             <img 
