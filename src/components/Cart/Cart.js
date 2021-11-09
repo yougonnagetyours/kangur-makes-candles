@@ -8,9 +8,9 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 
   const EmptyCart = () => (
     <>
-        <div className="">
+        <div className="my-10">
           <p className="text-center text-base tracking-widest">Twój koszyk jest pusty</p>
-          <Link to="/" className="text-center text-base tracking-widest" >Dodaj produkty do koszyka!</Link>
+          <Link to="/shop" className="text-center text-base tracking-widest border-b-2 border-black	" >Dodaj produkty do koszyka!</Link>
         </div>
     </>
 )
@@ -29,13 +29,13 @@ const FilledCart = () => (
           ))}
       </div>
       <div className="my-10">
-          <div>
+          <div className="text-base tracking-widest">
               Razem: {cart.subtotal.formatted} zł
           </div>
           <div>
-              <div className="mt-2" onClick={handleEmptyCart}>Wyczyść koszyk
+              <div className="mt-2 text-base tracking-widest" onClick={handleEmptyCart}>Wyczyść koszyk
               </div>
-              <div component={Link} to="/checkout" className="mt-2">Do kasy
+              <div component={Link} to="/checkout" className="mt-2 text-base tracking-widest">Do kasy
               </div>
           </div>
       </div>
