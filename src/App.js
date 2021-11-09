@@ -80,7 +80,12 @@ function App() {
               <Shop products={products} onAddToCart={handleAddToCart}/>
             </Route>
             <Route exact path="/cart">
-              <Cart cart={cart} />
+              <Cart 
+                cart={cart}
+                handleUpdateCartQty={handleUpdateCartQty}
+                handleRemoveFromCart={handleRemoveFromCart}
+                handleEmptyCart={handleEmptyCart} 
+              />
             </Route>
             <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={handleAddToCart} />}></Route> 
           </Switch>
