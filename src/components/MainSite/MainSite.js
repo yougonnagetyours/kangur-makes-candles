@@ -43,6 +43,19 @@ export default function MainSite() {
             </Link>
           </div>
         </div>
+        
+        <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
+          <div className="lg:mr-3 max-w-screen-lg">
+            <img 
+              className="block" 
+              src={main2} 
+              alt="candles" 
+            />
+          </div>
+          <div className="mt-6">
+            <p className="text-2xl text-center sm:text-4xl mx-6 mt-3 tracking-widest">Nowości</p>
+          </div>
+        </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 mt-10 mb-6 ">
           {candles.map((candle) => (
             <div className="border border-black w-2/5 p-5 mb-6">
@@ -53,19 +66,6 @@ export default function MainSite() {
               />
             </div>
           ))}  
-        </div>
-        <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
-          <div className="lg:mr-3 max-w-screen-lg">
-            <img 
-              className="block" 
-              src={main2} 
-              alt="candles" 
-            />
-          </div>
-          <div className="mt-6">
-            <p className="text-2xl sm:text-4xl mx-6 mt-3 tracking-widest">Naturalne składniki</p>
-            <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">To coś co wyróżnia soyaCandles</p>
-          </div>
         </div>
         {/*<ShopPreview />*/}
         <div className="4throw box-border mb-8">
