@@ -33,10 +33,14 @@ const FilledCart = () => (
               Razem: {cart.subtotal.formatted} zł
           </div>
           <div>
-              <div className="mt-2 text-base tracking-widest" onClick={handleEmptyCart}>Wyczyść koszyk
+              <div className="mt-2" onClick={handleEmptyCart}>
+                <p className="text-base tracking-widest">Wyczyść koszyk</p>
               </div>
-              <div component={Link} to="/checkout" className="mt-2 text-base tracking-widest">Do kasy
-              </div>
+              <Link to="/checkout">
+                <div className="mt-2">
+                  <p className="text-base tracking-widest">Do kasy</p>
+                </div>
+              </Link>
           </div>
       </div>
   </>
