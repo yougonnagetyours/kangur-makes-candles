@@ -17,7 +17,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Nav1() {
+const Nav1 = ({ cart }) => {
   return (
     <div className="">
       <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
@@ -75,11 +75,13 @@ export default function Nav1() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <Link to="/cart">
                 <button className="flex bg-white p-1 rounded-full text-black focus:outline-none">
                   <span className="sr-only">Zobacz koszyk</span>
                   <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-                  <p>(0)</p>
+                  <p>({cart.total_items})</p>
                 </button>
+                </Link>
               </div>
 
         </div>
@@ -142,3 +144,4 @@ export default function Nav1() {
   )
 }
 
+export default Nav1

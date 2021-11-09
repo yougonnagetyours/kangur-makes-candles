@@ -45,6 +45,7 @@ if (!cart.line_items) return "Loading";
 return (
     <div className="text-2xl text-center mt-6 tracking-widest">
       <p>Koszyk</p>
+      {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </div>
   )
 }

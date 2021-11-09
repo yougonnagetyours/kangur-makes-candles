@@ -66,23 +66,23 @@ function App() {
     fetchCart();
   }, []);
 
-  console.log(products);
+  console.log(cart);
   return (
     <Router>
       <div className="w-full h-16" />
-      <Nav1 />
+      <Nav1 cart={cart} />
       <main>
         <Fragment>
           <ScrollToTop />
           <Switch>
             <Route path="/" exact component={MainSite} />
             <Route path="/shop">
-              <Shop products={products} />
+              <Shop products={products} onAddToCart={handleAddToCart}/>
             </Route>
             <Route exact path="/cart">
-              <Cart />
+              <Cart cart={cart} />
             </Route>
-            <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={""} />}></Route> 
+            <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={handleAddToCart} />}></Route> 
           </Switch>
         </Fragment>
       </main>

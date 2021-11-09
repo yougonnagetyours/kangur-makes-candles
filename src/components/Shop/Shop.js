@@ -8,7 +8,7 @@ import {
   Link
 } from "react-router-dom"
 
-const Shop = ({ products }) => {
+const Shop = ({ products, onAddToCart }) => {
   return (
     <>
         <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
@@ -27,9 +27,9 @@ const Shop = ({ products }) => {
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6 ">
           {products.map((product) => (
             <div className="w-10/12 mb-20" item key={product.id}>
-              <Link to={`/${product.id}`}>
-                <Product product={product} onAddToCart={""} />
-              </Link>
+              
+                <Product product={product} onAddToCart={onAddToCart} />
+              
             </div>
           ))}  
         </div>  
