@@ -19,7 +19,7 @@ const FilledCart = () => (
   <>
       <div className="container" spacing={3}>
           {cart.line_items.map((item) => (
-              <div className="grid">
+              <div className="grid" key={item.id}>
                   <CartItem
                       item={item}
                       onUpdateCartQty={handleUpdateCartQty}
