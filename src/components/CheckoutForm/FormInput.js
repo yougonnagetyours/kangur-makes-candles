@@ -24,8 +24,8 @@ function FormInput({ name, label, required }) {
 
             //label={label}
             //fullWidth
-            required
-            error={isError}
+            //required
+            //error={isError}
             />
           </div>  
         </div>
