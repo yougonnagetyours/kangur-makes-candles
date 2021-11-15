@@ -64,26 +64,26 @@ const AddressForm = ({ checkoutToken, next }) => {
                   <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
                       <div className="shadow overflow-hidden sm:rounded-md">
                         <div className="px-4 py-5 bg-white sm:p-6">
-                          <div className="grid grid-cols-6 gap-6">
+                          <div className="grid grid-cols-6 gap-6 w-10/12 mx-auto">
                             <div className="col-span-6 sm:col-span-3">
-                              <FormInput required name='firstName' label='first Name' />
+                              <FormInput required name='Imie' label='first Name' />
                             </div>
                             <div className="col-span-6 sm:col-span-3">
-                              <FormInput required name='lastName' label='last Name' />
+                              <FormInput required name='Nazwisko' label='last Name' />
                             </div>
                             <div className="col-span-6 sm:col-span-4">  
-                              <FormInput required name='address' label='Adres' />
+                              <FormInput required name='Adres' label='Adres' />
                             </div>
                             <div className="col-span-6 sm:col-span-3">  
-                              <FormInput required name='email' label='Email' />
+                              <FormInput required name='Email' label='Email' />
                             </div>
                             <div className="col-span-6">  
-                              <FormInput required name='city' label='City' />
+                              <FormInput required name='Miasto' label='City' />
                             </div>  
                             <div className="col-span-6">
-                              <FormInput required name='zip' label='Zip' />
+                              <FormInput required name='Kod pocztowy' label='Zip' />
                             </div>  
-                            <div className="col-span-6 sm:col-span-3"></div>
+                            <div className="col-span-6 sm:col-span-3 w-10/12 mx-auto"></div>
                                 <label htmlFor="country" className="block text-sm font-medium text-gray-700">Kraj</label>
                                 <select
                                   id="country"
@@ -119,9 +119,9 @@ const AddressForm = ({ checkoutToken, next }) => {
                           </div>
                         </div>
                       <br />
-                      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                          <Link to="/cart" className="text-center text-base tracking-widest border-b-2 border-black	" >Powrót do koszyka!</Link>
-                          <button type='submit' variant='contained' color='primary'>Dalej</button>
+                      <div className="flex justify-between w-10/12 mx-auto mb-6">
+                          <Link to="/cart" className="text-center text-base tracking-widest cursor-pointer my-2 border-b-2 border-black" >Powrót do koszyka!</Link>
+                          <button  type='submit' className="text-center  tracking-widest border-2 border-black cursor-pointer px-4 py-2">Dalej</button>
                       </div>
                   </form>
               </FormProvider>

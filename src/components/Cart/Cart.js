@@ -29,7 +29,7 @@ const FilledCart = () => (
           ))}
       </div>
       <div className="my-10">
-          <div className="text-base tracking-widest">
+          <div className="text-base tracking-widest font-medium">
               Razem: {cart.subtotal.formatted} zł
           </div>
           <div>
