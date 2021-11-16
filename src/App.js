@@ -78,7 +78,7 @@ function App() {
     fetchCart();
   }, []);
 
-  console.log(cart);
+  console.log(products);
   return (
     <Router>
       <div className="w-full h-16" />
