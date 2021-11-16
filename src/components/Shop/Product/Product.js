@@ -12,7 +12,7 @@ const Product = ({ product, onAddToCart }) => {
           <img 
             className=""
             src={product.image.url} 
-            alt="candles" 
+            alt={product.name}  
           />
         </div>
         </Link>
