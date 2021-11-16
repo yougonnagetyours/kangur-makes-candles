@@ -87,7 +87,9 @@ function App() {
         <Fragment>
           <ScrollToTop />
           <Switch>
-            <Route path="/" exact component={MainSite} />
+            <Route path="/">
+              <MainSite products={products} />
+            </Route>  
             <Route path="/shop">
               <Shop products={products} onAddToCart={handleAddToCart}/>
             </Route>
