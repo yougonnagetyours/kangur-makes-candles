@@ -59,11 +59,13 @@ const MainSite = ({ products }) => {
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 mt-10 mb-6 ">
           {products.map((product) => (
             <div className="border border-black w-2/5 p-5 mb-6">
-              <img 
-                className="block" 
-                src={product.image.url} 
-                alt={product.name}   
-              />
+              <Link to={`/${product.id}`}>
+                <img 
+                  className="block" 
+                  src={product.image.url} 
+                  alt={product.name}   
+                />
+              </Link>
             </div>
           ))}  
         </div>
