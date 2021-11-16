@@ -57,12 +57,12 @@ const MainSite = ({ products }) => {
           </div>
         </div>
         <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 mt-10 mb-6 ">
-          {candles.map((candle) => (
+          {products.map((product) => (
             <div className="border border-black w-2/5 p-5 mb-6">
               <img 
                 className="block" 
-                src={candle.src} 
-                alt="candles" 
+                src={product.image.url} 
+                alt={product.name}   
               />
             </div>
           ))}  
