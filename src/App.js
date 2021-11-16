@@ -87,7 +87,7 @@ function App() {
         <Fragment>
           <ScrollToTop />
           <Switch>
-            <Route path="/">
+            <Route exact path="/">
               <MainSite products={products} />
             </Route>  
             <Route path="/shop">
