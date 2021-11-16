@@ -36,7 +36,7 @@ const FilledCart = () => (
                 <p className="text-center text-base tracking-widest">Wyczyść koszyk</p>
           </div>
           <div className="flex justify-between w-10/12 mx-auto my-6">
-              <Link to="/shop" className="cursor-pointer my-2 border-b-2 border-black" onClick={handleEmptyCart}>
+              <Link to="/shop" className="cursor-pointer my-2 border-b-2 border-black">
                 <p className="text-center text-base tracking-widest">Powrót do sklepu</p>
               </Link>
               <Link to="/checkout" className="border-2 border-black cursor-pointer px-4 py-2">                
