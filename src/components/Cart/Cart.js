@@ -32,14 +32,12 @@ const FilledCart = () => (
           <div className="text-base tracking-widest font-medium">
               Razem: {cart.subtotal.formatted} zł
           </div>
-          <div>
-              <div className="mt-2" onClick={handleEmptyCart}>
-                <p className="text-base tracking-widest">Wyczyść koszyk</p>
+          <div className=""flex justify-between w-10/12 mx-auto mb-6"">
+              <div className="cursor-pointer my-2 border-b-2 border-black" onClick={handleEmptyCart}>
+                <p className="text-center text-base tracking-widest">Wyczyść koszyk</p>
               </div>
-              <Link to="/checkout">
-                <div className="mt-2">
-                  <p className="text-base tracking-widest">Do kasy</p>
-                </div>
+              <Link to="/checkout" className="border-2 border-black cursor-pointer px-4 py-2">                
+                <p className="text-center tracking-widest">Do kasy</p>
               </Link>
           </div>
       </div>
