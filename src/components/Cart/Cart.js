@@ -37,7 +37,7 @@ const FilledCart = () => (
                 <p className="text-center text-base tracking-widest">Wyczyść koszyk</p>
               </div>
               <Link to="/checkout" className="border-2 border-black cursor-pointer px-4 py-2">                
-                <p className="text-center tracking-widest">Do kasy</p>
+                <button className="text-center tracking-widest">Do kasy</button>
               </Link>
           </div>
       </div>
