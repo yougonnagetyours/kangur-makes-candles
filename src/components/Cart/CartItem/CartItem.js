@@ -10,6 +10,9 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
             alt="candles" 
           />
       </div>
+      <div className="my-2">
+        <p className="text-center text-base tracking-widest">{item.name}</p>
+      </div>
       <div className="flex justify-center mt-6">
         <button className="mx-2 cursor-pointer" onClick={() => onUpdateCartQty(item.id, item.quantity - 1)}>-</button>
         <p className="mx-2">{item.quantity}</p>
