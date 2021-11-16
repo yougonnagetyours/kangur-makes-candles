@@ -2,7 +2,7 @@ import React from 'react'
 
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   return (
-    <div className="w-6/12 mx-auto mt-10">
+    <div className="w-6/12 mx-auto mt-10 mb-6">
       <div className="border border-black">
           <img 
             className=""
@@ -14,7 +14,7 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
         <p className="text-center text-base tracking-widest">{item.name}</p>
       </div>
       <div className="my-2">
-        <p className="text-center text-base tracking-widest">{`${item.price.formatted * item.quantity} zł`}</p>
+        <p className="text-center text-lg tracking-widest">{`${item.price.formatted * item.quantity} zł`}</p>
       </div>
       <div className="flex justify-center mt-2">
         <button className="mx-2 cursor-pointer" onClick={() => onUpdateCartQty(item.id, item.quantity - 1)}>-</button>
