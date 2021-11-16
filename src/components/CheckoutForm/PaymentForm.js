@@ -50,7 +50,7 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <button onClick={backStep}>Wstecz</button>
               <button type="submit" disabled={!stripe}>
-                Zapłać {checkoutToken.live.subtotal.formatted_with_symbol}
+                {`Zapłać ${checkoutToken.live.subtotal.formatted} zł`}
               </button>
             </div>
           </form>
