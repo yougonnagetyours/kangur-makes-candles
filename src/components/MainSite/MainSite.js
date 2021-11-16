@@ -21,7 +21,7 @@ const candles = [
   { src: candle4 },
 ]
 
-export default function MainSite() {
+const MainSite = ({ products }) => {
   return (
       <div>  
         
@@ -80,3 +80,5 @@ export default function MainSite() {
       </div>    
   );
 }
+
+export default MainSite;
