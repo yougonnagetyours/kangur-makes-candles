@@ -24,10 +24,10 @@ const Shop = ({ products, onAddToCart }) => {
             <p className="text-sm font-light sm:text-xl mx-6 mt-3 tracking-widest">Poszukaj dla siebie coś odpowiedniego</p>
           </div>
         </div> 
-        <div className="my-6 ">
+        <div className="flex flex-wrap justify-around box-border mx-2.5 my-6">
           {products.map((product) => (
             <div className="w-10/12 mb-20 sm:flex sm:-mx-2" item key={product.id}>            
-                <Product product={product} onAddToCart={onAddToCart} />           
+                <Product product={product} className="sm:w-1/3 sm:px-2" onAddToCart={onAddToCart} />           
             </div>
           ))}  
         </div>  
