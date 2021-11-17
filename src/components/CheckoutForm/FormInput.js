@@ -15,10 +15,10 @@ function FormInput({ name, label, required, placeholder }) {
                 control={control}
                 render={({ field }) => (
                     <div className="mb-4" required>
-                      <label className="block text-sm font-bold mb-2" for={name}>
+                      <label className="block text-sm tracking-widest font-bold mb-2" for={name}>
                         {name}
                       </label>
-                      <input className="appearance-none border border-black w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id={label} type="text" placeholder={placeholder} required />
+                      <input className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline" id={label} type="text" placeholder={placeholder} required />
                     </div>
                 )}
 
