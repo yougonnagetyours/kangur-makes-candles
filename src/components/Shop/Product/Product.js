@@ -6,7 +6,7 @@ const Product = ({ product, onAddToCart }) => {
   const handleAddToCart = () => onAddToCart(product.id, 1);
 
   return (
-      <div className="">      
+      <div className="sm:w-1/3 sm:px-2">      
         <Link to={`/${product.id}`}>
         <div className="border border-black">
           <img 
