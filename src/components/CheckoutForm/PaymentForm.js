@@ -42,7 +42,7 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
   return (
     <>
       <Review checkoutToken={checkoutToken} />
-      <div className="text-2xl text-center mt-6 tracking-widest">Payment method</div>
+      <div className="text-lg text-center mt-6 tracking-widest font-medium">Metoda płatności</div>
       <Elements stripe={stripePromise}>
         <ElementsConsumer>{({ elements, stripe }) => (
           <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
