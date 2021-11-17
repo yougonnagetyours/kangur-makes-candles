@@ -20,7 +20,7 @@ const Review = ({ checkoutToken }) => {
                         </div>
                     </div>
                 ))}
-                <div className="w-1/3 mx-auto mt-10 mb-6">
+                <div className="w-1/4 mx-auto mt-10 mb-6">
                     <p className="text-center text-lg tracking-widest">Suma</p>
                     <div className="text-center">
                         <p className="font-medium text-lg tracking-widest border-b-2 border-black">{`${checkoutToken.live.subtotal.formatted} zł`}</p>
