@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
 
-function FormInput({ name, label, required, placeholder }) {
+function FormInput({ name, label, required }) {
     const { control } = useFormContext();
     const isError = false;
 
@@ -15,9 +15,9 @@ function FormInput({ name, label, required, placeholder }) {
                 control={control}
                 render={({ field }) => (
                     <div className="mb-4" required>
-                    {/*<label className="block text-sm tracking-widest font-bold mb-2" for={name}>
+                      <label className="block text-sm tracking-widest font-bold mb-2" for={name}>
                         {name}
-                      </label>*/}
+                      </label>
                       <input className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline" id={label} type="text" placeholder={name} required />
                     </div>
                 )}
