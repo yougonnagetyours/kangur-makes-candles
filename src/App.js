@@ -81,7 +81,7 @@ function App() {
   console.log(products);
   return (
     <Router>
-    <div className="m-auto">
+    <div className="mx-auto">
       <div className="w-full h-16 sm:hidden" />
       <Nav1 cart={cart} />
       <main>
