@@ -66,7 +66,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                         <div className="px-4 py-5 bg-white sm:p-6">
                           <div className="grid grid-cols-6 gap-6 w-10/12 mx-auto">
                             <div className="col-span-6 sm:col-span-3">
-                              <FormInput required name='Imie' label='first Name' />
+                              <FormInput required name='Imie' label='first Name' placeholder="'Jan' />
                             </div>
                             <div className="col-span-6 sm:col-span-3">
                               <FormInput required name='Nazwisko' label='last Name' />
