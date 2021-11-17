@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
 
-function FormInput({ name, label, required }) {
+function FormInput({ name, label, required, placeholder }) {
     const { control } = useFormContext();
     const isError = false;
 
