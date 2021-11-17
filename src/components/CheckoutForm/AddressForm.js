@@ -66,7 +66,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                         <div className="px-4 py-5 bg-white sm:p-6">
                           <div className="grid grid-cols-6 gap-6 w-10/12 mx-auto">
                             <div className="col-span-6 sm:col-span-3">
-                              <FormInput required name='Imie' label='first Name' placeholder='Jan' />
+                              <FormInput required name='Imie' label='first Name' />
                             </div>
                             <div className="col-span-6 sm:col-span-3">
                               <FormInput required name='Nazwisko' label='last Name' />
@@ -84,7 +84,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                               <FormInput required name='Kod pocztowy' label='Zip' />
                             </div>  
                             <div className="col-span-6 sm:col-span-3 w-10/12 mx-auto"></div>
-                                <label htmlFor="country" className="block text-sm font-medium text-gray-700">Kraj</label>
+                                <label htmlFor="country" className="block text-sm tracking-widest font-medium">Kraj</label>
                                 <select
                                   id="country"
                                   name="country"
