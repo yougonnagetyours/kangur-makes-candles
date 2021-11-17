@@ -17,9 +17,9 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 
 const FilledCart = () => (
   <>
-      <div className="container" spacing={3}>
+      <div className="flex flex-wrap justify-around box-border sm:-mx-2 my-6">
           {cart.line_items.map((item) => (
-              <div className="grid grid-cols-1 sm:grid-cols-4 gap-6" key={item.id}>
+              <div className="sm:w-1/3 sm:px-2" key={item.id}>
                   <CartItem
                       item={item}
                       onUpdateCartQty={handleUpdateCartQty}
