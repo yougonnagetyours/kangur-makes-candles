@@ -47,7 +47,7 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
         <ElementsConsumer>{({ elements, stripe }) => (
           <form onSubmit={(e) => handleSubmit(e, elements, stripe)}>
             <CardElement />
-            <div className="flex justify-between w-10/12 mx-auto my-6"}>
+            <div className="flex justify-between w-10/12 mx-auto my-6">
               <button className="text-center text-base tracking-widest cursor-pointer my-2 border-b-2 border-black" onClick={backStep}>Wstecz</button>
               <button type="submit" disabled={!stripe} className="text-center  tracking-widest border-2 border-black cursor-pointer px-4 py-2">
                 {`Zapłać ${checkoutToken.live.subtotal.formatted} zł`}
