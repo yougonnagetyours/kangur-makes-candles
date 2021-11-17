@@ -81,7 +81,7 @@ function App() {
   console.log(products);
   return (
     <Router>
-      <div className="w-full h-16 sm:hide" />
+      <div className="w-full h-16 sm:hidden" />
       <Nav1 cart={cart} />
       <main>
         <Fragment>
