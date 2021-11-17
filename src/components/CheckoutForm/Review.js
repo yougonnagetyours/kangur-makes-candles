@@ -8,9 +8,9 @@ const Review = ({ checkoutToken }) => {
             </div>
             <div className="">
                 {checkoutToken.live.line_items.map((product) => (
-                    <div className="w-8/12 mx-auto mt-10 mb-6 p-2 border border-black" key={product.id}>
+                    <div className="w-8/12 mx-auto mt-10 mb-6 px-4 py-2 border border-black" key={product.id}>
                         <div className="my-2">
-                            <p className="text-base tracking-widest">{product.name}</p>
+                            <p className="font-medium text-base tracking-widest">{product.name}</p>
                         </div>
                         <div className="my-2">
                             <p className="text-base tracking-widest">{`${product.quantity} szt.`}</p>
