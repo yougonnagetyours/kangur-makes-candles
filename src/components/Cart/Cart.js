@@ -50,8 +50,8 @@ const FilledCart = () => (
 if (!cart.line_items) return "Loading";
 
 return (
-    <div className="text-2xl text-center mt-6 tracking-widest">
-      <p>Koszyk</p>
+    <div className="text-center mt-6">
+      <p className="text-2xl tracking-widest">Koszyk</p>
       {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </div>
   )
