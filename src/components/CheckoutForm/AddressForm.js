@@ -93,11 +93,16 @@ const AddressForm = ({ checkoutToken, next }) => {
                                   value={shippingCountry}
                                   onChange={(e) => setShippingCountry(e.target.value)}
                                 >
-                                  {countries.map((country) => (
+                                    {Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name })).map((item) => (
+                                      <option key={item.id} value={item.id}>
+                                        {item.label}
+                                      </option>
+                                    ))}
+                                    {/*{countries.map((country) => (
                                         <option key={country.id} value={country.id}>
                                             {country.label}
                                         </option>
-                                    ))}
+                                    ))}*/}
                                 </select>
                             </div>
                             {/*<div className="col-span-6 sm:col-span-3">
