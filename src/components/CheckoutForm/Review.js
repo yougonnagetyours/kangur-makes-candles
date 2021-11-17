@@ -3,19 +3,27 @@ import React from 'react';
 const Review = ({ checkoutToken }) => {
     return (
         <>
-            <div variant='h6' gutterBottom>Podsumowanie zamówienia</div>
-            <div disablePadding>
+            <div className="text-center mt-6">
+              <p className="text-2xl tracking-widest">Podsumowanie zamówienia</p>
+            </div>
+            <div className="">
                 {checkoutToken.live.line_items.map((product) => (
-                    <div className="" key={product.id}>
-                        <div>{`ilość: ${product.name}`}</div>
-                        <div>{`ilość: ${product.quantity}`}</div>
-                        <div>{`${product.line_total.formatted} zł`}</div>
+                    <div className="w-6/12 mx-auto mt-10 mb-6" key={product.id}>
+                        <div className="my-2">
+                            <p className="text-center text-base tracking-widest">{`ilość: ${product.name}`}</p>
+                        </div>
+                        <div className="my-2">
+                            <p className="text-center text-base tracking-widest">{`ilość: ${product.quantity}`}</p>
+                        </div>
+                        <div className="my-2">
+                            <p className="text-center text-lg tracking-widest">{`${product.line_total.formatted} zł`}</p>
+                        </div>
                     </div>
                 ))}
-                <div style={{ padding: '10px 0' }}>
-                    <div primary='Suma' />
-                    <div variant='subtitle2' style={{ fontWeight: '700' }}>
-                        {`${checkoutToken.live.subtotal.formatted} zł`}
+                <div className="w-6/12 mx-auto mt-10 mb-6">
+                    <p className="text-center text-lg tracking-widest">Suma</p>
+                    <div className="text-center">
+                        <p className="font-medium text-lg tracking-widest">{`${checkoutToken.live.subtotal.formatted} zł`}</p>
                     </div>
                 </div>
             </div>
