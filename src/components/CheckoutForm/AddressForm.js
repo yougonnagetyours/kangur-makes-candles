@@ -55,35 +55,32 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     return (
         <>
-        <div className="mt-10 sm:mt-0">
-          <div className="md:grid md:grid-cols-3 md:gap-6">
-            <div className="md:col-span-1">
-            <div className="px-4 sm:px-0"></div>
+            <div className="px-4 my-6 sm:px-0"></div>
               <div className="text-2xl text-center tracking-widest">Adres dostawy</div>
               <FormProvider {...methods}>
                   <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
-                      <div className="shadow overflow-hidden sm:rounded-md">
+                      <div className="shadow overflow-hidden">
                         <div className="px-4 py-5 bg-white sm:p-6">
-                          <div className="grid grid-cols-6 gap-6 w-10/12 mx-auto">
-                            <div className="col-span-6 sm:col-span-3">
+                          <div className="mx-auto">
+                            <div className="col-span-6 mx-auto">
                               <FormInput required name='Imie' label='first Name' />
                             </div>
-                            <div className="col-span-6 sm:col-span-3">
+                            <div className="col-span-6 mx-auto">
                               <FormInput required name='Nazwisko' label='last Name' />
                             </div>
-                            <div className="col-span-6 sm:col-span-4">  
+                            <div className="col-span-6 mx-auto">  
                               <FormInput required name='Adres' label='Adres' />
                             </div>
-                            <div className="col-span-6 sm:col-span-3">  
+                            <div className="col-span-6 mx-auto">  
                               <FormInput required name='Email' label='Email' />
                             </div>
-                            <div className="col-span-6">  
+                            <div className="col-span-6 mx-auto">  
                               <FormInput required name='Miasto' label='City' />
                             </div>  
-                            <div className="col-span-6">
+                            <div className="col-span-6 mx-auto">
                               <FormInput required name='Kod pocztowy' label='Zip' />
                             </div>  
-                            <div className="col-span-6 sm:col-span-3 w-10/12 mx-auto"></div>
+                            <div className="col-span-6 mx-auto"></div>
                                 <label htmlFor="country" className="block text-sm tracking-widest font-medium">Kraj</label>
                                 <select
                                   id="country"
@@ -130,9 +127,6 @@ const AddressForm = ({ checkoutToken, next }) => {
                       </div>
                   </form>
               </FormProvider>
-            </div>
-          </div>
-        </div>
         </>
     )
 }

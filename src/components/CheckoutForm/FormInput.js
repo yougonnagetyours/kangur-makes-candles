@@ -6,8 +6,8 @@ function FormInput({ name, label, required }) {
     const isError = false;
 
     return (
-      <div className="grid grid-cols-6 gap-6">
-        <div className="col-span-6 sm:col-span-3">
+      <div className="">
+        <div className="">
             <Controller
                 //as={TextField}
                 defaultValue=''

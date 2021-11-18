@@ -12,7 +12,7 @@ const Shop = ({ products, onAddToCart }) => {
   return (
     <>
         <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
-          <div className="sm:flex sm:justify-center sm:items-center lg:mr-3 max-w-screen-lg sm:h-48 lg:h-48 sm:overflow-hidden">
+          <div className="sm:flex sm:justify-center sm:items-center lg:mr-3 max-w-screen-lg sm:h-80 lg:h-80 sm:overflow-hidden">
             <img 
               className="block sm:w-full sm:mt-10" 
               src={main2} 
