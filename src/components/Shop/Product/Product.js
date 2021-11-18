@@ -16,13 +16,13 @@ const Product = ({ product, onAddToCart }) => {
           />
         </div>
         </Link>
-        <div className="mt-6 mb-2">
-          <p className="text-center text-base tracking-widest">{product.name}</p>
+        <div className="flex justify-around mt-6 mb-2">
+          <p className="text-center text-base sm:text-sm tracking-widest">{product.name}</p>
         </div>
-        <div className="mt-3 mb-4">
+        <div className="flex justify-around mt-3 mb-4">
           <p className="text-center text-base tracking-widest">{`${product.price.formatted} zł`}</p>
         </div>
-        <div className="mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
+        <div className="flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden">
            <p className="text-center tracking-wider" aria-label="Dodaj do koszyka" onClick={handleAddToCart}>Do koszyka</p>
         </div>
       </div>
