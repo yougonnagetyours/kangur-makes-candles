@@ -24,7 +24,7 @@ const Nav1 = ({ cart }) => {
         {({ open }) => (
         <>  
         <div className={classNames(open ? "" : "border-b", "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8")}>
-        <div className="relative flex items-center justify-between h-24">
+        <div className="relative flex items-center justify-between h-16 sm:h-24">
         <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <Menu.Button className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
             <span className="sr-only">Open main menu</span>
@@ -40,7 +40,7 @@ const Nav1 = ({ cart }) => {
                 <Link to="/">
                   <div className="flex-shrink-0 flex items-center">
                     <img
-                      className="block lg:hidden h-10 w-auto"
+                      className="block sm:hidden h-8 w-auto"
                       src={brand}
                       alt="candles"
                     />
@@ -50,8 +50,8 @@ const Nav1 = ({ cart }) => {
                       alt="candles"
                     />
                     <div className="text-containerr ml-2 mr-2">
-                      <p className="text-base tracking-wider font-poiret-one font-bold">Kangur</p>
-                      <p className="text-base tracking-wider font-poiret-one font-bold">MakesCandles</p>
+                      <p className="text-sm sm:text-base tracking-wider font-poiret-one font-bold">Kangur</p>
+                      <p className="text-sm sm:text-base tracking-wider font-poiret-one font-bold">MakesCandles</p>
                     </div>
                   </div>
                 </Link>
@@ -78,8 +78,8 @@ const Nav1 = ({ cart }) => {
                 <Link to="/cart">
                 <button className="flex bg-white p-1 rounded-full text-black focus:outline-none">
                   <span className="sr-only">Zobacz koszyk</span>
-                  <ShoppingCartIcon className="h-8 w-8" aria-hidden="true" />
-                  <p className="text-xl">({cart.total_items})</p>
+                  <ShoppingCartIcon className="h-6 w-6 sm:h-8 sm:w-8" aria-hidden="true" />
+                  <p className="sm:text-xl">({cart.total_items})</p>
                 </button>
                 </Link>
               </div>
