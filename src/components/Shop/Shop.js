@@ -24,13 +24,15 @@ const Shop = ({ products, onAddToCart }) => {
             <p className="text-sm font-light md:text-xl mx-6 mt-3 tracking-widest">Poszukaj dla siebie coś odpowiedniego</p>
           </div>
         </div> 
-        <div className="flex flex-wrap justify-around box-border mx-2.5 sm:-mx-2 my-6 sm:justify-between">
-          {products.map((product) => (
-            <div className="w-10/12 mb-20 sm:w-1/3 lg:w-1/4 sm:px-8 sm:mb-10" item key={product.id}>            
-                <Product product={product} onAddToCart={onAddToCart} />           
-            </div>
-          ))}  
-        </div>  
+        <div className="flex justify-center">
+          <div className="flex flex-wrap justify-around max-w-screen-sm box-border mx-2.5 sm:-mx-2 my-6 sm:justify-between">
+            {products.map((product) => (
+              <div className="w-10/12 mb-20 sm:w-1/3 sm:px-4 sm:mb-10" item key={product.id}>            
+                  <Product product={product} onAddToCart={onAddToCart} />           
+              </div>
+            ))}  
+          </div> 
+        </div> 
     </>    
   );
 }

@@ -40,22 +40,26 @@ const MainSite = ({ products }) => {
               alt="candles" 
             />
           </div>
-          <div className="mt-6">
-            <p className="text-2xl text-center md:text-4xl mx-6 mt-3 tracking-widest">Nowości</p>
+          <div className="mt-10 mb-6">
+            <p className="text-2xl text-center md:text-4xl tracking-widest">Nowości</p>
           </div>
         </div>
-        <div className="2ndrow flex flex-wrap justify-around box-border mx-2.5 mt-10 mb-6 ">
-          {products.map((product) => (
-            <div className="border border-black w-2/5 p-5 mb-6">
-              <Link to={`/${product.id}`}>
-                <img 
-                  className="block" 
-                  src={product.image.url} 
-                  alt={product.name}   
-                />
-              </Link>
-            </div>
-          ))}  
+        <div className="flex justify-center">
+          <div className="2ndrow flex flex-wrap justify-around max-w-screen-sm box-border mx-2.5 sm:-mx-2 my-6 sm:justify-between">
+            {products.map((product) => (
+              <div className="mb-4 w-1/2 sm:w-1/3 px-2 sm:px-4 sm:mb-10 ">
+                <div className="border border-black">
+                <Link to={`/${product.id}`}>
+                  <img 
+                    className="block" 
+                    src={product.image.url} 
+                    alt={product.name}   
+                  />
+                </Link>
+              </div>  
+              </div>
+            ))}  
+          </div>
         </div>
         {/*<ShopPreview />*/}
         <div className="4throw box-border mb-8">
