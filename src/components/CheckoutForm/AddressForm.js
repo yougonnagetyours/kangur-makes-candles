@@ -55,7 +55,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     return (
         <>
-            <div className="px-4 my-6 sm:px-0"></div>
+            <div className="mx-20 my-6 sm:px-0"></div>
               <div className="text-2xl text-center tracking-widest">Adres dostawy</div>
               <FormProvider {...methods}>
                   <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>

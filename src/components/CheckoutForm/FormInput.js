@@ -18,7 +18,7 @@ function FormInput({ name, label, required }) {
                       <label className="block text-sm tracking-widest font-bold mb-2" for={name}>
                         {name}
                       </label>
-                      <input className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline" id={label} type="text" placeholder={name} required />
+                      <input className="appearance-none border w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline" id={label} type="text" placeholder={name} required />
                     </div>
                 )}
 
