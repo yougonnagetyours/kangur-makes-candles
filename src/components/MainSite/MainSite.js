@@ -45,7 +45,7 @@ const MainSite = ({ products }) => {
           </div>
         </div>
         <div className="flex justify-center">
-          <div className="2ndrow flex flex-wrap justify-around max-w-screen-sm box-border mx-2.5 sm:-mx-2 my-6 sm:justify-around">
+          <div className="2ndrow flex flex-wrap justify-around max-w-screen-md box-border mx-2.5 sm:-mx-2 my-6 sm:justify-around">
             {products.map((product) => (
               <div className="mb-4 w-1/2 sm:w-1/3 px-2 sm:px-4 sm:mb-10">
                 <div className="border border-black">

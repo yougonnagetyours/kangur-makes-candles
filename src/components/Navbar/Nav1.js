@@ -45,7 +45,7 @@ const Nav1 = ({ cart }) => {
                       alt="candles"
                     />
                     <img
-                      className="hidden sm:block h-16 w-auto"
+                      className="hidden sm:block h-12 w-auto"
                       src={brand}
                       alt="candles"
                     />
@@ -78,8 +78,8 @@ const Nav1 = ({ cart }) => {
                 <Link to="/cart">
                 <button className="flex bg-white p-1 rounded-full text-black focus:outline-none">
                   <span className="sr-only">Zobacz koszyk</span>
-                  <ShoppingCartIcon className="h-6 w-6 sm:h-8 sm:w-8" aria-hidden="true" />
-                  <p className="sm:text-xl">({cart.total_items})</p>
+                  <ShoppingCartIcon className="h-6 w-6 sm:h-7 sm:w-7" aria-hidden="true" />
+                  <p className="sm:text-lg">({cart.total_items})</p>
                 </button>
                 </Link>
               </div>
@@ -122,14 +122,14 @@ const Nav1 = ({ cart }) => {
                     <img 
                       className="block h-full" 
                       src={insta} 
-                      alt="candles" 
+                      alt="fb-candles" 
                     />
                   </a>
                   <a href="https://www.facebook.com/" className="block">
                   <img 
                       className="block h-full" 
                       src={fb} 
-                      alt="candles" 
+                      alt="insta-candles" 
                     />  
                   </a> 
                 </div>  

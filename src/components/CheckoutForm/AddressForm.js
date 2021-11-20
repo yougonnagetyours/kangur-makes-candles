@@ -55,32 +55,32 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     return (
         <>
-            <div className="mx-20 my-6 sm:px-0"></div>
+            <div className="mx-10 my-6 sm:px-0"></div>
               <div className="text-2xl text-center tracking-widest">Adres dostawy</div>
               <FormProvider {...methods}>
                   <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
                       <div className="shadow overflow-hidden">
                         <div className="px-4 py-5 bg-white sm:p-6">
                           <div className="mx-auto">
-                            <div className="col-span-6 mx-auto">
+                            <div className="mx-auto">
                               <FormInput required name='Imie' label='first Name' />
                             </div>
-                            <div className="col-span-6 mx-auto">
+                            <div className="mx-auto">
                               <FormInput required name='Nazwisko' label='last Name' />
                             </div>
-                            <div className="col-span-6 mx-auto">  
+                            <div className="mx-auto">  
                               <FormInput required name='Adres' label='Adres' />
                             </div>
-                            <div className="col-span-6 mx-auto">  
+                            <div className="mx-auto">  
                               <FormInput required name='Email' label='Email' />
                             </div>
-                            <div className="col-span-6 mx-auto">  
+                            <div className="mx-auto">  
                               <FormInput required name='Miasto' label='City' />
                             </div>  
-                            <div className="col-span-6 mx-auto">
+                            <div className="mx-auto">
                               <FormInput required name='Kod pocztowy' label='Zip' />
                             </div>  
-                            <div className="col-span-6 mx-auto"></div>
+                            <div className="mx-auto"></div>
                                 <label htmlFor="country" className="block text-sm tracking-widest font-medium">Kraj</label>
                                 <select
                                   id="country"

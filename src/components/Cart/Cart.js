@@ -17,16 +17,18 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 
 const FilledCart = () => (
   <>
-      <div className="flex flex-wrap justify-around box-border sm:-mx-2 my-6">
-          {cart.line_items.map((item) => (
-              <div className="sm:w-1/3 sm:px-2" key={item.id}>
-                  <CartItem
-                      item={item}
-                      onUpdateCartQty={handleUpdateCartQty}
-                      onRemoveFromCart={handleRemoveFromCart}
-                  />
-              </div>
-          ))}
+      <div className="flex justify-center">
+        <div className="flex flex-wrap justify-around max-w-screen-md box-border sm:-mx-2 my-6">
+            {cart.line_items.map((item) => (
+                <div className="sm:w-1/3 sm:px-2" key={item.id}>
+                    <CartItem
+                        item={item}
+                        onUpdateCartQty={handleUpdateCartQty}
+                        onRemoveFromCart={handleRemoveFromCart}
+                    />
+                </div>
+            ))}
+        </div>
       </div>
       <div className="my-10">
           <div className="text-base tracking-widest font-medium">
