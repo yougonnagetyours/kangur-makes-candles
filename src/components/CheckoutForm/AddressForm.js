@@ -73,10 +73,10 @@ const AddressForm = ({ checkoutToken, next }) => {
                             <div className="sm:mx-24">  
                               <FormInput required name='Adres' label='Adres' />
                             </div>
-                            <div className="mx-24">  
+                            <div className="sm:mx-24">  
                               <FormInput required name='Email' label='Email' />
                             </div>
-                            <div className="flex">
+                            <div className="sm:flex">
                               <div className="mx-auto">  
                                 <FormInput required name='Miasto' label='City' />
                               </div>  
@@ -85,7 +85,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                               </div>  
                             </div>
                             <div></div>
-                            <div className="mx-24">
+                            <div className="sm:mx-24">
                                 <label htmlFor="country" className="block text-sm tracking-widest font-medium">Kraj</label>
                                 <select
                                   id="country"
