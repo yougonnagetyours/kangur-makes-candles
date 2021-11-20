@@ -55,38 +55,43 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     return (
         <>
-            <div className="mx-10 my-6 sm:px-0"></div>
-              <div className="text-2xl text-center tracking-widest">Adres dostawy</div>
+            <div className="my-6 sm:px-0"></div>
+              <div className="text-2xl mb-4 text-center tracking-widest">Adres dostawy</div>
               <FormProvider {...methods}>
                   <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
                       <div className="shadow overflow-hidden">
-                        <div className="px-4 py-5 bg-white sm:p-6">
-                          <div className="mx-auto">
-                            <div className="mx-auto">
-                              <FormInput required name='Imie' label='first Name' />
+                        <div className="sm:mx-24 my-4 bg-white">
+                          <div className="mx-4 my-4">
+                            <div className="sm:flex">
+                              <div className="mx-auto">
+                                <FormInput required name='Imie' label='first Name' />
+                              </div>
+                              <div className="mx-auto">
+                                <FormInput required name='Nazwisko' label='last Name' />
+                              </div>
                             </div>
-                            <div className="mx-auto">
-                              <FormInput required name='Nazwisko' label='last Name' />
-                            </div>
-                            <div className="mx-auto">  
+                            <div className="sm:mx-24">  
                               <FormInput required name='Adres' label='Adres' />
                             </div>
-                            <div className="mx-auto">  
+                            <div className="mx-24">  
                               <FormInput required name='Email' label='Email' />
                             </div>
-                            <div className="mx-auto">  
-                              <FormInput required name='Miasto' label='City' />
-                            </div>  
-                            <div className="mx-auto">
-                              <FormInput required name='Kod pocztowy' label='Zip' />
-                            </div>  
-                            <div className="mx-auto"></div>
+                            <div className="flex">
+                              <div className="mx-auto">  
+                                <FormInput required name='Miasto' label='City' />
+                              </div>  
+                              <div className="mx-auto">
+                                <FormInput required name='Kod pocztowy' label='Zip' />
+                              </div>  
+                            </div>
+                            <div></div>
+                            <div className="mx-24">
                                 <label htmlFor="country" className="block text-sm tracking-widest font-medium">Kraj</label>
                                 <select
                                   id="country"
                                   name="country"
                                   autoComplete="country-name"
-                                  className="mt-1 block w-full py-2 px-3 tracking-widest border border-black bg-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                  className="mt-1 block w-full py-2 px-3 tracking-widest border text-gray-700 bg-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                                   value={shippingCountry}
                                   onChange={(e) => setShippingCountry(e.target.value)}
                                 >
@@ -101,6 +106,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                                         </option>
                                     ))}*/}
                                 </select>
+                            </div>
                             </div>
                             {/*<div className="col-span-6 sm:col-span-3">
                                 <InputLabel>Subdivisions</InputLabel>
