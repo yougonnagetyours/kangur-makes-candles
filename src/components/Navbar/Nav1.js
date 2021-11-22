@@ -9,7 +9,7 @@ import brand from '../../pics/kangaroo.png'
 
 const navigation = [
   { name: 'Sklep', path: '/shop', current: false },
-  { name: 'O nas', path: '#', current: false },
+  { name: 'O nas', path: '/about', current: false },
   { name: 'Kontakt', path: '#', current: false },
 ]
 
