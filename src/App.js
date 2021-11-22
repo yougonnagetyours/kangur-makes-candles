@@ -7,6 +7,7 @@ import ProductDetails from './components/ProductDetails/ProductDetails'
 import Cart from './components/Cart/Cart.js'
 import Footer from './components/Footer/Footer.js'
 import About from './components/About/About.js'
+import Contact from './components/Contact/Contact.js'
 import ScrollToTop from './components/scrollToTop.js'
 
 import {
@@ -113,6 +114,9 @@ function App() {
             </Route>
             <Route exact path="/about">
               <About />
+            </Route>
+            <Route exact path="/contact">
+              <Contact />
             </Route>
             <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={handleAddToCart} />}></Route> 
           </Switch>
