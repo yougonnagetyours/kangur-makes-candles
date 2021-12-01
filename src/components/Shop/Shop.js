@@ -25,9 +25,9 @@ const Shop = ({ products, onAddToCart }) => {
           </div>
         </div> 
         <div className="flex justify-center">
-          <div className="flex flex-wrap justify-around max-w-screen-sm box-border mx-2.5 sm:-mx-2 my-6 sm:justify-between">
+          <div className="flex flex-wrap box-border mx-2.5 my-6">
             {products.map((product) => (
-              <div className="w-10/12 mb-20 sm:w-1/3 sm:px-4 sm:mb-10" item key={product.id}>            
+              <div className="px-2 mb-20 sm:w-1/3 lg:w-1/4 sm:px-2 sm:mb-10" item key={product.id}>            
                   <Product product={product} onAddToCart={onAddToCart} />           
               </div>
             ))}  
