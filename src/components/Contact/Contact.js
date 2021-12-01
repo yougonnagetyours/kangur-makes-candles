@@ -8,11 +8,11 @@ return (
       <p className="text-xl sm:text-2xl md:text-3xl tracking-widest">Kontakt</p>
       <div className="mt-6">
         <p className="text-sm font-light uppercase text-justify md:text-base mx tracking-widest">Telefon:</p>
-        <p className="text-sm font-light border-b w-max border-black md:text-base mx tracking-widest">+48 111 111 111</p>
+        <a className="block text-sm font-light border-b w-max border-black md:text-base mx tracking-widest" href="tel:+48694773906">+48 111 111 111</a>
       </div>
       <div className="mt-6">
         <p className="text-sm font-light uppercase text-justify md:text-base mx tracking-widest">Napisz do nas:</p>
-        <p className="text-sm font-light border-b w-max border-black md:text-base mx tracking-widest">kontakt@kangurmakescandles.pl</p>
+        <a className="block text-sm font-light border-b w-max border-black md:text-base mx tracking-widest" href="mailto:kontakt@kangurmakescandles.pl">kontakt@kangurmakescandles.pl</a>
       </div>
     </div>
     <div className="statute mt-24 mx-6">
