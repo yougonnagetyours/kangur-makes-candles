@@ -144,8 +144,8 @@ function App() {
           </main>
           <Footer />
           {isAddedToCart ? 
-           <div className='flex justify-center'>
-             <div className='fixed left-0 bottom-0 w-11/12 bg-black mb-2 text-center tracking-widest text-white p-4'>
+           <div className='fixed left-0 bottom-0 flex justify-center w-full'>
+             <div className='w-11/12 bg-black mb-2 text-center tracking-widest text-white p-4'>
                 Produkt został dodany do koszyka !
              </div>
            </div>
