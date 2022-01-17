@@ -24,7 +24,7 @@ function App() {
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isAddedToCart, setIsAddedToCart] = useState(true);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -41,10 +41,10 @@ function App() {
     const { cart } = await commerce.cart.add(productId, quantity);
 
     setCart(cart);
-    //setIsAddedToCart(true);
-    //setTimeout(() => {
-    //  setIsAddedToCart(false);
-    //}, 2000)
+    setIsAddedToCart(true);
+    setTimeout(() => {
+      setIsAddedToCart(false);
+    }, 2000)
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
