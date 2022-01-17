@@ -29,6 +29,7 @@ function App() {
     const { data } = await commerce.products.list();
 
     setProducts(data);
+    setIsLoaded(true);
   }
 
   const fetchCart = async () => {
@@ -79,9 +80,9 @@ function App() {
   useEffect(() => {
     fetchProducts();
     fetchCart();
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 3000);
+    //setTimeout(() => {
+      //setIsLoaded(true);
+    //}, 3000);
   }, []);
 
   console.log(products);
