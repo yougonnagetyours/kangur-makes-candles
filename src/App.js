@@ -10,6 +10,7 @@ import About from './components/About/About.js'
 import Contact from './components/Contact/Contact.js'
 import ScrollToTop from './components/scrollToTop.js'
 import Loader from './components/Loader.js'
+import ShoppingPopup from './components/ShoppingPopup.js'
 
 import {
   BrowserRouter as Router,
@@ -144,13 +145,7 @@ function App() {
             </Fragment>
           </main>
           <Footer />
-          {isAddedToCart ? 
-           <div className='fixed left-0 bottom-0 flex justify-center w-full'>
-             <div className='bg-black mx-2 mb-2 w-full text-center tracking-widest font-light text-white p-4'>
-                Produkt został dodany do koszyka !
-             </div>
-           </div>
-           : null}        
+          {isAddedToCart ? <ShoppingPopup /> : null}        
         </div>
       ) : (
         <Loader />
