@@ -22,8 +22,8 @@ const Product = ({ product, onAddToCart }) => {
         <div className="flex justify-around mt-3 mb-4">
           <p className="text-center text-base tracking-widest">{`${product.price.formatted} zł`}</p>
         </div>
-        <div className="flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden">
-           <p className="text-center tracking-wider" aria-label="Dodaj do koszyka" onClick={handleAddToCart}>Do koszyka</p>
+        <div className="flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden" onClick={handleAddToCart}>
+           <p className="text-center tracking-wider" aria-label="Dodaj do koszyka" >Do koszyka</p>
         </div>
       </div>
   )
