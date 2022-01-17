@@ -78,52 +78,66 @@ function App() {
   useEffect(() => {
     fetchProducts();
     fetchCart();
+    setIsLoaded(true);
   }, []);
 
   console.log(products);
   return (
     <Router>
-    <div className="wrapper max-w-screen-lg mx-auto">
-      <div className="w-full h-16 sm:hidden" />
-      <Nav1 cart={cart} />
-      <main>
-        <Fragment>
-          <ScrollToTop />
-          <Switch>
-            <Route exact path="/">
-              <MainSite products={products} />
-            </Route>  
-            <Route path="/shop">
-              <Shop products={products} onAddToCart={handleAddToCart}/>
-            </Route>
-            <Route exact path="/cart">
-              <Cart 
-                cart={cart}
-                handleUpdateCartQty={handleUpdateCartQty}
-                handleRemoveFromCart={handleRemoveFromCart}
-                handleEmptyCart={handleEmptyCart} 
-              />
-            </Route>
-            <Route exact path="/checkout">
-              <Checkout
-                cart={cart}
-                order={order}
-                onCaptureCheckout={handleCaptureCheckout}
-                error={errorMessage} 
-              />
-            </Route>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/contact">
-              <Contact />
-            </Route>
-            <Route exact path="/:id" children={<ProductDetails products={products} onAddToCart={handleAddToCart} />}></Route> 
-          </Switch>
-        </Fragment>
-      </main>
-      <Footer />
-    </div>          
+      {isLoaded ? (
+        <div className="wrapper max-w-screen-lg mx-auto">
+          <div className="w-full h-16 sm:hidden" />
+          <Nav1 cart={cart} />
+          <main>
+            <Fragment>
+              <ScrollToTop />
+              <Switch>
+                <Route exact path="/">
+                  <MainSite products={products} />
+                </Route>
+                <Route path="/shop">
+                  <Shop products={products} onAddToCart={handleAddToCart} />
+                </Route>
+                <Route exact path="/cart">
+                  <Cart
+                    cart={cart}
+                    handleUpdateCartQty={handleUpdateCartQty}
+                    handleRemoveFromCart={handleRemoveFromCart}
+                    handleEmptyCart={handleEmptyCart}
+                  />
+                </Route>
+                <Route exact path="/checkout">
+                  <Checkout
+                    cart={cart}
+                    order={order}
+                    onCaptureCheckout={handleCaptureCheckout}
+                    error={errorMessage}
+                  />
+                </Route>
+                <Route exact path="/about">
+                  <About />
+                </Route>
+                <Route exact path="/contact">
+                  <Contact />
+                </Route>
+                <Route
+                  exact
+                  path="/:id"
+                  children={
+                    <ProductDetails
+                      products={products}
+                      onAddToCart={handleAddToCart}
+                    />
+                  }
+                ></Route>
+              </Switch>
+            </Fragment>
+          </main>
+          <Footer />
+        </div>
+      ) : (
+        "Loading"
+      )}
     </Router>
   )
 }
