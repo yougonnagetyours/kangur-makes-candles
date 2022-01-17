@@ -143,9 +143,9 @@ function App() {
             </Fragment>
           </main>
           <Footer />
-          <div className="fixed left-0 bottom-0 w-10/12 bg-black mx-auto text-center tracking-widest text-white p-4">
+          {isAddedToCart ? <div className="fixed left-0 bottom-0 w-10/12 bg-black mx-auto text-center tracking-widest text-white p-4">
             Produkt został dodany do koszyka
-          </div>        
+          </div> : null}        
         </div>
       ) : (
         "Loading"
