@@ -7,7 +7,7 @@ const Product = ({ product, onAddToCart }) => {
 
   return (
       <div className="">      
-        <Link to={`/${product.id}`}>
+        <Link to={`/shop/${product.id}`}>
         <div className="border border-black">
           <img 
             className=""
