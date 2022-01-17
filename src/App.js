@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer.js'
 import About from './components/About/About.js'
 import Contact from './components/Contact/Contact.js'
 import ScrollToTop from './components/scrollToTop.js'
+import Loader from './components/Loader.js'
 
 import {
   BrowserRouter as Router,
@@ -152,7 +153,7 @@ function App() {
            : null}        
         </div>
       ) : (
-        "Loading"
+        <Loader />
       )}
     </Router>
   )
