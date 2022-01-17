@@ -131,7 +131,7 @@ function App() {
                 </Route>
                 <Route
                   exact
-                  path="/shop/:id"
+                  path="/:id"
                   children={
                     <ProductDetails
                       products={products}
