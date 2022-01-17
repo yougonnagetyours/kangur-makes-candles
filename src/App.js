@@ -44,7 +44,7 @@ function App() {
     setIsAddedToCart(true);
     setTimeout(() => {
       setIsAddedToCart(false);
-    }, 1000)
+    }, 2000)
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
