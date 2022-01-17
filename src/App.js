@@ -24,6 +24,7 @@ function App() {
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isAddedToCart, setIsAddedToCart] = useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -40,6 +41,10 @@ function App() {
     const { cart } = await commerce.cart.add(productId, quantity);
 
     setCart(cart);
+    setIsAddedToCart(true);
+    setTimeout(() => {
+      setIsAddedToCart(false);
+    }, 1000)
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
@@ -138,6 +143,9 @@ function App() {
             </Fragment>
           </main>
           <Footer />
+          <div className="fixed left-0 bottom-0 bg-black m-4 text-center text-white p-4">
+            Produkt został dodany do koszyka
+          </div>        
         </div>
       ) : (
         "Loading"
