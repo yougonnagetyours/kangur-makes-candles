@@ -79,7 +79,9 @@ function App() {
   useEffect(() => {
     fetchProducts();
     fetchCart();
-    setIsLoaded(true);
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 700);
   }, []);
 
   console.log(products);
