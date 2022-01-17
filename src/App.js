@@ -41,10 +41,10 @@ function App() {
     const { cart } = await commerce.cart.add(productId, quantity);
 
     setCart(cart);
-    setIsAddedToCart(true);
-    setTimeout(() => {
-      setIsAddedToCart(false);
-    }, 2000)
+    //setIsAddedToCart(true);
+    //setTimeout(() => {
+    //  setIsAddedToCart(false);
+    //}, 2000)
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
