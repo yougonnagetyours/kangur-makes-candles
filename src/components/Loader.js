@@ -1,5 +1,5 @@
 import React from "react";
-import pulsatingBrand from '../../pics/kangaroo.png'
+import pulsatingBrand from '../pics/kangaroo.png'
 
 const Loader = () => {
   return (
