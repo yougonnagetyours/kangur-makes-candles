@@ -81,7 +81,7 @@ function App() {
     fetchCart();
     setTimeout(() => {
       setIsLoaded(true);
-    }, 700);
+    }, 3000);
   }, []);
 
   console.log(products);
