@@ -24,7 +24,7 @@ function App() {
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
-  const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const [isAddedToCart, setIsAddedToCart] = useState(true);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
