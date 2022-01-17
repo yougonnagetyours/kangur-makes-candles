@@ -9,12 +9,12 @@ const Loader = () => {
           <div className="flex-shrink-0 flex items-center">
              <img
                className="block sm:hidden h-8 w-auto"
-               src={brand}
+               src={pulsatingBrand}
                alt="candles"
              />
              <img
                className="hidden sm:block h-12 w-auto"
-               src={brand}
+               src={pulsatingBrand}
                alt="candles"
               />
               <div className="text-containerr ml-2 mr-2">
