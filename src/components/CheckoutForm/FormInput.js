@@ -14,7 +14,7 @@ function FormInput({ name, label, placeholder, required }) {
           name={name}
           control={control}
           render={({ field }) => (
-            <div className="mb-4" required>
+            <div className="mb-4 py-2 px-3" required>
               <label
                 className="block text-sm tracking-widest font-bold mb-2"
                 for={name}
