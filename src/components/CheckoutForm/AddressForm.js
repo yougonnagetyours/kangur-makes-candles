@@ -94,33 +94,38 @@ const AddressForm = ({ checkoutToken, next }) => {
             })
           )}
         >
-          <div className="shadow overflow-hidden">
+          <div className="overflow-hidden">
             <div className="">
               <div className="mx-4 my-4">
                 <div className="sm:flex">
-                  <div className="mx-auto">
-                    <FormInput required name="Imie" label="Imie" />
+                  <div className="mx-auto py-2 px-3">
+                    <FormInput
+                      required
+                      name="Imie"
+                      label="first name"
+                      placeholder="Jan"
+                    />
                   </div>
-                  <div className="mx-auto">
-                    <FormInput required name="Nazwisko" label="Nazwisko" />
+                  <div className="mx-auto py-2 px-3">
+                    <FormInput required name="Nazwisko" label="last name" />
                   </div>
                 </div>
-                <div className="sm:mx-24">
+                <div className="sm:mx-auto py-2 px-3">
                   <FormInput required name="Adres" label="Adres" />
                 </div>
-                <div className="sm:mx-24">
+                <div className="sm:mx-auto py-2 px-3">
                   <FormInput required name="Email" label="Email" />
                 </div>
                 <div className="sm:flex">
-                  <div className="mx-auto">
+                  <div className="mx-auto py-2 px-3">
                     <FormInput required name="Miasto" label="City" />
                   </div>
-                  <div className="mx-auto">
+                  <div className="mx-auto py-2 px-3">
                     <FormInput required name="Kod pocztowy" label="Zip" />
                   </div>
                 </div>
                 <div></div>
-                <div className="sm:mx-24">
+                <div className="sm:mx-auto">
                   <label
                     htmlFor="country"
                     className="block text-sm tracking-widest font-medium"
