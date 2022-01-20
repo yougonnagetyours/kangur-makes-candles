@@ -98,34 +98,38 @@ const AddressForm = ({ checkoutToken, next }) => {
             <div className="">
               <div className="mx-4 my-4">
                 <div className="sm:flex">
-                  <div className="mx-auto py-2 px-3">
+                  <div className="mx-auto">
                     <FormInput
                       required
                       name="Imie"
                       label="first name"
-                      placeholder="Jan"
+                      placeholder="Jan" 
                     />
                   </div>
-                  <div className="mx-auto py-2 px-3">
-                    <FormInput required name="Nazwisko" label="last name" />
+                  <div className="w-full">
+                    <FormInput 
+                      required 
+                      name="Nazwisko" 
+                      label="last name" 
+                      placeholder="Kowalski" />
                   </div>
                 </div>
-                <div className="sm:mx-auto py-2 px-3">
-                  <FormInput required name="Adres" label="Adres" />
+                <div className="w-full">
+                  <FormInput required name="Adres" label="Adres" placeholder="Adres zamieszkania" />
                 </div>
-                <div className="sm:mx-auto py-2 px-3">
-                  <FormInput required name="Email" label="Email" />
+                <div className="">
+                  <FormInput required name="Email" label="Email" placeholder="jan.kowalski@dzimejl.com" />
                 </div>
                 <div className="sm:flex">
-                  <div className="mx-auto py-2 px-3">
-                    <FormInput required name="Miasto" label="City" />
+                  <div className="w-full">
+                    <FormInput required name="Miasto" label="City" placeholder="Chrząszczyżewoszyce" />
                   </div>
-                  <div className="mx-auto py-2 px-3">
-                    <FormInput required name="Kod pocztowy" label="Zip" />
+                  <div className="w-full">
+                    <FormInput required name="Kod pocztowy" label="Zip" placeholder="00-258" />
                   </div>
                 </div>
                 <div></div>
-                <div className="sm:mx-auto">
+                <div className="py-2 px-3">
                   <label
                     htmlFor="country"
                     className="block text-sm tracking-widest font-medium"
