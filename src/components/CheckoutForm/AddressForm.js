@@ -98,7 +98,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             <div className="">
               <div className="mx-4 my-4">
                 <div className="sm:flex">
-                  <div className="mx-auto">
+                  <div className="w-full">
                     <FormInput
                       required
                       name="Imie"
@@ -115,17 +115,33 @@ const AddressForm = ({ checkoutToken, next }) => {
                   </div>
                 </div>
                 <div className="w-full">
-                  <FormInput required name="Adres" label="Adres" placeholder="Adres zamieszkania" />
+                  <FormInput 
+                    required 
+                    name="Adres" 
+                    label="Adres"   
+                    placeholder="Adres zamieszkania" />
                 </div>
-                <div className="">
-                  <FormInput required name="Email" label="Email" placeholder="jan.kowalski@dzimejl.com" />
+                <div className="w-full">
+                  <FormInput 
+                    required 
+                    name="Email" 
+                    label="Email" 
+                    placeholder="jan.kowalski@dzimejl.com" />
                 </div>
                 <div className="sm:flex">
                   <div className="w-full">
-                    <FormInput required name="Miasto" label="City" placeholder="Chrząszczyżewoszyce" />
+                    <FormInput 
+                      required 
+                      name="Miasto" 
+                      label="City" 
+                      placeholder="Chrząszczyżewoszyce" />
                   </div>
                   <div className="w-full">
-                    <FormInput required name="Kod pocztowy" label="Zip" placeholder="00-258" />
+                    <FormInput 
+                      required 
+                      name="Kod pocztowy" 
+                      label="Zip" 
+                      placeholder="00-258" />
                   </div>
                 </div>
                 <div></div>
