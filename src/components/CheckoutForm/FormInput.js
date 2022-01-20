@@ -22,7 +22,7 @@ function FormInput({ name, label, placeholder, required }) {
                 {name}
               </label>
               <input
-                className="appearance-none border border-black w-full text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
+                className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
                 id={label}
                 type="text"
                 placeholder={placeholder}
