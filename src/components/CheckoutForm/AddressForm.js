@@ -156,7 +156,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     id="country"
                     name="country"
                     autoComplete="country-name"
-                    className="mt-1 block w-full py-2 px-3 tracking-widest border text-gray-700 bg-white focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none sm:text-sm"
                     value={shippingCountry}
                     onChange={(e) => setShippingCountry(e.target.value)}
                   >
@@ -203,7 +203,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             </Link>
             <button
               type="submit"
-              className="text-center  tracking-widest border-2 border-black cursor-pointer px-4 py-2"
+              className="text-center tracking-widest border-2 border-black cursor-pointer px-4 py-2"
             >
               Dalej
             </button>
