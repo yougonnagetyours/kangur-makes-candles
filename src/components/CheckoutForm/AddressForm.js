@@ -78,8 +78,7 @@ const AddressForm = ({ checkoutToken, next }) => {
   }, [shippingSubdivision]);
 
   return (
-    <>
-      <div className="my-6 sm:px-0"></div>
+    <div className="sm:max-w-screen-sm mx-auto">
       <div className="text-2xl mb-4 text-center tracking-widest">
         Adres dostawy
       </div>
@@ -156,7 +155,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     id="country"
                     name="country"
                     autoComplete="country-name"
-                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none sm:text-sm"
+                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none"
                     value={shippingCountry}
                     onChange={(e) => setShippingCountry(e.target.value)}
                   >
@@ -194,7 +193,7 @@ const AddressForm = ({ checkoutToken, next }) => {
             </div>
           </div>
           <br />
-          <div className="flex justify-between w-10/12 mx-auto mb-6">
+          <div className="flex justify-between mx-6 mb-6">
             <Link
               to="/cart"
               className="text-center text-base tracking-widest cursor-pointer my-2 border-b-2 border-black"
@@ -210,7 +209,7 @@ const AddressForm = ({ checkoutToken, next }) => {
           </div>
         </form>
       </FormProvider>
-    </>
+    </div>
   );
 };
 

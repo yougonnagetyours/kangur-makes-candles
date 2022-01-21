@@ -18,7 +18,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 const FilledCart = () => (
   <>
       <div className="flex justify-center">
-        <div className="flex flex-wrap justify-around max-w-screen-md box-border sm:-mx-2 my-6">
+        <div className="flex flex-wrap justify-start max-w-screen-md box-border sm:-mx-2 my-6">
             {cart.line_items.map((item) => (
                 <div className="sm:w-1/3 sm:px-2" key={item.id}>
                     <CartItem

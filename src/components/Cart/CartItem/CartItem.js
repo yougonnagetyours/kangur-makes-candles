@@ -2,7 +2,7 @@ import React from 'react'
 
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   return (
-    <div className="w-6/12 mx-auto mt-10 mb-6">
+    <div className="w-10/12 mx-auto mt-10 mb-6">
       <div className="border border-black">
           <img 
             className=""
