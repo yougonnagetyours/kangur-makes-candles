@@ -66,8 +66,6 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     ? <AddressForm checkoutToken={checkoutToken} next={next} />
     : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />)
 
-    console.log(checkoutToken)
-
   return (
     <>
       {/*<div className="text-2xl text-center tracking-widest" variant="h4" align="center">Checkout</div>
