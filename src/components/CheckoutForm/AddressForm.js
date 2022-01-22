@@ -77,9 +77,11 @@ const AddressForm = ({ checkoutToken, next }) => {
       );
   }, [shippingSubdivision]);
 
+  //console.log(shippingOptions);
+
   return (
     <div className="sm:max-w-screen-sm mx-auto">
-      <div className="text-2xl mb-4 text-center tracking-widest">
+      <div className="text-2xl mt-10 mb-4 text-center tracking-widest">
         Adres dostawy
       </div>
       <FormProvider {...methods}>
@@ -94,7 +96,6 @@ const AddressForm = ({ checkoutToken, next }) => {
           )}
         >
           <div className="overflow-hidden">
-            <div className="">
               <div className="mx-4 my-4">
                 <div className="sm:flex">
                   <div className="w-full">
@@ -143,21 +144,20 @@ const AddressForm = ({ checkoutToken, next }) => {
                       placeholder="00-258" />
                   </div>
                 </div>
-                <div></div>
-                <div className="py-2 px-3">
+                <div className="mb-4 py-2 px-3">
                   <label
                     htmlFor="country"
-                    className="block text-sm tracking-widest font-medium"
+                    className="block text-sm tracking-widest font-bold mb-2"
                   >
                     Kraj
                   </label>
                   <select
+                    value={shippingCountry}
+                    onChange={(e) => setShippingCountry(e.target.value)}
                     id="country"
                     name="country"
                     autoComplete="country-name"
-                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none"
-                    value={shippingCountry}
-                    onChange={(e) => setShippingCountry(e.target.value)}
+                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none" 
                   >
                     {Object.entries(shippingCountries)
                       .map(([code, name]) => ({ id: code, label: name }))
@@ -166,31 +166,34 @@ const AddressForm = ({ checkoutToken, next }) => {
                           {item.label}
                         </option>
                       ))}
-                    {/*{countries.map((country) => (
-                                        <option key={country.id} value={country.id}>
-                                            {country.label}
-                                        </option>
-                                    ))}*/}
+                  </select>
+                </div>
+                <div className="py-2 px-3">
+                  <label
+                    htmlFor="delivery-option"
+                    className="block text-sm tracking-widest font-bold mb-2"
+                  >
+                    Opcje dostawy
+                  </label>
+                  <select 
+                    value={shippingOption} 
+                    onChange={(e) => setShippingOption(e.target.value)}
+                    id="delivery-option"
+                    name="delivery-option"
+                    autoComplete=""
+                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none"
+                  >
+                    {shippingOptions
+                      .map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted} zł)` }))
+                      .map((item) => (
+                        <option key={item.id} value={item.id}>
+                          {item.label}
+                        </option>
+                      ))}
                   </select>
                 </div>
               </div>
-              {/*<div className="col-span-6 sm:col-span-3">
-                                <InputLabel>Subdivisions</InputLabel>
-                                <Select value={shippingSubdivision} fullWidth onChange={(e) => setShippingSubdivision(e.target.value)}>
-                                    {subdivisions.map((subdivision) => (
-                                        <MenuItem key={subdivision.id} value={subdivision.id}>{subdivision.label}</MenuItem>
-                                    ))}
-                                </Select>
-                            </div>
-                            <div className="col-span-6 sm:col-span-3">
-                                <InputLabel>Opcje dostawy</InputLabel>
-                                <Select value={shippingOption} fullWidth onChange={(e) => setShippingOption(e.targer.value)}>
-                                    {options.map((option) => (
-                                        <MenuItem key={option.id} value={option.id}>{option.label}</MenuItem>
-                                    ))}
-                                </Select>
-                              </div>*/}
-            </div>
+            
           </div>
           <br />
           <div className="flex justify-between mx-6 mb-6">
