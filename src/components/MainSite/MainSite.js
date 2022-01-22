@@ -47,7 +47,7 @@ const MainSite = ({ products }) => {
         <div className="flex justify-center">
           <div className="2ndrow flex flex-wrap box-border mx-2.5 my-6 ">
             {products.map((product) => (
-              <div className="mb-4 w-1/2 sm:w-1/3 md:w-1/4 px-2 sm:mb-10">
+              <div className="mb-4 w-1/2 sm:w-1/3 md:w-1/4 px-2 sm:mb-10" key={product.id}>
                 <div className="border border-black">
                 <Link to={`/${product.id}`}>
                   <img 
