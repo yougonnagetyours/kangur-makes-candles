@@ -68,15 +68,6 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
 
   return (
     <>
-      {/*<div className="text-2xl text-center tracking-widest" variant="h4" align="center">Checkout</div>
-      <div className="grid grid-cols-3 gap-4 w-3/4 m-auto">
-        {steps.map((step) => (
-          <div className={activeStep === step ? "border-t-4 border-purple-500 pt-4" : "border-t-4 border-gray-200 pt-4"}>
-            <p className={activeStep === step ? "uppercase text-purple-500 font-bold" : "uppercase text-gray-400 font-bold"}>{step}</p>
-          </div>
-        ))}
-      </div>*/}
-      
           {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form />}
         
     </>
