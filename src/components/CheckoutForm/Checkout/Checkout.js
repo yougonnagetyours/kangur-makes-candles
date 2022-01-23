@@ -61,7 +61,8 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
           <Link to="/shop" className="text-center text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
       </>
   }
-
+  console.log(shippingData);
+  
   const Form = () => (activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} next={next} />
     : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />)

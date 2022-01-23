@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
@@ -18,12 +17,12 @@ const PaymentForm = ({ checkoutToken, nextStep, backStep, shippingData, onCaptur
     const { error, paymentMethod } = await stripe.createPaymentMethod({ type: 'card', card: cardElement });
 
     if (error) {
-      console.log('[error]', error);
+      console.log(error);
     } else {
       const orderData = {
         line_items: checkoutToken.live.line_items,
         customer: { firstname: shippingData.firstName, lastname: shippingData.lastName, email: shippingData.email },
-        shipping: { name: 'International', street: shippingData.address1, town_city: shippingData.city, county_state: shippingData.shippingSubdivision, postal_zip_code: shippingData.zip, country: shippingData.shippingCountry },
+        shipping: { name: 'Primary', street: shippingData.address, town_city: shippingData.city, postal_zip_code: shippingData.zip, country: shippingData.shippingCountry },
         fulfillment: { shipping_method: shippingData.shippingOption },
         payment: {
           gateway: 'stripe',

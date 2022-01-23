@@ -79,8 +79,7 @@ const AddressForm = ({ checkoutToken, next }) => {
       );
   }, [shippingSubdivision]);
 
-  console.log(shippingCountries);
-  console.log(shippingOptions);
+  console.log(next);
 
   return (
     <div className="sm:max-w-screen-sm mx-auto">
@@ -88,46 +87,37 @@ const AddressForm = ({ checkoutToken, next }) => {
         Adres dostawy
       </div>
       <FormProvider {...methods}>
-        <form
-          onSubmit={methods.handleSubmit((data) =>
-            next({
-              ...data,
-              shippingCountry,
-              shippingSubdivision,
-              shippingOption
-            })
-          )}
-        >
+        <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision, shippingOption}))}>
           <div className="overflow-hidden">
               <div className="mx-4 my-4">
                 <div className="sm:flex">
                   <div className="w-full">
                     <FormInput
                       required
-                      name="Imie"
-                      label="first name"
+                      name="firstName"
+                      label="Imie"
                       placeholder="Jan" 
                     />
                   </div>
                   <div className="w-full">
                     <FormInput 
                       required 
-                      name="Nazwisko" 
-                      label="last name" 
+                      name="lastName" 
+                      label="Nazwisko" 
                       placeholder="Kowalski" />
                   </div>
                 </div>
                 <div className="w-full">
                   <FormInput 
                     required 
-                    name="Adres" 
+                    name="address" 
                     label="Adres"   
                     placeholder="Adres zamieszkania" />
                 </div>
                 <div className="w-full">
                   <FormInput 
                     required 
-                    name="Email" 
+                    name="email" 
                     label="Email" 
                     placeholder="jan.kowalski@dzimejl.com" />
                 </div>
@@ -135,15 +125,15 @@ const AddressForm = ({ checkoutToken, next }) => {
                   <div className="w-full">
                     <FormInput 
                       required 
-                      name="Miasto" 
-                      label="City" 
+                      name="city" 
+                      label="Miasto" 
                       placeholder="Chrząszczyżewoszyce" />
                   </div>
                   <div className="w-full">
                     <FormInput 
                       required 
-                      name="Kod pocztowy" 
-                      label="Zip" 
+                      name="zip" 
+                      label="Kod pocztowy" 
                       placeholder="00-258" />
                   </div>
                 </div>
@@ -182,7 +172,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     value={shippingOption} 
                     onChange={(e) => setShippingOption(e.target.value)}
                     id="delivery-option"
-                    name="delivery-option"
+                    name="deliveryOption"
                     autoComplete=""
                     className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none"
                   >

@@ -6,20 +6,23 @@ function FormInput({ name, label, placeholder, required }) {
   const isError = false;
 
   return (
-    <div className="">
-      <div className="">
+    <div>
+      <div>
         <Controller
           //as={TextField}
           defaultValue=""
           name={name}
           control={control}
+          label={label}
+          required={required}
+          error={isError}
           render={({ field }) => (
             <div className="mb-4 py-2 px-3" required>
               <label
                 className="block text-sm tracking-widest font-bold mb-2"
                 htmlFor={name}
               >
-                {name}
+                {label}
               </label>
               <input
                 className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
@@ -32,8 +35,7 @@ function FormInput({ name, label, placeholder, required }) {
           )}
           //label={label}
           //fullWidth
-          required
-          error={isError}
+          
         />
       </div>
     </div>
