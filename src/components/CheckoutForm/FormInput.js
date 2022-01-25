@@ -10,7 +10,7 @@ function FormInput({ name, label, placeholder, required }) {
       <div>
         <Controller
           //as={TextField}
-          defaultValue=""
+          //defaultValue=""
           name={name}
           control={control}
           label={label}

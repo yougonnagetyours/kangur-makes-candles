@@ -87,7 +87,7 @@ const AddressForm = ({ checkoutToken, next }) => {
         Adres dostawy
       </div>
       <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision, shippingOption}))}>
+        <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
           <div className="overflow-hidden">
               <div className="mx-4 my-4">
                 <div className="sm:flex">
