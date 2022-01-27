@@ -15,7 +15,7 @@ const AddressForm = ({ checkoutToken, next }) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState("");
  
-  const methods = useForm();
+  const { register, handleSubmit } = useForm();
 
   const countries = Object.entries(shippingCountries).map(([code, name]) => ({
     id: code,
@@ -86,55 +86,72 @@ const AddressForm = ({ checkoutToken, next }) => {
       <div className="text-2xl mt-10 mb-4 text-center tracking-widest">
         Adres dostawy
       </div>
-      <FormProvider {...methods}>
-        <form onSubmit={methods.handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
+      <FormProvider>
+        <form onSubmit={handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
           <div className="overflow-hidden">
               <div className="mx-4 my-4">
                 <div className="sm:flex">
                   <div className="w-full">
-                    <FormInput
-                      required
+                    <label htmlFor="firstName">Imie</label>
+                    <input
+                      type="text"
+                      placeholder="name"
+                      id="firstName"
                       name="firstName"
-                      label="Imie"
-                      placeholder="Jan" 
+                      {...register("firstName")}
                     />
                   </div>
                   <div className="w-full">
-                    <FormInput 
-                      required 
-                      name="lastName" 
-                      label="Nazwisko" 
-                      placeholder="Kowalski" />
+                    <label htmlFor="lastName">Nazwisko</label>
+                    <input
+                      type="text"
+                      placeholder="lastName"
+                      id="lastName"
+                      name="lastName"
+                      {...register("lastName")}
+                    />
                   </div>
                 </div>
                 <div className="w-full">
-                  <FormInput 
-                    required 
-                    name="address" 
-                    label="Adres"   
-                    placeholder="Adres zamieszkania" />
+                  <label htmlFor="address">Adres</label>
+                  <input
+                    type="text"
+                    placeholder="Adres zamieszkania"
+                    id="address"
+                    name="address"
+                    {...register("address")}
+                  />
                 </div>
                 <div className="w-full">
-                  <FormInput 
-                    required 
-                    name="email" 
-                    label="Email" 
-                    placeholder="jan.kowalski@dzimejl.com" />
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="text"
+                    placeholder="jan.kowalski@dzimejl.com"
+                    id="email"
+                    name="email"
+                    {...register("email")}
+                  />
                 </div>
                 <div className="sm:flex">
                   <div className="w-full">
-                    <FormInput 
-                      required 
-                      name="city" 
-                      label="Miasto" 
-                      placeholder="Chrząszczyżewoszyce" />
+                    <label htmlFor="city">Miasto</label>
+                    <input
+                      type="text"
+                      placeholder="Chrząszczyżewoszyce"
+                      id="city"
+                      name="city"
+                      {...register("city")}
+                    />
                   </div>
                   <div className="w-full">
-                    <FormInput 
-                      required 
-                      name="zip" 
-                      label="Kod pocztowy" 
-                      placeholder="00-258" />
+                    <label htmlFor="zip">Kod pocztowy</label>
+                    <input
+                      type="text"
+                      placeholder="00-258"
+                      id="zip"
+                      name="zip"
+                      {...register("zip")}
+                    />
                   </div>
                 </div>
                 <div className="mb-4 py-2 px-3">
