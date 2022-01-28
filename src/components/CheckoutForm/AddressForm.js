@@ -14,7 +14,7 @@ const AddressForm = ({ checkoutToken, next }) => {
   const [shippingSubdivision, setShippingSubdivision] = useState("");
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState("");
- 
+
   const { register, handleSubmit } = useForm();
 
   const countries = Object.entries(shippingCountries).map(([code, name]) => ({
@@ -24,7 +24,7 @@ const AddressForm = ({ checkoutToken, next }) => {
   const subdivisions = Object.entries(
     shippingSubdivisions
   ).map(([code, name]) => ({ id: code, label: name }));
-  
+
   const options = shippingOptions.map((sO) => ({
     id: sO.id,
     label: `${sO.description} - ${sO.price.formatted}`
@@ -87,11 +87,21 @@ const AddressForm = ({ checkoutToken, next }) => {
         Adres dostawy
       </div>
       <FormProvider>
-        <form onSubmit={handleSubmit((data) => next({ ...data, shippingCountry, shippingSubdivision, shippingOption }))}>
+        <form
+          onSubmit={handleSubmit((data) =>
+            next({
+              ...data,
+              shippingCountry,
+              shippingSubdivision,
+              shippingOption
+            })
+          )}
+        >
           <div className="overflow-hidden">
-              <div className="mx-4 my-4">
-                <div className="sm:flex">
-                  <div className="w-full">
+            <div className="mx-4 my-4">
+              <div className="sm:flex">
+                <div className="w-full">
+                  <div className="mb-4 py-2 px-3">
                     <label htmlFor="firstName">Imie</label>
                     <input
                       type="text"
@@ -101,7 +111,9 @@ const AddressForm = ({ checkoutToken, next }) => {
                       {...register("firstName")}
                     />
                   </div>
-                  <div className="w-full">
+                </div>
+                <div className="w-full">
+                  <div className="mb-4 py-2 px-3">
                     <label htmlFor="lastName">Nazwisko</label>
                     <input
                       type="text"
@@ -112,7 +124,9 @@ const AddressForm = ({ checkoutToken, next }) => {
                     />
                   </div>
                 </div>
-                <div className="w-full">
+              </div>
+              <div className="w-full">
+                <div className="mb-4 py-2 px-3">
                   <label htmlFor="address">Adres</label>
                   <input
                     type="text"
@@ -122,7 +136,9 @@ const AddressForm = ({ checkoutToken, next }) => {
                     {...register("address")}
                   />
                 </div>
-                <div className="w-full">
+              </div>
+              <div className="w-full">
+                <div className="mb-4 py-2 px-3">
                   <label htmlFor="email">Email</label>
                   <input
                     type="text"
@@ -132,8 +148,10 @@ const AddressForm = ({ checkoutToken, next }) => {
                     {...register("email")}
                   />
                 </div>
-                <div className="sm:flex">
-                  <div className="w-full">
+              </div>
+              <div className="sm:flex">
+                <div className="w-full">
+                  <div className="mb-4 py-2 px-3">
                     <label htmlFor="city">Miasto</label>
                     <input
                       type="text"
@@ -143,7 +161,9 @@ const AddressForm = ({ checkoutToken, next }) => {
                       {...register("city")}
                     />
                   </div>
-                  <div className="w-full">
+                </div>
+                <div className="w-full">
+                  <div className="mb-4 py-2 px-3">
                     <label htmlFor="zip">Kod pocztowy</label>
                     <input
                       type="text"
@@ -154,56 +174,59 @@ const AddressForm = ({ checkoutToken, next }) => {
                     />
                   </div>
                 </div>
-                <div className="mb-4 py-2 px-3">
-                  <label
-                    htmlFor="country"
-                    className="block text-sm tracking-widest font-bold mb-2"
-                  >
-                    Kraj
-                  </label>
-                  <select
-                    value={shippingCountry}
-                    onChange={(e) => setShippingCountry(e.target.value)}
-                    id="country"
-                    name="country"
-                    autoComplete="country-name"
-                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none" 
-                  >
-                    {Object.entries(shippingCountries)
-                      .map(([code, name]) => ({ id: code, label: name }))
-                      .map((item) => (
-                        <option key={item.id} value={item.id}>
-                          {item.label}
-                        </option>
-                      ))}
-                  </select>
-                </div>
-                <div className="py-2 px-3">
-                  <label
-                    htmlFor="delivery-option"
-                    className="block text-sm tracking-widest font-bold mb-2"
-                  >
-                    Opcje dostawy
-                  </label>
-                  <select 
-                    value={shippingOption} 
-                    onChange={(e) => setShippingOption(e.target.value)}
-                    id="delivery-option"
-                    name="deliveryOption"
-                    autoComplete=""
-                    className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none"
-                  >
-                    {shippingOptions
-                      .map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted} zł)` }))
-                      .map((item) => (
-                        <option key={item.id} value={item.id}>
-                          {item.label}
-                        </option>
-                      ))}
-                  </select>
-                </div>
               </div>
-            
+              <div className="mb-4 py-2 px-3">
+                <label
+                  htmlFor="country"
+                  className="block text-sm tracking-widest font-bold mb-2"
+                >
+                  Kraj
+                </label>
+                <select
+                  value={shippingCountry}
+                  onChange={(e) => setShippingCountry(e.target.value)}
+                  id="country"
+                  name="country"
+                  autoComplete="country-name"
+                  className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none"
+                >
+                  {Object.entries(shippingCountries)
+                    .map(([code, name]) => ({ id: code, label: name }))
+                    .map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.label}
+                      </option>
+                    ))}
+                </select>
+              </div>
+              <div className="py-2 px-3">
+                <label
+                  htmlFor="delivery-option"
+                  className="block text-sm tracking-widest font-bold mb-2"
+                >
+                  Opcje dostawy
+                </label>
+                <select
+                  value={shippingOption}
+                  onChange={(e) => setShippingOption(e.target.value)}
+                  id="delivery-option"
+                  name="deliveryOption"
+                  autoComplete=""
+                  className="mt-1 block w-full py-2 px-3 tracking-widest border border-black text-gray-700 bg-white focus:outline-none"
+                >
+                  {shippingOptions
+                    .map((sO) => ({
+                      id: sO.id,
+                      label: `${sO.description} - (${sO.price.formatted} zł)`
+                    }))
+                    .map((item) => (
+                      <option key={item.id} value={item.id}>
+                        {item.label}
+                      </option>
+                    ))}
+                </select>
+              </div>
+            </div>
           </div>
           <br />
           <div className="flex justify-between mx-6 mb-6">
