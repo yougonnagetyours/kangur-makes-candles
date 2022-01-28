@@ -102,7 +102,12 @@ const AddressForm = ({ checkoutToken, next }) => {
               <div className="sm:flex">
                 <div className="w-full">
                   <div className="mb-4 py-2 px-3">
-                    <label htmlFor="firstName">Imie</label>
+                    <label
+                      className="block text-sm tracking-widest font-bold mb-2"
+                      htmlFor="firstName"
+                    >
+                      Imie
+                    </label>
                     <input
                       type="text"
                       placeholder="name"
@@ -115,7 +120,12 @@ const AddressForm = ({ checkoutToken, next }) => {
                 </div>
                 <div className="w-full">
                   <div className="mb-4 py-2 px-3">
-                    <label htmlFor="lastName">Nazwisko</label>
+                    <label
+                      className="block text-sm tracking-widest font-bold mb-2"
+                      htmlFor="lastName"
+                    >
+                      Nazwisko
+                    </label>
                     <input
                       type="text"
                       placeholder="lastName"
@@ -129,7 +139,12 @@ const AddressForm = ({ checkoutToken, next }) => {
               </div>
               <div className="w-full">
                 <div className="mb-4 py-2 px-3">
-                  <label htmlFor="address">Adres</label>
+                  <label
+                    className="block text-sm tracking-widest font-bold mb-2"
+                    htmlFor="address"
+                  >
+                    Adres
+                  </label>
                   <input
                     type="text"
                     placeholder="Adres zamieszkania"
@@ -142,7 +157,12 @@ const AddressForm = ({ checkoutToken, next }) => {
               </div>
               <div className="w-full">
                 <div className="mb-4 py-2 px-3">
-                  <label htmlFor="email">Email</label>
+                  <label
+                    className="block text-sm tracking-widest font-bold mb-2"
+                    htmlFor="email"
+                  >
+                    Email
+                  </label>
                   <input
                     type="text"
                     placeholder="jan.kowalski@dzimejl.com"
@@ -156,7 +176,12 @@ const AddressForm = ({ checkoutToken, next }) => {
               <div className="sm:flex">
                 <div className="w-full">
                   <div className="mb-4 py-2 px-3">
-                    <label htmlFor="city">Miasto</label>
+                    <label
+                      className="block text-sm tracking-widest font-bold mb-2"
+                      htmlFor="city"
+                    >
+                      Miasto
+                    </label>
                     <input
                       type="text"
                       placeholder="Chrząszczyżewoszyce"
@@ -169,7 +194,12 @@ const AddressForm = ({ checkoutToken, next }) => {
                 </div>
                 <div className="w-full">
                   <div className="mb-4 py-2 px-3">
-                    <label htmlFor="zip">Kod pocztowy</label>
+                    <label
+                      className="block text-sm tracking-widest font-bold mb-2"
+                      htmlFor="zip"
+                    >
+                      Kod pocztowy
+                    </label>
                     <input
                       type="text"
                       placeholder="00-258"
