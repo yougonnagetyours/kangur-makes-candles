@@ -108,6 +108,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                       placeholder="name"
                       id="firstName"
                       name="firstName"
+                      className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
                       {...register("firstName")}
                     />
                   </div>
@@ -120,6 +121,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                       placeholder="lastName"
                       id="lastName"
                       name="lastName"
+                      className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
                       {...register("lastName")}
                     />
                   </div>
@@ -133,6 +135,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     placeholder="Adres zamieszkania"
                     id="address"
                     name="address"
+                    className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
                     {...register("address")}
                   />
                 </div>
@@ -145,6 +148,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     placeholder="jan.kowalski@dzimejl.com"
                     id="email"
                     name="email"
+                    className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
                     {...register("email")}
                   />
                 </div>
@@ -158,6 +162,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                       placeholder="Chrząszczyżewoszyce"
                       id="city"
                       name="city"
+                      className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
                       {...register("city")}
                     />
                   </div>
@@ -170,6 +175,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                       placeholder="00-258"
                       id="zip"
                       name="zip"
+                      className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
                       {...register("zip")}
                     />
                   </div>
