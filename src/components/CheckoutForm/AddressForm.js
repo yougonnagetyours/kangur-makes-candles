@@ -110,7 +110,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     </label>
                     <input
                       type="text"
-                      placeholder="name"
+                      placeholder="Jan"
                       id="firstName"
                       name="firstName"
                       className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
@@ -128,7 +128,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     </label>
                     <input
                       type="text"
-                      placeholder="lastName"
+                      placeholder="Kowalski"
                       id="lastName"
                       name="lastName"
                       className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
@@ -164,7 +164,7 @@ const AddressForm = ({ checkoutToken, next }) => {
                     Email
                   </label>
                   <input
-                    type="text"
+                    type="email"
                     placeholder="jan.kowalski@dzimejl.com"
                     id="email"
                     name="email"
