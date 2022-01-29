@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   return (
     <div className="w-10/12 mx-auto mt-10 mb-6">
-      <div className="border border-black">
+      <div className="border border-black shadow-xl">
           <img 
             className=""
             src={item.image.url} 
@@ -30,4 +30,4 @@ const CartItem = ({ item, onUpdateCartQty, onRemoveFromCart }) => {
   )
 }
 
-export default CartItem
+export default CartItem;

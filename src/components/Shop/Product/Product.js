@@ -8,7 +8,7 @@ const Product = ({ product, onAddToCart }) => {
   return (
       <div className="">      
         <Link to={`/${product.id}`}>
-        <div className="border border-black">
+        <div className="border border-black shadow-xl">
           <img 
             className=""
             src={product.image.url} 

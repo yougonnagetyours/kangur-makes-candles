@@ -17,7 +17,7 @@ const ProductDetails = ({ products, onAddToCart }) => {
       <div>  
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6">
           {products.map((product) => id === product.id ? (
-            <>
+            <div key={product.id}>
               {handleAddToCart = () => onAddToCart(product.id, 1)}
               <div className="">      
                 <div className="header sm:flex sm:mx-4 sm:justify-between">
@@ -53,7 +53,7 @@ const ProductDetails = ({ products, onAddToCart }) => {
                   </div>
                 </Link>
               </div>
-            </>
+            </div>
           ) :
           <div></div>
           )}  
