@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-
 import { useForm, FormProvider } from "react-hook-form";
+import { ErrorMessage } from "@hookform/error-message";
 import { Link } from "react-router-dom";
-
 import { commerce } from "../../lib/commerce";
-
-import FormInput from "./FormInput";
+//import FormInput from "./FormInput";
 
 const AddressForm = ({ checkoutToken, next }) => {
   const [shippingCountries, setShippingCountries] = useState([]);
@@ -15,7 +13,7 @@ const AddressForm = ({ checkoutToken, next }) => {
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState("");
 
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors }} = useForm();
 
   const countries = Object.entries(shippingCountries).map(([code, name]) => ({
     id: code,
@@ -114,7 +112,19 @@ const AddressForm = ({ checkoutToken, next }) => {
                       id="firstName"
                       name="firstName"
                       className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
-                      {...register("firstName")}
+                      {...register("firstName", {required: "wypełnij to pole!"})}
+                    />
+                    <ErrorMessage
+                      errors={errors}
+                      name="firstName"
+                      render={({ messages }) => {
+                        console.log("messages", messages);
+                        return messages
+                          ? Object.entries(messages).map(([type, message]) => (
+                              <p key={type}>{message}</p>
+                            ))
+                          : null;
+                      }}
                     />
                   </div>
                 </div>
