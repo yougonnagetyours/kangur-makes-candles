@@ -7,11 +7,11 @@ import PaymentForm from '../PaymentForm'
 
 const steps = ['Adres dostawy', 'Szczegóły płatności'];
 
-const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
+const Checkout = ({ cart, order, onCaptureCheckout, error, refreshCart }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
-    
+  const [isFinished, setIsFinished] = useState(false); 
   const history = useHistory();
 
   useEffect(() => {
@@ -39,6 +39,12 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     nextStep();
   }
 
+  const timeout = () => {
+    setTimeout(() => {
+      setIsFinished(true);
+    }, 3000)
+  }
+
   let Confirmation = () => order.customer ? (
     <>
         <div>
@@ -46,6 +52,17 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
             <div className="divide-y" />
             <div className="text-center text-base tracking-widest">Nr zamówienia: {order.customer_reference}</div>
             <Link to="/shop" className="text-center text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
+        </div>
+    </>
+  ) : isFinished ? (
+    <>
+        <div className='my-10'>
+            <div className="text-2xl text-center tracking-widest">Dziękujemy za zakup</div>
+            <div className="divide-y" />
+            <div className="text-center text-base tracking-widest">Nr zamówienia: 345424534532</div>
+            <div className='flex justify-center'>
+              <Link to="/shop" className="block w-max mt-10 mb-6 text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
+            </div>
         </div>
     </>
   ) : (
@@ -65,7 +82,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   
   const Form = () => (activeStep === 0
     ? <AddressForm checkoutToken={checkoutToken} next={next} />
-    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} />)
+    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} timeout={timeout} refreshCart={refreshCart} />)
 
   return (
     <>
@@ -75,4 +92,4 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
   )
 }
 
-export default Checkout
+export default Checkout;
