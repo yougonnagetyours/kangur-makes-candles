@@ -112,20 +112,11 @@ const AddressForm = ({ checkoutToken, next }) => {
                       id="firstName"
                       name="firstName"
                       className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
-                      {...register("firstName", {required: "wypełnij to pole!"})}
+                      {...register("firstName", { required: true })}
                     />
-                    <ErrorMessage
-                      errors={errors}
-                      name="firstName"
-                      render={({ messages }) => {
-                        console.log("messages", messages);
-                        return messages
-                          ? Object.entries(messages).map(([type, message]) => (
-                              <p key={type}>{message}</p>
-                            ))
-                          : null;
-                      }}
-                    />
+                    <div className="text-red-400 tracking-widest mt-4 -mb-4">
+                      {errors.firstName && "Wypełnij to pole !"}
+                    </div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -142,8 +133,11 @@ const AddressForm = ({ checkoutToken, next }) => {
                       id="lastName"
                       name="lastName"
                       className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
-                      {...register("lastName")}
+                      {...register("lastName", { required: true })}
                     />
+                    <div className="text-red-400 tracking-widest mt-4 -mb-4">
+                      {errors.lastName && "Wypełnij to pole !"}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -161,8 +155,11 @@ const AddressForm = ({ checkoutToken, next }) => {
                     id="address"
                     name="address"
                     className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
-                    {...register("address")}
+                    {...register("address", { required: true })}
                   />
+                  <div className="text-red-400 tracking-widest mt-4 -mb-4">
+                    {errors.address && "Wypełnij to pole !"}
+                  </div>
                 </div>
               </div>
               <div className="w-full">
@@ -179,8 +176,11 @@ const AddressForm = ({ checkoutToken, next }) => {
                     id="email"
                     name="email"
                     className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
-                    {...register("email")}
+                    {...register("email", { required: true })}
                   />
+                  <div className="text-red-400 tracking-widest mt-4 -mb-4">
+                    {errors.email && "Wypełnij to pole !"}
+                  </div>
                 </div>
               </div>
               <div className="sm:flex">
@@ -198,8 +198,11 @@ const AddressForm = ({ checkoutToken, next }) => {
                       id="city"
                       name="city"
                       className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
-                      {...register("city")}
+                      {...register("city", { required: true })}
                     />
+                    <div className="text-red-400 tracking-widest mt-4 -mb-4">
+                      {errors.city && "Wypełnij to pole !"}
+                    </div>
                   </div>
                 </div>
                 <div className="w-full">
@@ -216,8 +219,11 @@ const AddressForm = ({ checkoutToken, next }) => {
                       id="zip"
                       name="zip"
                       className="appearance-none border border-black w-full py-2 px-3 text-gray-700 tracking-widest leading-tight focus:outline-none focus:shadow-outline"
-                      {...register("zip")}
+                      {...register("zip", { required: true })}
                     />
+                    <div className="text-red-400 tracking-widest mt-4 -mb-4">
+                      {errors.zip && "Wypełnij to pole !"}
+                    </div>
                   </div>
                 </div>
               </div>
