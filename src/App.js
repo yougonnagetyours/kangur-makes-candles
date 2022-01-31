@@ -1,22 +1,21 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import { commerce } from './lib/commerce'
-import Nav1 from './components/Navbar/Nav1.js'
-import MainSite from './components/MainSite/MainSite.js'
-import Shop from './components/Shop/Shop.js'
-import ProductDetails from './components/ProductDetails/ProductDetails'
-import Cart from './components/Cart/Cart.js'
-import Footer from './components/Footer/Footer.js'
-import About from './components/About/About.js'
-import Contact from './components/Contact/Contact.js'
-import ScrollToTop from './components/scrollToTop.js'
-import Loader from './components/Loader.js'
-import ShoppingPopup from './components/ShoppingPopup.js'
+import React, { Fragment, useState, useEffect } from 'react';
+import { commerce } from './lib/commerce';
+import Nav1 from './components/Navbar/Nav1.js';
+import MainSite from './components/MainSite/MainSite.js';
+import Shop from './components/Shop/Shop.js';
+import ProductDetails from './components/ProductDetails/ProductDetails';
+import Cart from './components/Cart/Cart.js';
+import Footer from './components/Footer/Footer.js';
+import About from './components/About/About.js';
+import Contact from './components/Contact/Contact.js';
+import ScrollToTop from './components/scrollToTop.js';
+import Loader from './components/Loader.js';
+import ShoppingPopup from './components/ShoppingPopup.js';
 
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom"
 import Checkout from './components/CheckoutForm/Checkout/Checkout'
 
@@ -92,7 +91,6 @@ function App() {
     //}, 3000);
   }, []);
 
-  console.log(products);
   return (
     <Router>
       {isLoaded ? (

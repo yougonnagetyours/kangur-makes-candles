@@ -1,12 +1,6 @@
-import React from 'react'
-import Product from './Product/Product.js'
-import main2 from '../../pics/main2.jpg'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"
+import React from 'react';
+import Product from './Product/Product.js';
+import main2 from '../../pics/main2.jpg';
 
 const Shop = ({ products, onAddToCart }) => {
   return (

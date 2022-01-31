@@ -3,12 +3,7 @@ import React from 'react'
 import main1 from '../../pics/main1.jpg'
 import main2 from '../../pics/main2.jpg'
 import main3 from '../../pics/main3.jpg'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 const MainSite = ({ products }) => {
   return (
