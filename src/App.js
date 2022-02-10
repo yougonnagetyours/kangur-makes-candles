@@ -28,7 +28,8 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [q, setQ] = useState('');
-  const [isSearchActive, setIsSearchActive] = useState(true);
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -86,7 +87,13 @@ function App() {
     }
 }
 
-  const handleInput = (e) => setQ(e.target.value);
+  const handleInput = (e) => {
+    setQ(e.target.value);
+    setIsSearchActive(true);
+    if (e.target.value === ''){
+      setIsSearchActive(false);
+    }
+  };
 
   const search = (filterData) => {
     return filterData.filter((filteredItem) =>
@@ -94,28 +101,33 @@ function App() {
     );
   };
 
+  const clearInput = () => {
+    setQ('');
+    setIsSearchActive(false);
+  }
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
   }, []);
 
+  console.log(q);
   return (
     <Router>
       {isLoaded ? (
-        
         <div className="wrapper max-w-screen-lg mx-auto">
           <div className="w-full h-16 sm:hidden" />
-          <Nav1 cart={cart} q={q} handleInput={handleInput} />
+          <Nav1 cart={cart} q={q} handleInput={handleInput} clearInput={clearInput} />
           <main>
             <Fragment>
               <ScrollToTop />
-              {isSearchActive ? (<SearchResults products={products} search={search} />) :
+              {isSearchActive ? (<SearchResults products={products} search={search} clearInput={clearInput} />) :
               <Switch>
                 <Route exact path="/">
                   <MainSite products={products} />
                 </Route>
                 <Route path="/shop">
-                  <Shop products={products} onAddToCart={handleAddToCart} />
+                  <Shop products={products} onAddToCart={handleAddToCart} clearInput={clearInput} />
                 </Route>
                 <Route exact path="/cart">
                   <Cart

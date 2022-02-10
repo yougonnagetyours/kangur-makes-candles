@@ -2,7 +2,7 @@ import React from 'react';
 import Product from './Product/Product.js';
 import main2 from '../../pics/main2.jpg';
 
-const Shop = ({ products, onAddToCart }) => {
+const Shop = ({ products, onAddToCart, clearInput }) => {
   return (
     <>
         <div className="3rdrow box-border mb-10 lg:flex lg:flex-row-reverse lg:mb-20">
@@ -22,7 +22,7 @@ const Shop = ({ products, onAddToCart }) => {
           <div className="flex flex-wrap box-border mx-2.5 my-6">
             {products.map((product) => (
               <div className="px-2 mb-20 sm:w-1/3 lg:w-1/4 sm:px-2 sm:mb-10" item key={product.id}>            
-                  <Product product={product} onAddToCart={onAddToCart} />           
+                  <Product product={product} onAddToCart={onAddToCart} clearInput={clearInput} />           
               </div>
             ))}  
           </div> 

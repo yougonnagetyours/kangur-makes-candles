@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Product = ({ product, onAddToCart }) => {
+const Product = ({ product, onAddToCart, clearInput }) => {
 
   const handleAddToCart = () => onAddToCart(product.id, 1);
 
   return (
       <div className="">      
-        <Link to={`/${product.id}`}>
+        <Link to={`/${product.id}`} >
         <div className="border border-black shadow-xl">
           <img 
             className=""
