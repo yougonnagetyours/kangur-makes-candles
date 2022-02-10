@@ -28,7 +28,7 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [q, setQ] = useState('');
-  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isSearchActive, setIsSearchActive] = useState(true);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -88,24 +88,28 @@ function App() {
 
   const handleInput = (e) => setQ(e.target.value);
 
+  const search = (filterData) => {
+    return filterData.filter((filteredItem) =>
+      filteredItem.name.toLowerCase().includes(q.toLowerCase())
+    );
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
-    //setTimeout(() => {
-      //setIsLoaded(true);
-    //}, 3000);
   }, []);
 
   return (
     <Router>
       {isLoaded ? (
-        isSearchActive ? (<SearchResults />) :
+        
         <div className="wrapper max-w-screen-lg mx-auto">
           <div className="w-full h-16 sm:hidden" />
           <Nav1 cart={cart} q={q} handleInput={handleInput} />
           <main>
             <Fragment>
               <ScrollToTop />
+              {isSearchActive ? (<SearchResults products={products} search={search} />) :
               <Switch>
                 <Route exact path="/">
                   <MainSite products={products} />
@@ -145,7 +149,7 @@ function App() {
                     />
                   }
                 ></Route>
-              </Switch>
+              </Switch>}
             </Fragment>
           </main>
           <Footer />
