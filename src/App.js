@@ -86,6 +86,8 @@ function App() {
     }
 }
 
+  const handleInput = (e) => setQ(e.target.value);
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -100,7 +102,7 @@ function App() {
         isSearchActive ? (<SearchResults />) :
         <div className="wrapper max-w-screen-lg mx-auto">
           <div className="w-full h-16 sm:hidden" />
-          <Nav1 cart={cart} />
+          <Nav1 cart={cart} q={q} handleInput={handleInput} />
           <main>
             <Fragment>
               <ScrollToTop />

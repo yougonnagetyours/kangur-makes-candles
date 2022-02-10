@@ -17,7 +17,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Nav1 = ({ cart }) => {
+const Nav1 = ({ cart, q, handleInput }) => {
+
+  //const onInputChange = () => handleInput(e);
+
   return (
     <div className="">
       <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
@@ -142,6 +145,8 @@ const Nav1 = ({ cart }) => {
       </Menu>
       <input 
         placeholder="Szukaj..."
+        value={q}
+        onChange={(e) => handleInput(e)}
       /> 
     </div>
   )
