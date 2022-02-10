@@ -140,6 +140,9 @@ const Nav1 = ({ cart }) => {
         </>
         )}
       </Menu>
+      <input 
+        placeholder="Szukaj..."
+      /> 
     </div>
   )
 }
