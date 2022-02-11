@@ -11,6 +11,7 @@ import Contact from './components/Contact/Contact.js';
 import ScrollToTop from './components/scrollToTop.js';
 import Loader from './components/Loader.js';
 import ShoppingPopup from './components/ShoppingPopup.js';
+import SearchResults from './components/SearchResults.js';
 
 import {
   BrowserRouter as Router,
@@ -26,6 +27,9 @@ function App() {
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
+  const [q, setQ] = useState('');
+  const [isSearchActive, setIsSearchActive] = useState(false);
+  const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -83,29 +87,47 @@ function App() {
     }
 }
 
+  const handleInput = (e) => {
+    setQ(e.target.value);
+    setIsSearchActive(true);
+    if (e.target.value === ''){
+      setIsSearchActive(false);
+    }
+  };
+
+  const search = (filterData) => {
+    return filterData.filter((filteredItem) =>
+      filteredItem.name.toLowerCase().includes(q.toLowerCase())
+    );
+  };
+
+  const clearInput = () => {
+    setQ('');
+    setIsSearchActive(false);
+  }
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
-    //setTimeout(() => {
-      //setIsLoaded(true);
-    //}, 3000);
   }, []);
 
+  console.log(q);
   return (
     <Router>
       {isLoaded ? (
         <div className="wrapper max-w-screen-lg mx-auto">
           <div className="w-full h-16 sm:hidden" />
-          <Nav1 cart={cart} />
+          <Nav1 cart={cart} q={q} handleInput={handleInput} clearInput={clearInput} />
           <main>
             <Fragment>
               <ScrollToTop />
+              {isSearchActive ? (<SearchResults products={products} search={search} clearInput={clearInput} />) :
               <Switch>
                 <Route exact path="/">
                   <MainSite products={products} />
                 </Route>
                 <Route path="/shop">
-                  <Shop products={products} onAddToCart={handleAddToCart} />
+                  <Shop products={products} onAddToCart={handleAddToCart} clearInput={clearInput} />
                 </Route>
                 <Route exact path="/cart">
                   <Cart
@@ -139,7 +161,7 @@ function App() {
                     />
                   }
                 ></Route>
-              </Switch>
+              </Switch>}
             </Fragment>
           </main>
           <Footer />
