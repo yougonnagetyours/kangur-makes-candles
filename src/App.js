@@ -106,18 +106,29 @@ function App() {
     setIsSearchActive(false);
   }
 
+  const handleSearchPanelActive = () => {
+    setIsSearchPanelActive(!isSearchPanelActive);
+  }
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
   }, []);
 
-  console.log(q);
+  console.log(products);
   return (
     <Router>
       {isLoaded ? (
         <div className="wrapper max-w-screen-lg mx-auto">
           <div className="w-full h-16 sm:hidden" />
-          <Nav1 cart={cart} q={q} handleInput={handleInput} clearInput={clearInput} />
+          <Nav1 
+            cart={cart} 
+            q={q} handleInput={handleInput} 
+            clearInput={clearInput} 
+            isSearchActive={isSearchActive}
+            isSearchPanelActive={isSearchPanelActive}
+            handleSearchPanelActive={handleSearchPanelActive}
+            />
           <main>
             <Fragment>
               <ScrollToTop />
