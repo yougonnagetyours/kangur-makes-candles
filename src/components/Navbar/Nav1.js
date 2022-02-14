@@ -8,23 +8,24 @@ import brand from '../../pics/kangaroo.png'
 //import Footer from './Footer.js'
 
 const navigation = [
-  { name: 'Sklep', path: '/shop', current: false },
-  { name: 'O nas', path: '/about', current: false },
-  { name: 'Kontakt', path: '/contact', current: false },
+  { name: 'Sklep', path: '/shop' },
+  { name: 'O nas', path: '/about' },
+  { name: 'Kontakt', path: '/contact' }
 ]
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+// for further navlinks styling
+// const isActiveStyle = 'border-2 border-gray-900 text-black px-3 py-2 rounded-md text-lg tracking-widest';
+// const isNotActiveStyle = 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline px-3 py-2 rounded-md text-lg tracking-widest'
+
 
 const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelActive, handleSearchPanelActive }) => {
 
   return (
-    <div>
-      <Menu as="div" className="bg-white fixed top-0 right-0 w-full sm:static">
+    <div className='fixed sm:static top-0 left-0 bg-white w-full'>
+      <Menu as="div" className="">
         {({ open }) => (
           <>  
-            <div className={classNames(open ? "" : "border-b", "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8")}>
+            <div className={`${open ? null : "border-b"}, "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8"`}>
               <div className="relative flex items-center justify-between h-16 sm:h-24">
                 <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                   <Menu.Button className="inline-flex items-center justify-center p-2 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -61,11 +62,7 @@ const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelA
                         <Link to={item.path}>
                           <div
                             key={item.name}
-                            className={classNames(
-                              item.current ? 'border-2 border-gray-900 text-black' : 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline',
-                              'px-3 py-2 rounded-md text-lg tracking-widest'
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
+                            className='text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline px-3 py-2 rounded-md text-lg tracking-widest'                           
                           >
                             {item.name}
                           </div>
@@ -111,11 +108,7 @@ const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelA
                         <Link to={item.path}>
                           <div
                             key={item.id}
-                            className={classNames(
-                              item.current ? 'underline text-black' : 'text-black',
-                            'block px-2 py-5 rounded-md text-base tracking-widest'
-                            )}
-                            aria-current={item.current ? 'page' : undefined}
+                            className= 'text-black block px-2 py-5 rounded-md text-base tracking-widest'
                           >
                           {item.name}
                           </div>
@@ -147,7 +140,7 @@ const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelA
           </>
         )}
       </Menu>
-      <div className={`${!isSearchPanelActive ? 'hidden' : null} relative px-6 py-4 flex items-center`}>
+      <div className={`${!isSearchPanelActive ? 'hidden' : null} relative top-0 left-0 px-6 py-4 flex items-center sm:w-60`}>
         <input 
           className='w-full px-4 py-2 tracking-widest font-light border border-black rounded-sm'
           placeholder="Szukaj..."
