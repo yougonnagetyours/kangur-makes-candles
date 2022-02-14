@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import insta from '../../pics/instagram.png'
 import fb from '../../pics/facebook.png'
 import brand from '../../pics/kangaroo.png'
-//import Footer from './Footer.js'
 
 const navigation = [
   { name: 'Sklep', path: '/shop' },
@@ -16,7 +15,6 @@ const navigation = [
 // for further navlinks styling
 // const isActiveStyle = 'border-2 border-gray-900 text-black px-3 py-2 rounded-md text-lg tracking-widest';
 // const isNotActiveStyle = 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline px-3 py-2 rounded-md text-lg tracking-widest'
-
 
 const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelActive, handleSearchPanelActive }) => {
 
@@ -140,7 +138,7 @@ const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelA
           </>
         )}
       </Menu>
-      <div className={`${!isSearchPanelActive ? 'hidden' : null} relative top-0 left-0 px-6 py-4 flex items-center sm:w-60`}>
+      <div className={`${!isSearchPanelActive ? 'hidden' : null} relative sm:absolute top-0 sm:top-24 right-0 px-6 py-4 flex items-center sm:w-60`}>
         <input 
           className='w-full px-4 py-2 tracking-widest font-light border border-black rounded-sm'
           placeholder="Szukaj..."
