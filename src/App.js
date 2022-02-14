@@ -132,7 +132,14 @@ function App() {
           <main>
             <Fragment>
               <ScrollToTop />
-              {isSearchActive ? (<SearchResults products={products} search={search} clearInput={clearInput} />) :
+              {isSearchActive 
+                ? (<SearchResults 
+                    products={products} 
+                    search={search} 
+                    clearInput={clearInput} 
+                    handleSearchPanelActive={handleSearchPanelActive}
+                    />) 
+                : (
               <Switch>
                 <Route exact path="/">
                   <MainSite products={products} />
@@ -172,7 +179,7 @@ function App() {
                     />
                   }
                 ></Route>
-              </Switch>}
+              </Switch>)}
             </Fragment>
           </main>
           <Footer />
