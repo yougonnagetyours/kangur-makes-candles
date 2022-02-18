@@ -32,11 +32,11 @@ export const fetchCart = async (dispatch) => {
     const response = await commerce.cart.retrieve();
     dispatch({type: 'cart/cartLoaded', payload: response});
 }
-// export const handleAddToCart = (productId, quantity) => async (dispatch) => {
-//     const { cart } = await commerce.cart.add(productId, quantity);
-//     dispatch({type: 'cart/cartAddedItem', payload: cart})
-//     //Add notification handler
-// }
+export const handleAddToCart = (productId, quantity) => async (dispatch) => {
+    const { cart } = await commerce.cart.add(productId, quantity);
+    dispatch({type: 'cart/cartAddedItem', payload: cart})
+    //Add notification handler
+}
 // export const handleUpdateCartQty = (productId, quantity) => async (dispatch) => {
 //     const { cart } = await commerce.cart.update (productId, { quantity });
 //     dispatch({type: 'cart/cartUpdated', payload: cart})

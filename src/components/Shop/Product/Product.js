@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+//reducers
+import { handleAddToCart } from '../../../reducers/cartSlice';
+//redux store
+import store from '../../../store';
 
-const Product = ({ product, onAddToCart, clearInput }) => {
+const Product = ({ product }) => {
 
-  const handleAddToCart = () => onAddToCart(product.id, 1);
+  const onAddToCart = () => store.dispatch(handleAddToCart(product.id, 1));
 
   return (
       <div className="">      
@@ -22,7 +26,7 @@ const Product = ({ product, onAddToCart, clearInput }) => {
         <div className="flex justify-around mt-3 mb-4">
           <p className="text-center text-base tracking-widest">{`${product.price.formatted} zł`}</p>
         </div>
-        <div className="flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden" onClick={handleAddToCart}>
+        <div className="flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden" onClick={onAddToCart}>
            <p className="text-center tracking-wider" aria-label="Dodaj do koszyka" >Do koszyka</p>
         </div>
       </div>

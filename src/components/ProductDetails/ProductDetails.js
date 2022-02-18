@@ -1,18 +1,22 @@
 import React from 'react';
 import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
+//reducers
+import { handleAddToCart } from '../../reducers/cartSlice';
+//redux store
+import store from '../../store';
 
-const ProductDetails = ({ products, onAddToCart }) => {
+const ProductDetails = ({ products }) => {
 
   let { id } = useParams();
-  let handleAddToCart = '';
+  let onAddToCart;
 
   return (
       <div>  
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6">
           {products.map((product) => id === product.id ? (
             <div key={product.id}>
-              {handleAddToCart = () => onAddToCart(product.id, 1)}
+              {onAddToCart = () => store.dispatch(handleAddToCart(product.id, 1))}
               <div className="">      
                 <div className="header sm:flex sm:mx-4 sm:justify-between">
                   <div className="border border-black sm:w-1/2">
@@ -30,8 +34,8 @@ const ProductDetails = ({ products, onAddToCart }) => {
                       <div className="mt-3 sm:mt-6 mb-4">
                         <p className="text-center text-base font-medium tracking-widest">{`${product.price.formatted} zł`}</p>
                       </div>
-                      <div className="hidden sm:block mt-6 mb-2 py-2 border-2 border-black cursor-pointer w-auto">
-                        <p className="text-center tracking-wider" onClick={handleAddToCart} aria-label="Dodaj do koszyka">Do koszyka</p>
+                      <div className="hidden sm:block mt-6 mb-2 py-2 border-2 border-black cursor-pointer w-auto" onClick={onAddToCart}>
+                        <p className="text-center tracking-wider"  aria-label="Dodaj do koszyka">Do koszyka</p>
                       </div>
                   </div>
                 </div>
@@ -39,7 +43,7 @@ const ProductDetails = ({ products, onAddToCart }) => {
                 <div className="description mx-4 mt-5 mb-2 py-2 text-base text-justify cursor-pointer w-auto tracking-widest" dangerouslySetInnerHTML={{ __html: product.description }}>
                 </div>
                 <div className="mx-4 mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden">
-                  <p className="text-center tracking-wider" onClick={handleAddToCart} aria-label="Dodaj do koszyka">Do koszyka</p>
+                  <p className="text-center tracking-wider" onClick={onAddToCart} aria-label="Dodaj do koszyka">Do koszyka</p>
                 </div>
                 <Link to="/shop">
                   <div className="mx-auto mt-5 mb-2 py-2 cursor-pointer w-auto">
