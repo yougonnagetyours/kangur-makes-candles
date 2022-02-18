@@ -72,7 +72,7 @@ const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelA
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <div>
                   <button className="flex bg-white p-1 rounded-full text-black focus:outline-none" onClick={handleSearchPanelActive}>
-                    <span className="sr-only">Zobacz koszyk</span>
+                    <span className="sr-only">Szukaj</span>
                     {isSearchPanelActive 
                       ? <XIcon className="block h-6 w-6" aria-hidden="true" /> 
                       : <SearchIcon className="h-5 w-5 sm:h-7 sm:w-7" aria-hidden="true" 

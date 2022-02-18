@@ -34,6 +34,7 @@ function App() {
   const products = useSelector((state) => state.products, shallowEqual);
   const cart2 = useSelector(state => state.cart);
 
+  // const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
@@ -43,6 +44,12 @@ function App() {
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
 
+  // const fetchProducts = async () => {
+  //   const { data } = await commerce.products.list();
+
+  //   setProducts(data);
+  //   setIsLoaded(true);
+  // }
   // const fetchCart = async () => {
   //   const response = await commerce.cart.retrieve();
   //   setCart(response); 
@@ -119,11 +126,11 @@ function App() {
   useEffect(() => {
     store.dispatch(fetchProducts);
     setIsLoaded(true);
-    fetchCart();
+    // fetchCart();
     store.dispatch(fetchCart);
   }, []);
 
-  console.log('render');
+  console.log(cart2);
   return (
     <Router>
       {isLoaded ? (
