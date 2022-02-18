@@ -1,4 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
+
+import { fetchProducts } from './reducers/productsSlice';
+import store from './store';
+
 import { commerce } from './lib/commerce';
 import Nav1 from './components/Navbar/Nav1.js';
 import MainSite from './components/MainSite/MainSite.js';
@@ -19,9 +23,12 @@ import {
   Route
 } from "react-router-dom"
 import Checkout from './components/CheckoutForm/Checkout/Checkout'
+import { useSelector } from 'react-redux';
 
 function App() {
-  const [products, setProducts] = useState([]);
+  //REDUX
+  const products = useSelector(state => state.products);
+
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
@@ -30,13 +37,6 @@ function App() {
   const [q, setQ] = useState('');
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
-
-  const fetchProducts = async () => {
-    const { data } = await commerce.products.list();
-
-    setProducts(data);
-    setIsLoaded(true);
-  }
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve()); 
@@ -111,7 +111,8 @@ function App() {
   }
 
   useEffect(() => {
-    fetchProducts();
+    store.dispatch(fetchProducts);
+    setIsLoaded(true);
     fetchCart();
   }, []);
 
