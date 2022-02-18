@@ -13,7 +13,11 @@ export default function productsReducer(state = initialState, action) {
     }
 }
 //Thunk function
-export async function fetchProducts(dispatch) {
+// export async function fetchProducts(dispatch) {
+//     const { data } = await commerce.products.list();
+//     dispatch({type: 'products/productsLoaded', payload: data});
+// }
+export const fetchProducts = async (dispatch) => {
     const { data } = await commerce.products.list();
     dispatch({type: 'products/productsLoaded', payload: data});
 }
