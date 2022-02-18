@@ -1,9 +1,15 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { shallowEqual, useSelector } from 'react-redux';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 import { fetchProducts } from './reducers/productsSlice';
-import store from './store';
 
 import { commerce } from './lib/commerce';
+
 import Nav1 from './components/Navbar/Nav1.js';
 import MainSite from './components/MainSite/MainSite.js';
 import Shop from './components/Shop/Shop.js';
@@ -17,17 +23,15 @@ import Loader from './components/Loader.js';
 import ShoppingPopup from './components/ShoppingPopup.js';
 import SearchResults from './components/SearchResults.js';
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom"
 import Checkout from './components/CheckoutForm/Checkout/Checkout'
-import { useSelector } from 'react-redux';
+
+import store from './store';
+// import { fetchCart } from './reducers/cartSlice';
 
 function App() {
   //REDUX
-  const products = useSelector(state => state.products);
+  const products = useSelector((state) => state.products, shallowEqual);
+  // const cart = useSelector(state => state.cart);
 
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
@@ -39,7 +43,8 @@ function App() {
   const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
 
   const fetchCart = async () => {
-    setCart(await commerce.cart.retrieve()); 
+    const response = await commerce.cart.retrieve();
+    setCart(response); 
   };
 
   const handleAddToCart = async (productId, quantity) => {
@@ -114,9 +119,10 @@ function App() {
     store.dispatch(fetchProducts);
     setIsLoaded(true);
     fetchCart();
+    // store.dispatch(fetchCart);
   }, []);
 
-  console.log(products);
+  console.log('render');
   return (
     <Router>
       {isLoaded ? (
