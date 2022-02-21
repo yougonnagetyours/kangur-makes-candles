@@ -1,10 +1,12 @@
-import { Menu, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
-import { MenuIcon, XIcon, ShoppingCartIcon, SearchIcon } from '@heroicons/react/outline'
-import { Link } from "react-router-dom"
-import insta from '../../pics/instagram.png'
-import fb from '../../pics/facebook.png'
-import brand from '../../pics/kangaroo.png'
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { Menu, Transition } from '@headlessui/react';
+import { Fragment } from 'react';
+import { MenuIcon, XIcon, ShoppingCartIcon, SearchIcon } from '@heroicons/react/outline';
+
+import insta from '../../pics/instagram.png';
+import fb from '../../pics/facebook.png';
+import brand from '../../pics/kangaroo.png';
 
 const navigation = [
   { name: 'Sklep', path: '/shop' },
@@ -16,7 +18,8 @@ const navigation = [
 // const isActiveStyle = 'border-2 border-gray-900 text-black px-3 py-2 rounded-md text-lg tracking-widest';
 // const isNotActiveStyle = 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline px-3 py-2 rounded-md text-lg tracking-widest'
 
-const Nav1 = ({ cart, q, handleInput, clearInput, isSearchActive, isSearchPanelActive, handleSearchPanelActive }) => {
+const Nav1 = ({ q, handleInput, clearInput, isSearchActive, isSearchPanelActive, handleSearchPanelActive }) => {
+  const cart = useSelector(state => state.cart);
 
   return (
     <div className='fixed sm:static top-0 left-0 bg-white w-full'>
