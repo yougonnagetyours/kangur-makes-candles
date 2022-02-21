@@ -41,14 +41,14 @@ export const handleUpdateCartQty = (productId, quantity) => async (dispatch) => 
     const { cart } = await commerce.cart.update (productId, { quantity });
     dispatch({type: 'cart/cartUpdated', payload: cart})
 }
-// export const handleRemoveFromCart = (productId) => async (dispatch) => {
-//     const { cart } = await commerce.cart.remove(productId);
-//     dispatch({type: 'cart/cartRemoved', payload: cart})
-// }
-// export const handleEmptyCart = async (dispatch) => {
-//     const { cart } = await commerce.cart.empty();
-//     dispatch({type: 'cart/cartEmptied', payload: cart})
-// }
+export const handleRemoveFromCart = (productId) => async (dispatch) => {
+    const { cart } = await commerce.cart.remove(productId);
+    dispatch({type: 'cart/cartRemoved', payload: cart})
+}
+export const handleEmptyCart = async (dispatch) => {
+    const { cart } = await commerce.cart.empty();
+    dispatch({type: 'cart/cartEmptied', payload: cart})
+}
 // export const refreshCart = async (dispatch) => {
 //     const newCart = await commerce.cart.refresh();
 //     dispatch({type: 'cart/cartRefreshed', payload: newCart})

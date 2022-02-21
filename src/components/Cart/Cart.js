@@ -1,10 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+//reducers
+import { handleEmptyCart } from '../../reducers/cartSlice';
+//redux store
+import store from '../../store';
 
 import CartItem from './CartItem/CartItem';
 
-const Cart = ({ handleRemoveFromCart, handleEmptyCart }) => {
+const Cart = () => {
   const cart = useSelector(state => state.cart);
 
   const EmptyCart = () => (
@@ -22,10 +26,7 @@ const FilledCart = () => (
         <div className="flex flex-wrap justify-start max-w-screen-md box-border sm:-mx-2 my-6">
             {cart.line_items.map((item) => (
                 <div className="sm:w-1/3 sm:px-2" key={item.id}>
-                    <CartItem
-                        item={item}
-                        onRemoveFromCart={handleRemoveFromCart}
-                    />
+                    <CartItem item={item} />
                 </div>
             ))}
         </div>
@@ -34,7 +35,7 @@ const FilledCart = () => (
           <div className="text-base tracking-widest font-medium">
               Razem: {cart.subtotal.formatted} zł
           </div>
-          <div className="cursor-pointer my-2" onClick={handleEmptyCart}>
+          <div className="cursor-pointer my-2" onClick={store.handleEmptyCart}>
                 <p className="text-center text-base tracking-widest">Wyczyść koszyk</p>
           </div>
           <div className="flex justify-between w-10/12 mx-auto my-6">

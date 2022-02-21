@@ -1,10 +1,10 @@
 import React from 'react';
 //reducers
-import { handleUpdateCartQty } from '../../../reducers/cartSlice';
+import { handleUpdateCartQty, handleRemoveFromCart } from '../../../reducers/cartSlice';
 //redux store
 import store from '../../../store';
 
-const CartItem = ({ item, onRemoveFromCart }) => {
+const CartItem = ({ item }) => {
   return (
     <div className="w-10/12 mx-auto mt-10 mb-6">
       <div className="border border-black shadow-xl">
@@ -27,7 +27,7 @@ const CartItem = ({ item, onRemoveFromCart }) => {
       </div>
       <div 
         className="text-center text-base tracking-widest border-2 border-black mt-2 p-2 cursor-pointer" 
-        onClick={() => onRemoveFromCart(item.id)}>
+        onClick={() => store.handleRemoveFromCart(item.id)}>
           <p>Usuń</p>
       </div>
     </div>
