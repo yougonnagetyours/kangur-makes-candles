@@ -1,10 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { Link } from 'react-router-dom'
+import CartItem from './CartItem/CartItem';
 
-import CartItem from './CartItem/CartItem'
-
-const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart }) => {
+const Cart = ({ handleRemoveFromCart, handleEmptyCart }) => {
+  const cart = useSelector(state => state.cart);
 
   const EmptyCart = () => (
     <>
@@ -23,7 +24,6 @@ const FilledCart = () => (
                 <div className="sm:w-1/3 sm:px-2" key={item.id}>
                     <CartItem
                         item={item}
-                        onUpdateCartQty={handleUpdateCartQty}
                         onRemoveFromCart={handleRemoveFromCart}
                     />
                 </div>

@@ -55,21 +55,21 @@ function App() {
   //   setCart(response); 
   // };
 
-  const handleAddToCart = async (productId, quantity) => {
-    const { cart } = await commerce.cart.add(productId, quantity);
+  // const handleAddToCart = async (productId, quantity) => {
+  //   const { cart } = await commerce.cart.add(productId, quantity);
 
-    setCart(cart);
-    setIsAddedToCart(true);
-    setTimeout(() => {
-      setIsAddedToCart(false);
-    }, 2000)
-  };
+  //   setCart(cart);
+  //   setIsAddedToCart(true);
+  //   setTimeout(() => {
+  //     setIsAddedToCart(false);
+  //   }, 2000)
+  // };
 
-  const handleUpdateCartQty = async (productId, quantity) => {
-      const { cart } = await commerce.cart.update(productId, { quantity });
+  // const handleUpdateCartQty = async (productId, quantity) => {
+  //     const { cart } = await commerce.cart.update(productId, { quantity });
 
-      setCart(cart);
-  }
+  //     setCart(cart);
+  // }
 
   const handleRemoveFromCart = async (productId) => {
       const { cart } = await commerce.cart.remove(productId);
@@ -148,8 +148,7 @@ function App() {
             <Fragment>
               <ScrollToTop />
               {isSearchActive 
-                ? (<SearchResults 
-                    products={products} 
+                ? (<SearchResults  
                     search={search} 
                     clearInput={clearInput} 
                     handleSearchPanelActive={handleSearchPanelActive}
@@ -157,22 +156,19 @@ function App() {
                 : (
               <Switch>
                 <Route exact path="/">
-                  <MainSite products={products} />
+                  <MainSite />
                 </Route>
                 <Route path="/shop">
-                  <Shop products={products} onAddToCart={handleAddToCart} clearInput={clearInput} />
+                  <Shop clearInput={clearInput} />
                 </Route>
                 <Route exact path="/cart">
                   <Cart
-                    cart={cart}
-                    handleUpdateCartQty={handleUpdateCartQty}
                     handleRemoveFromCart={handleRemoveFromCart}
                     handleEmptyCart={handleEmptyCart}
                   />
                 </Route>
                 <Route exact path="/checkout">
                   <Checkout
-                    cart={cart}
                     order={order}
                     onCaptureCheckout={handleCaptureCheckout}
                     error={errorMessage}
@@ -188,10 +184,7 @@ function App() {
                   exact
                   path="/:id"
                   children={
-                    <ProductDetails
-                      products={products}
-                      onAddToCart={handleAddToCart}
-                    />
+                    <ProductDetails products={products} />
                   }
                 ></Route>
               </Switch>)}

@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import {Link, useHistory } from 'react-router-dom'
-import { commerce } from '../../../lib/commerce'
+import React, { useState, useEffect } from 'react';
+import {Link, useHistory } from 'react-router-dom';
 
-import AddressForm from '../AddressForm'
-import PaymentForm from '../PaymentForm'
+import { commerce } from '../../../lib/commerce';
+import { useSelector } from 'react-redux';
+
+import AddressForm from '../AddressForm';
+import PaymentForm from '../PaymentForm';
 
 const steps = ['Adres dostawy', 'Szczegóły płatności'];
 
-const Checkout = ({ cart, order, onCaptureCheckout, error, refreshCart }) => {
+const Checkout = ({ order, onCaptureCheckout, error, refreshCart }) => {
+  const cart = useSelector(state => state.cart);
+
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});

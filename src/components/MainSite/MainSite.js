@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useSelector, shallowEqual } from 'react-redux';
+import { Link } from "react-router-dom";
 
-import main1 from '../../pics/main1.jpg'
-import main2 from '../../pics/main2.jpg'
-import main3 from '../../pics/main3.jpg'
-import { Link } from "react-router-dom"
+import main1 from '../../pics/main1.jpg';
+import main2 from '../../pics/main2.jpg';
+import main3 from '../../pics/main3.jpg';
 
-const MainSite = ({ products }) => {
+const MainSite = ({ }) => {
+  const products = useSelector((state) => state.products, shallowEqual);
+
   return (
       <div>  
         <div className="1strow box-border mb-10 lg:flex lg:mb-20">

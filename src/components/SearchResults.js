@@ -1,7 +1,11 @@
 import React from "react";
+import { useSelector, shallowEqual } from "react-redux";
+
 import Product from './Shop/Product/Product';
 
-const SearchResults = ({ products, search, onAddToCart, clearInput, handleSearchPanelActive }) => {
+const SearchResults = ({ search, clearInput, handleSearchPanelActive }) => {
+  const products = useSelector((state) => state.products, shallowEqual);
+
   return (
     <div className='flex flex-wrap box-border mx-2.5 my-6'>
       <div className="h-16"></div>
@@ -11,7 +15,7 @@ const SearchResults = ({ products, search, onAddToCart, clearInput, handleSearch
            clearInput();
            handleSearchPanelActive();
           }}>
-          <Product product={product} onAddToCart={onAddToCart} clearInput={clearInput} />
+          <Product product={product} clearInput={clearInput} />
         </div>
         </div>
       ))}
