@@ -34,20 +34,21 @@ export const fetchCart = async (dispatch) => {
 }
 export const handleAddToCart = (productId, quantity) => async (dispatch) => {
     const { cart } = await commerce.cart.add(productId, quantity);
-    dispatch({type: 'cart/cartAddedItem', payload: cart})
+    dispatch({type: 'cart/cartAddedItem', payload: cart});
     //Add notification handler
 }
 export const handleUpdateCartQty = (productId, quantity) => async (dispatch) => {
     const { cart } = await commerce.cart.update (productId, { quantity });
-    dispatch({type: 'cart/cartUpdated', payload: cart})
+    dispatch({type: 'cart/cartUpdated', payload: cart});
 }
 export const handleRemoveFromCart = (productId) => async (dispatch) => {
     const { cart } = await commerce.cart.remove(productId);
-    dispatch({type: 'cart/cartRemoved', payload: cart})
+    dispatch({type: 'cart/cartRemoved', payload: cart});
 }
 export const handleEmptyCart = async (dispatch) => {
     const { cart } = await commerce.cart.empty();
-    dispatch({type: 'cart/cartEmptied', payload: cart})
+    dispatch({type: 'cart/cartEmptied', payload: cart});
+    console.log('clear!');
 }
 // export const refreshCart = async (dispatch) => {
 //     const newCart = await commerce.cart.refresh();
