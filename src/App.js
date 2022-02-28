@@ -78,6 +78,13 @@ function App() {
     setIsSearchPanelActive(!isSearchPanelActive);
   }
 
+  const handleAddToCartPopup = () => {
+    setIsAddedToCart(true);
+    // setInterval(() => {
+    //   setIsAddedToCart(false);
+    // }, 1200)
+  }
+
   useEffect(() => {
     store.dispatch(fetchProducts);
     setIsLoaded(true);
@@ -114,7 +121,7 @@ function App() {
                   <MainSite />
                 </Route>
                 <Route path="/shop">
-                  <Shop clearInput={clearInput} />
+                  <Shop clearInput={clearInput} handleAddToCartPopup={handleAddToCartPopup} />
                 </Route>
                 <Route exact path="/cart">
                   <Cart />

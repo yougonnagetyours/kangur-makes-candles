@@ -4,7 +4,7 @@ import { shallowEqual, useSelector } from 'react-redux';
 import Product from './Product/Product.js';
 import main2 from '../../pics/main2.jpg';
 
-const Shop = ({ clearInput }) => {
+const Shop = ({ clearInput, handleAddToCartPopup }) => {
   const products = useSelector(state => state.products, shallowEqual);
 
   return (
@@ -26,7 +26,7 @@ const Shop = ({ clearInput }) => {
           <div className="flex flex-wrap box-border mx-2.5 my-6">
             {products.map((product) => (
               <div className="px-2 mb-20 sm:w-1/3 lg:w-1/4 sm:px-2 sm:mb-10" key={product.id}>            
-                  <Product product={product} clearInput={clearInput} />           
+                  <Product product={product} clearInput={clearInput} handleAddToCartPopup={handleAddToCartPopup} />
               </div>
             ))}  
           </div> 
