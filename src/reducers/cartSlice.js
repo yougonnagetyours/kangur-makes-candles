@@ -2,7 +2,7 @@ import { commerce } from '../lib/commerce';
 
 const initialState= [];
 
-export default function cartReducer(state = initialState, action) {
+export const cartReducer = (state = initialState, action) => {
     switch (action.type) {
         case 'cart/cartLoaded': {
             return action.payload;
@@ -55,4 +55,5 @@ export const refreshCart = async (dispatch) => {
     dispatch({type: 'cart/cartRefreshed', payload: newCart})
 }
 
+export default cartReducer;
 
