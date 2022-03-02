@@ -1,13 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 //reducers
 import { handleAddToCart } from '../../../reducers/cartSlice';
-//redux store
-import store from '../../../store';
 
 const Product = ({ product }) => {
-
-  const onAddToCart = () => store.dispatch(handleAddToCart(product.id, 1));
+  
+  const dispatch = useDispatch();
+  const onAddToCart = () => dispatch(handleAddToCart(product.id, 1));
 
   return (
       <div className="">      

@@ -1,11 +1,11 @@
 import React from 'react';
-import { shallowEqual, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Product from './Product/Product.js';
 import main2 from '../../pics/main2.jpg';
 
 const Shop = ({ clearInput }) => {
-  const products = useSelector(state => state.products, shallowEqual);
+  const products = useSelector(state => state.products);
 
   return (
     <>

@@ -1,13 +1,13 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
-//reducers
+
 import { handleAddToCart } from '../../reducers/cartSlice';
-//redux store
-import store from '../../store';
 
 const ProductDetails = ({ products }) => {
-
+  
+  const dispatch = useDispatch();
   let { id } = useParams();
   let onAddToCart;
 
@@ -16,7 +16,7 @@ const ProductDetails = ({ products }) => {
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6">
           {products.map((product) => id === product.id ? (
             <div key={product.id}>
-              {onAddToCart = () => store.dispatch(handleAddToCart(product.id, 1))}
+              {onAddToCart = () => dispatch(handleAddToCart(product.id, 1))}
               <div className="">      
                 <div className="header sm:flex sm:mx-4 sm:justify-between">
                   <div className="border border-black sm:w-1/2">
