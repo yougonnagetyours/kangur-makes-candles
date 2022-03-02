@@ -27,7 +27,7 @@ export const cartReducer = (state = initialState, action) => {
         }
     }
 }
-//Thunk functions
+
 export const fetchCart = async (dispatch) => {
     const response = await commerce.cart.retrieve();
     dispatch({type: 'cart/cartLoaded', payload: response});
