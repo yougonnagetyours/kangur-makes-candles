@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { shallowEqual, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 
 import { fetchProducts } from './reducers/productsSlice';
-import { fetchCart } from './reducers/cartSlice';
+import { fetchCart, refreshCart } from './reducers/cartSlice';
 
 import { commerce } from './lib/commerce';
 
@@ -26,12 +26,11 @@ import SearchResults from './components/SearchResults.js';
 
 import Checkout from './components/CheckoutForm/Checkout/Checkout'
 
-import store from './store';
-
 
 function App() {
   //REDUX
-  const products = useSelector((state) => state.products, shallowEqual);
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products);
   const cart = useSelector(state => state.cart);
 
   // const [products, setProducts] = useState([]);
@@ -49,7 +48,7 @@ function App() {
         const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder)
 
         setOrder(incomingOrder);
-        store.refreshCart();
+        dispatch(refreshCart);
     } catch (error) {
         setErrorMessage(error.data.error.message);   
     }
@@ -86,10 +85,10 @@ function App() {
   }
 
   useEffect(() => {
-    store.dispatch(fetchProducts);
+    dispatch(fetchProducts);
     setIsLoaded(true);
     // fetchCart();
-    store.dispatch(fetchCart);
+    dispatch(fetchCart);
   }, []);
 
   console.log(cart);

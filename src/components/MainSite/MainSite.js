@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 
 import main1 from '../../pics/main1.jpg';
@@ -7,7 +7,7 @@ import main2 from '../../pics/main2.jpg';
 import main3 from '../../pics/main3.jpg';
 
 const MainSite = ({ }) => {
-  const products = useSelector((state) => state.products, shallowEqual);
+  const products = useSelector((state) => state.products);
 
   return (
       <div>  

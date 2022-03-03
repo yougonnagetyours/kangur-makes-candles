@@ -50,9 +50,9 @@ export const handleEmptyCart = async (dispatch) => {
     dispatch({type: 'cart/cartEmptied', payload: cart});
     console.log('clear!');
 }
-// export const refreshCart = async (dispatch) => {
-//     const newCart = await commerce.cart.refresh();
-//     dispatch({type: 'cart/cartRefreshed', payload: newCart})
-// }
+export const refreshCart = async (dispatch) => {
+    const newCart = await commerce.cart.refresh();
+    dispatch({type: 'cart/cartRefreshed', payload: newCart})
+}
 
 

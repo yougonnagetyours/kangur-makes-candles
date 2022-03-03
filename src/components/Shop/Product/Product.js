@@ -1,14 +1,14 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 //reducers
 import { handleAddToCart } from '../../../reducers/cartSlice';
-//redux store
-import store from '../../../store';
 
 const Product = ({ product, handleAddToCartPopup }) => {
 
+  const dispatch = useDispatch();
   const handleAddToCartFunc = () => {
-    store.dispatch(handleAddToCart(product.id, 1));
+    dispatch(handleAddToCart(product.id, 1));
     handleAddToCartPopup();
   };
 
