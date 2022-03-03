@@ -31,13 +31,14 @@ function App() {
   //REDUX
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.fetchedData);
+  const isLoaded = useSelector((state) => state.products.isLoaded);
   const cart = useSelector(state => state.cart);
 
   // const [products, setProducts] = useState([]);
   // const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
-  const [isLoaded, setIsLoaded] = useState(false);
+  // const [isLoaded, setIsLoaded] = useState(false);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [q, setQ] = useState('');
   const [isSearchActive, setIsSearchActive] = useState(false);
@@ -86,8 +87,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchProducts);
-    setIsLoaded(true);
-    // fetchCart();
+    // setIsLoaded(true);
     dispatch(fetchCart);
   }, []);
 
