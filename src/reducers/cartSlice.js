@@ -3,6 +3,7 @@ import { commerce } from '../lib/commerce';
 const initialState = {
     fetchedData: [],
     isAddedToCart: false,
+    isBusy: false,
 }
 
 export default function cartReducer(state = initialState, { type, payload }) {
@@ -26,7 +27,17 @@ export default function cartReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 isAddedToCart: false,
-            }   
+            }
+        case 'SET_IS_BUSY': 
+            return {
+                ...state,
+                isBusy: true,
+            }
+        case 'SET_IS_NOT_BUSY': 
+            return {
+                ...state,
+                isBusy: false,
+            }
         default: 
             return state;
     }
@@ -39,6 +50,7 @@ export const fetchCart = async (dispatch) => {
 export const handleAddToCart = (productId, quantity) => async (dispatch) => {
     const { cart } = await commerce.cart.add(productId, quantity);
     dispatch({type: 'ADD_TO_CART', payload: cart});
+    dispatch({type: 'SET_IS_NOT_BUSY'});
     setTimeout(() => {
         dispatch({type: 'DISABLE_NOTIFICATION'});
       }, 2000);

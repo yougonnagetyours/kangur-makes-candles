@@ -22,7 +22,7 @@ const Nav1 = ({ q, handleInput, clearInput, isSearchActive, isSearchPanelActive,
   const cart = useSelector(state => state.cart.fetchedData);
 
   return (
-    <div className='fixed sm:static top-0 left-0 bg-white w-full'>
+    <div className='fixed sm:relative top-0 left-0 bg-white w-full sm:border sm:border-black sm:mb-20 sm:shadow-lg'>
       <Menu as="div" className="">
         {({ open }) => (
           <>  

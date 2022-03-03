@@ -35,12 +35,8 @@ function App() {
   const cart = useSelector(state => state.cart.fetchedData);
   const isAddedToCart = useSelector(state => state.cart.isAddedToCart);
 
-  // const [products, setProducts] = useState([]);
-  // const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
-  // const [isLoaded, setIsLoaded] = useState(false);
-  // const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [q, setQ] = useState('');
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
@@ -79,16 +75,8 @@ function App() {
     setIsSearchPanelActive(!isSearchPanelActive);
   }
 
-  // const handleAddToCartPopup = () => {
-  //   setIsAddedToCart(true);
-    // setInterval(() => {
-    //   setIsAddedToCart(false);
-    // }, 1200)
-  // }
-
   useEffect(() => {
     dispatch(fetchProducts);
-    // setIsLoaded(true);
     dispatch(fetchCart);
   }, []);
 
