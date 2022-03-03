@@ -30,7 +30,7 @@ import Checkout from './components/CheckoutForm/Checkout/Checkout'
 function App() {
   //REDUX
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.fetchedData);
   const cart = useSelector(state => state.cart);
 
   // const [products, setProducts] = useState([]);

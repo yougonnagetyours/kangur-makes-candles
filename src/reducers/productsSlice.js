@@ -1,6 +1,6 @@
 import { commerce } from '../lib/commerce';
 
-const initialState= [];
+const initialState = [];
 
 export default function productsReducer(state = initialState, { type, payload }) {
     switch (type) {
