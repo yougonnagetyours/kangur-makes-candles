@@ -4,12 +4,11 @@ import { useDispatch } from 'react-redux';
 //reducers
 import { handleAddToCart } from '../../../reducers/cartSlice';
 
-const Product = ({ product, handleAddToCartPopup }) => {
+const Product = ({ product }) => {
 
   const dispatch = useDispatch();
   const handleAddToCartFunc = () => {
     dispatch(handleAddToCart(product.id, 1));
-    handleAddToCartPopup();
   };
 
   return (

@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 //reducers
 import { handleAddToCart } from '../../reducers/cartSlice';
 
-const ProductDetails = ({ products, handleAddToCartPopup }) => {
+const ProductDetails = ({ products }) => {
 
   const dispatch = useDispatch();
   let { id } = useParams();

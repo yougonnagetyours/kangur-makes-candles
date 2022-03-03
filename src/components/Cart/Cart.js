@@ -1,16 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 //reducers
 import { handleEmptyCart } from '../../reducers/cartSlice';
-//redux store
-import store from '../../store';
 
 import CartItem from './CartItem/CartItem';
 
 const Cart = () => {
-  const cart = useSelector(state => state.cart);
-  const handleEmptyCartFunc = () => store.dispatch(handleEmptyCart);
+  const cart = useSelector(state => state.cart.fetchedData);
+  const dispatch = useDispatch();
+  const handleEmptyCartFunc = () => dispatch(handleEmptyCart);
 
   const EmptyCart = () => (
     <>

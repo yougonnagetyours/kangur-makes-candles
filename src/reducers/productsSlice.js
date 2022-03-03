@@ -7,7 +7,7 @@ const initialState = {
 
 export default function productsReducer(state = initialState, { type, payload }) {
     switch (type) {
-        case 'products/productsLoaded': 
+        case 'LOAD_PRODUCTS': 
             return {
                 ...state,
                 fetchedData: payload,
@@ -20,7 +20,5 @@ export default function productsReducer(state = initialState, { type, payload })
 
 export const fetchProducts = async (dispatch) => {
     const { data } = await commerce.products.list();
-    dispatch({type: 'products/productsLoaded', payload: data});
+    dispatch({type: 'LOAD_PRODUCTS', payload: data});
 }
-
-// products = productsReducer

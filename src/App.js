@@ -32,14 +32,15 @@ function App() {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.products.fetchedData);
   const isLoaded = useSelector((state) => state.products.isLoaded);
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector(state => state.cart.fetchedData);
+  const isAddedToCart = useSelector(state => state.cart.isAddedToCart);
 
   // const [products, setProducts] = useState([]);
   // const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
   // const [isLoaded, setIsLoaded] = useState(false);
-  const [isAddedToCart, setIsAddedToCart] = useState(false);
+  // const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [q, setQ] = useState('');
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
@@ -78,12 +79,12 @@ function App() {
     setIsSearchPanelActive(!isSearchPanelActive);
   }
 
-  const handleAddToCartPopup = () => {
-    setIsAddedToCart(true);
+  // const handleAddToCartPopup = () => {
+  //   setIsAddedToCart(true);
     // setInterval(() => {
     //   setIsAddedToCart(false);
     // }, 1200)
-  }
+  // }
 
   useEffect(() => {
     dispatch(fetchProducts);
@@ -120,7 +121,7 @@ function App() {
                   <MainSite />
                 </Route>
                 <Route path="/shop">
-                  <Shop clearInput={clearInput} handleAddToCartPopup={handleAddToCartPopup} />
+                  <Shop clearInput={clearInput} />
                 </Route>
                 <Route exact path="/cart">
                   <Cart />
