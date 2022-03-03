@@ -2,29 +2,17 @@ import { commerce } from '../lib/commerce';
 
 const initialState= [];
 
-export default function cartReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'cart/cartLoaded': {
-            return action.payload;
-        }
-        case 'cart/cartAddedItem': {
-            return action.payload;
-        }
-        case 'cart/cartUpdated': {
-            return action.payload;
-        }
-        case 'cart/cartRemoved': {
-            return action.payload;
-        }
-        case 'cart/cartEmptied': {
-            return action.payload;
-        }
-        case 'cart/cartRefreshed': {
-            return action.payload;
-        }
-        default: {
+export default function cartReducer(state = initialState, { type, payload }) {
+    switch (type) {
+        case 'cart/cartLoaded':
+        case 'cart/cartAddedItem': 
+        case 'cart/cartUpdated':
+        case 'cart/cartRemoved':
+        case 'cart/cartEmptied':
+        case 'cart/cartRefreshed': 
+            return payload;
+        default: 
             return state;
-        }
     }
 }
 //Thunk functions

@@ -2,14 +2,12 @@ import { commerce } from '../lib/commerce';
 
 const initialState= [];
 
-export default function productsReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'products/productsLoaded': {
-            return action.payload;
-        }
-        default: {
+export default function productsReducer(state = initialState, { type, payload }) {
+    switch (type) {
+        case 'products/productsLoaded': 
+            return payload;
+        default: 
             return state;
-        }
     }
 }
 
