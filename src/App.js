@@ -19,7 +19,7 @@ import Cart from './components/Cart/Cart.js';
 import Footer from './components/Footer/Footer.js';
 import About from './components/About/About.js';
 import Contact from './components/Contact/Contact.js';
-import ScrollToTop from './components/scrollToTop.js';
+import ScrollToTop from './ui/scrollToTop.js';
 import Loader from './ui/Loader.js';
 import ShoppingPopup from './ui/ShoppingPopup.js';
 import SearchResults from './components/SearchResults/SearchResults.js';
