@@ -23,22 +23,19 @@ import ScrollToTop from './components/scrollToTop.js';
 import Loader from './components/Loader.js';
 import ShoppingPopup from './components/ShoppingPopup.js';
 import SearchResults from './components/SearchResults.js';
-
 import Checkout from './components/CheckoutForm/Checkout/Checkout';
-
 
 function App() {
   //REDUX
   const dispatch = useDispatch();
 
-  const products = useSelector((state) => state.products);
-  const cart = useSelector(state => state.cart);
-
+  const products = useSelector((state) => state.products.fetchedData);
+  const isLoaded = useSelector((state) => state.products.isLoaded);
+  const cart = useSelector(state => state.cart.fetchedData);
+  const isAddedToCart = useSelector(state => state.cart.isAddedToCart);
 
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [q, setQ] = useState('');
   const [isSearchActive, setIsSearchActive] = useState(false);
   const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
@@ -79,7 +76,6 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchProducts);
-    setIsLoaded(true);
     dispatch(fetchCart);
   }, []);
 

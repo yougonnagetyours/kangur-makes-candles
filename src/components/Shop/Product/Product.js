@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 //reducers
 import { handleAddToCart } from '../../../reducers/cartSlice';
 
 const Product = ({ product }) => {
-  
+
+  const isBusy = useSelector(state => state.cart.isBusy);
   const dispatch = useDispatch();
-  const onAddToCart = () => dispatch(handleAddToCart(product.id, 1));
+  const handleAddToCartFunc = () => {
+    dispatch({type: 'SET_IS_BUSY'});
+    dispatch(handleAddToCart(product.id, 1));
+  };
 
   return (
       <div className="">      
@@ -26,8 +30,10 @@ const Product = ({ product }) => {
         <div className="flex justify-around mt-3 mb-4">
           <p className="text-center text-base tracking-widest">{`${product.price.formatted} zł`}</p>
         </div>
-        <div className="flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden" onClick={onAddToCart}>
-           <p className="text-center tracking-wider" aria-label="Dodaj do koszyka" >Do koszyka</p>
+        <div className={`flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden`} onClick={handleAddToCartFunc}>
+           <p className={`text-center tracking-wider`} aria-label="Dodaj do koszyka" >
+             {!isBusy ? 'Do koszyka' : 'Loading...'} 
+           </p>
         </div>
       </div>
   )

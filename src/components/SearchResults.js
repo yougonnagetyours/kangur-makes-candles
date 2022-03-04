@@ -1,10 +1,10 @@
 import React from "react";
-import { useSelector, shallowEqual } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Product from './Shop/Product/Product';
 
 const SearchResults = ({ search, clearInput, handleSearchPanelActive }) => {
-  const products = useSelector((state) => state.products, shallowEqual);
+  const products = useSelector((state) => state.products.fetchedData);
 
   return (
     <div className='flex flex-wrap box-border mx-2.5 my-6'>

@@ -1,59 +1,74 @@
 import { commerce } from '../lib/commerce';
 
-const initialState= [];
+const initialState = {
+    fetchedData: [],
+    isAddedToCart: false,
+    isBusy: false,
+}
 
-export const cartReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'cart/cartLoaded': {
-            return action.payload;
-        }
-        case 'cart/cartAddedItem': {
-            return action.payload;
-        }
-        case 'cart/cartUpdated': {
-            return action.payload;
-        }
-        case 'cart/cartRemoved': {
-            return action.payload;
-        }
-        case 'cart/cartEmptied': {
-            return action.payload;
-        }
-        case 'cart/cartRefreshed': {
-            return action.payload;
-        }
-        default: {
+export default function cartReducer(state = initialState, { type, payload }) {
+    switch (type) {
+        case 'LOAD_CART': 
+        case 'UPDATE_CART':
+        case 'REMOVE_CART':
+        case 'EMPTY_CART':
+        case 'REFRESH_CART': 
+            return {
+                ...state,
+                fetchedData: payload,
+            };
+        case 'ADD_TO_CART': 
+            return {
+                ...state,
+                fetchedData: payload,
+                isAddedToCart: true,
+            }
+        case 'DISABLE_NOTIFICATION':
+            return {
+                ...state,
+                isAddedToCart: false,
+            }
+        case 'SET_IS_BUSY': 
+            return {
+                ...state,
+                isBusy: true,
+            }
+        case 'SET_IS_NOT_BUSY': 
+            return {
+                ...state,
+                isBusy: false,
+            }
+        default: 
             return state;
-        }
     }
 }
 
 export const fetchCart = async (dispatch) => {
     const response = await commerce.cart.retrieve();
-    dispatch({type: 'cart/cartLoaded', payload: response});
+    dispatch({type: 'LOAD_CART', payload: response});
 }
 export const handleAddToCart = (productId, quantity) => async (dispatch) => {
     const { cart } = await commerce.cart.add(productId, quantity);
-    dispatch({type: 'cart/cartAddedItem', payload: cart});
-    //Add notification handler
+    dispatch({type: 'ADD_TO_CART', payload: cart});
+    dispatch({type: 'SET_IS_NOT_BUSY'});
+    setTimeout(() => {
+        dispatch({type: 'DISABLE_NOTIFICATION'});
+      }, 2000);
 }
 export const handleUpdateCartQty = (productId, quantity) => async (dispatch) => {
     const { cart } = await commerce.cart.update (productId, { quantity });
-    dispatch({type: 'cart/cartUpdated', payload: cart});
+    dispatch({type: 'UPDATE_CART', payload: cart});
 }
 export const handleRemoveFromCart = (productId) => async (dispatch) => {
     const { cart } = await commerce.cart.remove(productId);
-    dispatch({type: 'cart/cartRemoved', payload: cart});
+    dispatch({type: 'REMOVE_CART', payload: cart});
 }
 export const handleEmptyCart = async (dispatch) => {
     const { cart } = await commerce.cart.empty();
-    dispatch({type: 'cart/cartEmptied', payload: cart});
-    console.log('clear!');
+    dispatch({type: 'EMPTY_CART', payload: cart});
 }
 export const refreshCart = async (dispatch) => {
     const newCart = await commerce.cart.refresh();
-    dispatch({type: 'cart/cartRefreshed', payload: newCart})
+    dispatch({type: 'REFRESH_CART', payload: newCart})
 }
-
-export default cartReducer;
 

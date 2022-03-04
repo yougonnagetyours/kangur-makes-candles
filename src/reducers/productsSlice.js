@@ -1,21 +1,26 @@
 import { commerce } from '../lib/commerce';
 
-const initialState= [];
+const initialState = {
+    fetchedData: [],
+    isLoaded: false,
+};
 
-export const productsReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'products/productsLoaded': {
-            return action.payload;
-        }
-        default: {
+export default function productsReducer(state = initialState, { type, payload }) {
+    switch (type) {
+        case 'LOAD_PRODUCTS': 
+            return {
+                ...state,
+                fetchedData: payload,
+                isLoaded: true,
+            };
+        default: 
+
             return state;
-        }
     }
 }
 
 export const fetchProducts = async (dispatch) => {
     const { data } = await commerce.products.list();
-    dispatch({type: 'products/productsLoaded', payload: data});
+    dispatch({type: 'LOAD_PRODUCTS', payload: data});
 }
 
-export default productsReducer;
