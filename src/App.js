@@ -24,6 +24,7 @@ function App() {
   const isLoaded = useSelector((state) => state.products.isLoaded);
   const cart = useSelector(state => state.cart.fetchedData);
   const isAddedToCart = useSelector(state => state.cart.isAddedToCart);
+  const isBusy = useSelector(state => state.cart.isBusy);
 
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
@@ -70,7 +71,6 @@ function App() {
     dispatch(fetchCart);
   }, []);
 
-  console.log(cart);
   return (
     <Router>
       {isLoaded ? (
@@ -128,7 +128,13 @@ function App() {
             </Fragment>
           </main>
           <Footer />
-          {isAddedToCart ? <ShoppingPopup /> : null}        
+          {isAddedToCart ? <ShoppingPopup /> : null}
+          {!isBusy ? 
+            <div className=''>
+              <Loader />
+            </div> :
+            null
+          }        
         </div>
       ) : (
         <Loader />
