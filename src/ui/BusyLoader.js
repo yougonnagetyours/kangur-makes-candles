@@ -1,9 +1,9 @@
 import React from "react";
 import pulsatingBrand from '../pics/kangaroo.png'
 
-const Loader = () => {
+const BusyLoader = () => {
   return (
-    <div className="fixed bg-white left-0 top-0 w-full h-screen grid grid-cols-1 gap-4 place-content-center">
+    <div className="fixed bg-white bg-opacity-80 left-0 top-0 w-full h-screen grid grid-cols-1 gap-4 place-content-center">
       <div className='mb-20'>
         <div className="flex justify-center animate-pulse">
           <div className="flex-shrink-0 flex items-center">
@@ -28,4 +28,4 @@ const Loader = () => {
   );
 };
 
-export default Loader;
+export default BusyLoader;

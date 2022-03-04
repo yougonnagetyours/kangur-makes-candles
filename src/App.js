@@ -14,6 +14,7 @@ import { fetchCart, refreshCart } from './reducers/cartSlice';
 import { About, Cart, Checkout, Contact, Footer, MainSite, Nav1, ProductDetails, SearchResults, Shop } from './components';
 import ScrollToTop from './ui/scrollToTop.js';
 import Loader from './ui/Loader.js';
+import BusyLoader from './ui/BusyLoader.js';
 import ShoppingPopup from './ui/ShoppingPopup.js';
 
 function App() {
@@ -129,9 +130,9 @@ function App() {
           </main>
           <Footer />
           {isAddedToCart ? <ShoppingPopup /> : null}
-          {!isBusy ? 
-            <div className=''>
-              <Loader />
+          {isBusy ? 
+            <div>
+              <BusyLoader />
             </div> :
             null
           }        
