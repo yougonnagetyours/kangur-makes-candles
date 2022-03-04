@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { useSelector, useDispatch } from 'react-redux';
-//reducers
 import { handleAddToCart } from '../../../reducers/cartSlice';
 
 const Product = ({ product }) => {
@@ -32,7 +32,7 @@ const Product = ({ product }) => {
         </div>
         <div className={`flex justify-around mx-auto mt-5 mb-2 py-2 border-2 border-black cursor-pointer w-auto sm:hidden`} onClick={handleAddToCartFunc}>
            <p className={`text-center tracking-wider`} aria-label="Dodaj do koszyka" >
-             {!isBusy ? 'Do koszyka' : 'Loading...'} 
+             Do koszyka 
            </p>
         </div>
       </div>

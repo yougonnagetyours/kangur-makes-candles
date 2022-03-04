@@ -14,6 +14,7 @@ import { fetchCart, refreshCart } from './reducers/cartSlice';
 import { About, Cart, Checkout, Contact, Footer, MainSite, Nav1, ProductDetails, SearchResults, Shop } from './components';
 import ScrollToTop from './ui/scrollToTop.js';
 import Loader from './ui/Loader.js';
+import BusyLoader from './ui/BusyLoader.js';
 import ShoppingPopup from './ui/ShoppingPopup.js';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   const isLoaded = useSelector((state) => state.products.isLoaded);
   const cart = useSelector(state => state.cart.fetchedData);
   const isAddedToCart = useSelector(state => state.cart.isAddedToCart);
+  const isBusy = useSelector(state => state.cart.isBusy);
 
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
@@ -70,7 +72,6 @@ function App() {
     dispatch(fetchCart);
   }, []);
 
-  console.log(cart);
   return (
     <Router>
       {isLoaded ? (
@@ -128,7 +129,13 @@ function App() {
             </Fragment>
           </main>
           <Footer />
-          {isAddedToCart ? <ShoppingPopup /> : null}        
+          {isAddedToCart ? <ShoppingPopup /> : null}
+          {isBusy ? 
+            <div>
+              <BusyLoader />
+            </div> :
+            null
+          }        
         </div>
       ) : (
         <Loader />

@@ -58,14 +58,17 @@ export const handleAddToCart = (productId, quantity) => async (dispatch) => {
 export const handleUpdateCartQty = (productId, quantity) => async (dispatch) => {
     const { cart } = await commerce.cart.update (productId, { quantity });
     dispatch({type: 'UPDATE_CART', payload: cart});
+    dispatch({type: 'SET_IS_NOT_BUSY'});
 }
 export const handleRemoveFromCart = (productId) => async (dispatch) => {
     const { cart } = await commerce.cart.remove(productId);
     dispatch({type: 'REMOVE_CART', payload: cart});
+    dispatch({type: 'SET_IS_NOT_BUSY'});
 }
 export const handleEmptyCart = async (dispatch) => {
     const { cart } = await commerce.cart.empty();
     dispatch({type: 'EMPTY_CART', payload: cart});
+    dispatch({type: 'SET_IS_NOT_BUSY'});
 }
 export const refreshCart = async (dispatch) => {
     const newCart = await commerce.cart.refresh();
