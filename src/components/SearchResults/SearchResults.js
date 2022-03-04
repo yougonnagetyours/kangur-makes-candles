@@ -3,8 +3,15 @@ import { useSelector } from "react-redux";
 
 import Product from '../Shop/Product/Product';
 
-const SearchResults = ({ search, clearInput, handleSearchPanelActive }) => {
-  const products = useSelector((state) => state.products.fetchedData);
+const SearchResults = ({ clearInput, handleSearchPanelActive }) => {
+  const products = useSelector(state => state.products.fetchedData);
+  const q = useSelector(state => state.search.q)
+
+  const search = (filterData) => {
+    return filterData.filter((filteredItem) =>
+      filteredItem.name.toLowerCase().includes(q.toLowerCase())
+    );
+  };
 
   return (
     <div className='flex flex-wrap box-border mx-2.5 my-6'>

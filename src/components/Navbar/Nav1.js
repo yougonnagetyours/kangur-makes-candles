@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
+import { Fragment } from 'react';
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Menu, Transition } from '@headlessui/react';
-import { Fragment } from 'react';
 import { MenuIcon, XIcon, ShoppingCartIcon, SearchIcon } from '@heroicons/react/outline';
 
 import insta from '../../pics/instagram.png';
@@ -18,12 +18,22 @@ const navigation = [
 // const isActiveStyle = 'border-2 border-gray-900 text-black px-3 py-2 rounded-md text-lg tracking-widest';
 // const isNotActiveStyle = 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline px-3 py-2 rounded-md text-lg tracking-widest'
 
-const Nav1 = ({ q, handleInput, clearInput, isSearchActive, isSearchPanelActive, handleSearchPanelActive }) => {
+const Nav1 = ({ isSearchPanelActive, handleSearchPanelActive }) => {
   const cart = useSelector(state => state.cart.fetchedData);
+  const q = useSelector(state => state.search.q);
+  const isSearchActive = useSelector(state => state.search.isSearchActive);
+  const dispatch = useDispatch();
 
+  const handleInput = (e) => {
+    dispatch({type: 'HANDLE_INPUT', payload: e.target.value});
+    if (e.target.value === ''){
+      dispatch({type: 'SET_SEARCH_INACTIVE'});
+    }
+  };
+  
   return (
     <div className='fixed sm:relative top-0 left-0 bg-white w-full sm:border sm:border-black sm:mb-20 sm:shadow-lg'>
-      <Menu as="div" className="">
+      <Menu as="div">
         {({ open }) => (
           <>  
             <div className={`${open ? null : "border-b"}, "max-w-7xl mx-auto px-2 sm:px-6 lg:px-8"`}>
@@ -149,7 +159,10 @@ const Nav1 = ({ q, handleInput, clearInput, isSearchActive, isSearchPanelActive,
           onChange={(e) => handleInput(e)}
         />
         {isSearchActive 
-          ? <button className='absolute px-2 right-5' onClick={clearInput}>
+          ? <button 
+              className='absolute px-2 right-5' 
+              onClick={console.log('clear input')}
+            >
               <XIcon className="block h-6 w-6" aria-hidden="true" />
             </button> 
           : null} 

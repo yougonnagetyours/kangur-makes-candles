@@ -23,9 +23,9 @@ function App() {
 
   const products = useSelector((state) => state.products.fetchedData);
   const isLoaded = useSelector((state) => state.products.isLoaded);
-  const cart = useSelector(state => state.cart.fetchedData);
   const isAddedToCart = useSelector(state => state.cart.isAddedToCart);
   const isBusy = useSelector(state => state.cart.isBusy);
+  const isSearchActivee = useSelector(state => state.search.isSearchActive)
 
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
@@ -44,21 +44,11 @@ function App() {
     }
 }
 
-  //goes to the reducer
-  const handleInput = (e) => {
-    setQ(e.target.value);
-    setIsSearchActive(true);
-    if (e.target.value === ''){
-      setIsSearchActive(false);
-    }
-  };
-
-  //stay here
-  const search = (filterData) => {
-    return filterData.filter((filteredItem) =>
-      filteredItem.name.toLowerCase().includes(q.toLowerCase())
-    );
-  };
+  // const search = (filterData) => {
+  //   return filterData.filter((filteredItem) =>
+  //     filteredItem.name.toLowerCase().includes(searchState.q.toLowerCase())
+  //   );
+  // };
 
   // these go to reducer
   const clearInput = () => {
@@ -80,21 +70,15 @@ function App() {
       {isLoaded ? (
         <div className="wrapper max-w-screen-lg mx-auto">
           <div className="w-full h-16 sm:hidden" />
-          <Nav1 
-            cart={cart} 
-            q={q} 
-            handleInput={handleInput} 
-            clearInput={clearInput} 
-            isSearchActive={isSearchActive}
+          <Nav1  
             isSearchPanelActive={isSearchPanelActive}
             handleSearchPanelActive={handleSearchPanelActive}
             />
           <main>
             <Fragment>
               <ScrollToTop />
-              {isSearchActive 
-                ? (<SearchResults  
-                    search={search} 
+              {isSearchActivee 
+                ? (<SearchResults   
                     clearInput={clearInput} 
                     handleSearchPanelActive={handleSearchPanelActive}
                     />) 
