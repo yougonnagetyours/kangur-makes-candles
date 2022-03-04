@@ -44,6 +44,7 @@ function App() {
     }
 }
 
+  //goes to the reducer
   const handleInput = (e) => {
     setQ(e.target.value);
     setIsSearchActive(true);
@@ -52,12 +53,14 @@ function App() {
     }
   };
 
+  //stay here
   const search = (filterData) => {
     return filterData.filter((filteredItem) =>
       filteredItem.name.toLowerCase().includes(q.toLowerCase())
     );
   };
 
+  // these go to reducer
   const clearInput = () => {
     setQ('');
     setIsSearchActive(false);
@@ -66,7 +69,7 @@ function App() {
   const handleSearchPanelActive = () => {
     setIsSearchPanelActive(!isSearchPanelActive);
   }
-
+  //
   useEffect(() => {
     dispatch(fetchProducts);
     dispatch(fetchCart);
@@ -79,7 +82,8 @@ function App() {
           <div className="w-full h-16 sm:hidden" />
           <Nav1 
             cart={cart} 
-            q={q} handleInput={handleInput} 
+            q={q} 
+            handleInput={handleInput} 
             clearInput={clearInput} 
             isSearchActive={isSearchActive}
             isSearchPanelActive={isSearchPanelActive}

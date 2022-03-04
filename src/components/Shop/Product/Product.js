@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleAddToCart } from '../../../reducers/cartSlice';
 
 const Product = ({ product }) => {
 
-  const isBusy = useSelector(state => state.cart.isBusy);
   const dispatch = useDispatch();
   const handleAddToCartFunc = () => {
     dispatch({type: 'SET_IS_BUSY'});
