@@ -10,7 +10,7 @@ import PaymentForm from '../PaymentForm';
 const steps = ['Adres dostawy', 'Szczegóły płatności'];
 
 const Checkout = ({ order, onCaptureCheckout, error }) => {
-  const cart = useSelector(state => state.cart);
+  const cart = useSelector(state => state.cart.fetchedData);
 
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setCheckoutToken] = useState(null);

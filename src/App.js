@@ -1,29 +1,20 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
+import { commerce } from './lib/commerce';
+
+import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts } from './reducers/productsSlice';
 import { fetchCart, refreshCart } from './reducers/cartSlice';
 
-import { commerce } from './lib/commerce';
-
-import Nav1 from './components/Navbar/Nav1.js';
-import MainSite from './components/MainSite/MainSite.js';
-import Shop from './components/Shop/Shop.js';
-import ProductDetails from './components/ProductDetails/ProductDetails';
-import Cart from './components/Cart/Cart.js';
-import Footer from './components/Footer/Footer.js';
-import About from './components/About/About.js';
-import Contact from './components/Contact/Contact.js';
-import ScrollToTop from './components/scrollToTop.js';
-import Loader from './components/Loader.js';
-import ShoppingPopup from './components/ShoppingPopup.js';
-import SearchResults from './components/SearchResults.js';
-import Checkout from './components/CheckoutForm/Checkout/Checkout';
+import { About, Cart, Checkout, Contact, Footer, MainSite, Nav1, ProductDetails, SearchResults, Shop } from './components';
+import ScrollToTop from './ui/scrollToTop.js';
+import Loader from './ui/Loader.js';
+import ShoppingPopup from './ui/ShoppingPopup.js';
 
 function App() {
   //REDUX

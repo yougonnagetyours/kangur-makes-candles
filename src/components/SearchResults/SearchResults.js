@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import Product from './Shop/Product/Product';
+import Product from '../Shop/Product/Product';
 
 const SearchResults = ({ search, clearInput, handleSearchPanelActive }) => {
   const products = useSelector((state) => state.products.fetchedData);
