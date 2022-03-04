@@ -20,8 +20,8 @@ import Footer from './components/Footer/Footer.js';
 import About from './components/About/About.js';
 import Contact from './components/Contact/Contact.js';
 import ScrollToTop from './components/scrollToTop.js';
-import Loader from './components/Loader.js';
-import ShoppingPopup from './components/ShoppingPopup.js';
+import Loader from './ui/Loader.js';
+import ShoppingPopup from './ui/ShoppingPopup.js';
 import SearchResults from './components/SearchResults.js';
 import Checkout from './components/CheckoutForm/Checkout/Checkout';
 
