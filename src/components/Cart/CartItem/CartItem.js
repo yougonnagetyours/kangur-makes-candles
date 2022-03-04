@@ -22,13 +22,28 @@ const CartItem = ({ item }) => {
         <p className="text-center text-lg tracking-widest">{`${item.price.formatted * item.quantity} zł`}</p>
       </div>
       <div className="flex justify-center mt-2">
-        <button className="mx-2 cursor-pointer" onClick={() => dispatch(handleUpdateCartQty(item.id, item.quantity - 1))}>-</button>
+        <button 
+          className="mx-2 cursor-pointer" 
+          onClick={() => {
+            dispatch({type: 'SET_IS_BUSY'});
+            dispatch(handleUpdateCartQty(item.id, item.quantity - 1));
+          }}
+        >-</button>
         <p className="mx-2">{item.quantity}</p>
-        <button className="mx-2 cursor-pointer" onClick={() => dispatch(handleUpdateCartQty(item.id, item.quantity + 1))}>+</button>
+        <button 
+          className="mx-2 cursor-pointer" 
+          onClick={() => {
+            dispatch({type: 'SET_IS_BUSY'});
+            dispatch(handleUpdateCartQty(item.id, item.quantity + 1));
+          }}
+          >+</button>
       </div>
       <div 
         className="text-center text-base tracking-widest border-2 border-black mt-2 p-2 cursor-pointer" 
-        onClick={() => dispatch(handleRemoveFromCart(item.id))}>
+        onClick={() => {
+          dispatch({type: 'SET_IS_BUSY'});
+          dispatch(handleRemoveFromCart(item.id));
+        }}>
           <p>Usuń</p>
       </div>
     </div>

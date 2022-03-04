@@ -17,7 +17,10 @@ const ProductDetails = ({ products }) => {
         <div className="flex flex-wrap justify-around box-border mx-2.5 my-6">
           {products.map((product) => id === product.id ? (
             <div key={product.id}>
-              {handleAddToCartFunc = () => dispatch(handleAddToCart(product.id, 1))}
+              {handleAddToCartFunc = () => {
+                dispatch({type: 'SET_IS_BUSY'});
+                dispatch(handleAddToCart(product.id, 1));
+              }}
               <div className="">      
                 <div className="header sm:flex sm:mx-4 sm:justify-between">
                   <div className="border border-black sm:w-1/2">

@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { handleAddToCart } from '../../../reducers/cartSlice';
 
-// import Loader from '../../../ui/Loader';
-
 const Product = ({ product }) => {
 
   const isBusy = useSelector(state => state.cart.isBusy);
@@ -37,12 +35,6 @@ const Product = ({ product }) => {
              Do koszyka 
            </p>
         </div>
-        {/* {isBusy ? 
-          <div>
-            <Loader />
-          </div> :
-          null
-        } */}
       </div>
   )
 }

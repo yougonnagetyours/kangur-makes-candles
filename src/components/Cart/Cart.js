@@ -9,7 +9,10 @@ import CartItem from './CartItem/CartItem';
 const Cart = () => {
   const cart = useSelector(state => state.cart.fetchedData);
   const dispatch = useDispatch();
-  const handleEmptyCartFunc = () => dispatch(handleEmptyCart);
+  const handleEmptyCartFunc = () => {
+    dispatch({type: 'SET_IS_BUSY'});
+    dispatch(handleEmptyCart);
+  }
 
   const EmptyCart = () => (
     <>
