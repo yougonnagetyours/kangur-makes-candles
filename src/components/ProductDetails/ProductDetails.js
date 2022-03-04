@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
@@ -6,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { handleAddToCart } from '../../reducers/cartSlice';
 
 const ProductDetails = ({ products }) => {
+
 
   const dispatch = useDispatch();
   let { id } = useParams();

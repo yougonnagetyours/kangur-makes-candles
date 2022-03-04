@@ -23,13 +23,12 @@ import ScrollToTop from './components/scrollToTop.js';
 import Loader from './components/Loader.js';
 import ShoppingPopup from './components/ShoppingPopup.js';
 import SearchResults from './components/SearchResults.js';
-
-import Checkout from './components/CheckoutForm/Checkout/Checkout'
-
+import Checkout from './components/CheckoutForm/Checkout/Checkout';
 
 function App() {
   //REDUX
   const dispatch = useDispatch();
+
   const products = useSelector((state) => state.products.fetchedData);
   const isLoaded = useSelector((state) => state.products.isLoaded);
   const cart = useSelector(state => state.cart.fetchedData);

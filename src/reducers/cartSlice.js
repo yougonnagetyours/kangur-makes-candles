@@ -42,7 +42,7 @@ export default function cartReducer(state = initialState, { type, payload }) {
             return state;
     }
 }
-//Thunk functions
+
 export const fetchCart = async (dispatch) => {
     const response = await commerce.cart.retrieve();
     dispatch({type: 'LOAD_CART', payload: response});
@@ -71,5 +71,4 @@ export const refreshCart = async (dispatch) => {
     const newCart = await commerce.cart.refresh();
     dispatch({type: 'REFRESH_CART', payload: newCart})
 }
-
 

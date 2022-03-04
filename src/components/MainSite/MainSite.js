@@ -6,7 +6,8 @@ import main1 from '../../pics/main1.jpg';
 import main2 from '../../pics/main2.jpg';
 import main3 from '../../pics/main3.jpg';
 
-const MainSite = ({ }) => {
+const MainSite = () => {
+  
   const products = useSelector((state) => state.products.fetchedData);
 
   return (

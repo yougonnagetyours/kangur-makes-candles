@@ -5,6 +5,7 @@ import Product from './Product/Product.js';
 import main2 from '../../pics/main2.jpg';
 
 const Shop = ({ clearInput, handleAddToCartPopup }) => {
+  
   const products = useSelector(state => state.products.fetchedData);
 
   return (
