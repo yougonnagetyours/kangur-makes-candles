@@ -10,18 +10,27 @@ export default function searchReducer(state = initialState, { type, payload }) {
             return {
                 ...state,
                 q: payload,
-                isSearchActive: true,
             }
         case 'CLEAR_INPUT':
             return {
                 ...state,
                 q: '',
                 isSearchActive: false,
-            }       
+            }     
+        case 'SET_SEARCH_ACTIVE':  
+            return {
+                ...state,
+                isSearchActive: true,
+            }        
         case 'SET_SEARCH_INACTIVE':  
             return {
                 ...state,
                 isSearchActive: false,
+            }  
+        case 'TOGLE_SEARCH_PANEL_ACTIVE':  
+            return {
+                ...state,
+                isSearchPanelActive: payload,
             }  
         default:
             return state;

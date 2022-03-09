@@ -18,18 +18,24 @@ const navigation = [
 // const isActiveStyle = 'border-2 border-gray-900 text-black px-3 py-2 rounded-md text-lg tracking-widest';
 // const isNotActiveStyle = 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline px-3 py-2 rounded-md text-lg tracking-widest'
 
-const Nav1 = ({ isSearchPanelActive, handleSearchPanelActive }) => {
+const Nav1 = ({ }) => {
   const cart = useSelector(state => state.cart.fetchedData);
   const q = useSelector(state => state.search.q);
   const isSearchActive = useSelector(state => state.search.isSearchActive);
+  const isSearchPanelActive = useSelector(state => state.search.isSearchPanelActive);
   const dispatch = useDispatch();
 
   const handleInput = (e) => {
     dispatch({type: 'HANDLE_INPUT', payload: e.target.value});
+    dispatch({type: 'SET_SEARCH_ACTIVE'});
     if (e.target.value === ''){
       dispatch({type: 'SET_SEARCH_INACTIVE'});
     }
   };
+
+  const handleSearchPanelActive = () => {
+    dispatch({type: 'TOGLE_SEARCH_PANEL_ACTIVE', payload: !isSearchPanelActive})
+  }
   
   return (
     <div className='fixed sm:relative top-0 left-0 bg-white w-full sm:border sm:border-black sm:mb-20 sm:shadow-lg'>
@@ -161,11 +167,11 @@ const Nav1 = ({ isSearchPanelActive, handleSearchPanelActive }) => {
         {isSearchActive 
           ? <button 
               className='absolute px-2 right-5' 
-              onClick={console.log('clear input')}
+              onClick={() => dispatch({type: 'CLEAR_INPUT'})}
             >
               <XIcon className="block h-6 w-6" aria-hidden="true" />
             </button> 
-          : null} 
+          : null}
       </div>
     </div>
   )
