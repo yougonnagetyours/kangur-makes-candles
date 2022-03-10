@@ -15,6 +15,7 @@ import { About, Cart, Checkout, Contact, Footer, MainSite, Nav1, ProductDetails,
 import ScrollToTop from './ui/scrollToTop.js';
 import Loader from './ui/Loader.js';
 import BusyLoader from './ui/BusyLoader.js';
+import CheckoutLoader from './ui/CheckoutLoader.js';
 import ShoppingPopup from './ui/ShoppingPopup.js';
 
 function App() {

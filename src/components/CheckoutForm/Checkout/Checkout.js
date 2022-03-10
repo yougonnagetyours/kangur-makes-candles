@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
 
+import CheckoutLoader from '../../../ui/CheckoutLoader';
+
 const steps = ['Adres dostawy', 'Szczegóły płatności'];
 
 const Checkout = ({ order, onCaptureCheckout, error }) => {
@@ -62,7 +64,7 @@ const Checkout = ({ order, onCaptureCheckout, error }) => {
             <div className="text-2xl text-center tracking-widest">Dziękujemy za zakup</div>
             <div className="divide-y" />
             <div className="text-center text-base tracking-widest">Nr zamówienia: 345424534532</div>
-            <div className="text-center text-sm text-red-400 tracking-widest">TEST VERSION</div>
+            <div className="text-center text-sm text-red-400 tracking-widest font-semibold mt-10">TEST VERSION !!!</div>
             <div className='flex justify-center'>
               <Link to="/shop" className="block w-max mt-10 mb-6 text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
             </div>
@@ -70,9 +72,7 @@ const Checkout = ({ order, onCaptureCheckout, error }) => {
         {/* ONLY FOR TEST VERSION !!! */}
     </>
   ) : (
-    <div className="text-2xl text-center tracking-widest">
-        Ładowanie ..
-    </div>
+    <CheckoutLoader />
   );
 
   if (error) {
