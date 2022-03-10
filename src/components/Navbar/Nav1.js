@@ -34,7 +34,7 @@ const Nav1 = ({ }) => {
   };
 
   const handleSearchPanelActive = () => {
-    dispatch({type: 'TOGLE_SEARCH_PANEL_ACTIVE', payload: !isSearchPanelActive})
+    dispatch({type: 'TOGGLE_SEARCH_PANEL_ACTIVE', payload: !isSearchPanelActive})
   }
   
   return (

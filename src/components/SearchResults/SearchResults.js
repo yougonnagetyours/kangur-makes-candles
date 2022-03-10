@@ -23,7 +23,7 @@ const SearchResults = ({ clearInput, handleSearchPanelActive }) => {
        <div className="px-20 mb-20 sm:w-1/3 lg:w-1/4 sm:px-2 sm:mb-10" item key={product.id}>
          <div onClick={() => {
            dispatch({type: 'CLEAR_INPUT'});
-           dispatch({type: 'TOGLE_SEARCH_PANEL_ACTIVE', payload: !isSearchPanelActive});
+           dispatch({type: 'TOGGLE_SEARCH_PANEL_ACTIVE', payload: !isSearchPanelActive});
           }}>
           <Product product={product} clearInput={clearInput} />
         </div>

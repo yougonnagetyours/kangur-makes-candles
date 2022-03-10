@@ -27,7 +27,7 @@ export default function searchReducer(state = initialState, { type, payload }) {
                 ...state,
                 isSearchActive: false,
             }  
-        case 'TOGLE_SEARCH_PANEL_ACTIVE':  
+        case 'TOGGLE_SEARCH_PANEL_ACTIVE':  
             return {
                 ...state,
                 isSearchPanelActive: payload,
@@ -35,8 +35,4 @@ export default function searchReducer(state = initialState, { type, payload }) {
         default:
             return state;
     }
-}
-
-export const handleInput = (e) => (dispatch) => {
-    
 }
