@@ -15,6 +15,7 @@ import { About, Cart, Checkout, Contact, Footer, MainSite, Nav1, ProductDetails,
 import ScrollToTop from './ui/scrollToTop.js';
 import Loader from './ui/Loader.js';
 import BusyLoader from './ui/BusyLoader.js';
+import CheckoutLoader from './ui/CheckoutLoader.js';
 import ShoppingPopup from './ui/ShoppingPopup.js';
 
 function App() {
@@ -41,25 +42,14 @@ function App() {
         dispatch(refreshCart);
     } catch (error) {
         setErrorMessage(error.data.error.message);   
+        dispatch(refreshCart); //ferfeshing in this place ONLY FOR TEST VERSION !!!
     }
 }
-
-  // const search = (filterData) => {
-  //   return filterData.filter((filteredItem) =>
-  //     filteredItem.name.toLowerCase().includes(searchState.q.toLowerCase())
-  //   );
-  // };
-
-  // these go to reducer
-  const clearInput = () => {
-    setQ('');
-    setIsSearchActive(false);
-  }
 
   const handleSearchPanelActive = () => {
     setIsSearchPanelActive(!isSearchPanelActive);
   }
-  //
+  
   useEffect(() => {
     dispatch(fetchProducts);
     dispatch(fetchCart);
@@ -79,7 +69,6 @@ function App() {
               <ScrollToTop />
               {isSearchActivee 
                 ? (<SearchResults   
-                    clearInput={clearInput} 
                     handleSearchPanelActive={handleSearchPanelActive}
                     />) 
                 : (
@@ -88,7 +77,7 @@ function App() {
                   <MainSite />
                 </Route>
                 <Route path="/shop">
-                  <Shop clearInput={clearInput} />
+                  <Shop />
                 </Route>
                 <Route exact path="/cart">
                   <Cart />
