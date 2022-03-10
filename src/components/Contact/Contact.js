@@ -1,8 +1,6 @@
 import React from 'react'
 
-const Contact = () => {
-
-return (
+const Contact = () => (
   <>
     <div className="mt-6 mx-6">
       <p className="text-xl sm:text-2xl md:text-3xl tracking-widest">Kontakt</p>
@@ -23,7 +21,6 @@ return (
       <p className="text-sm uppercase mb-3 tracking-widest">reklamacje</p>
     </div>   
   </>  
-  )
-}
+);
 
-export default Contact
+export default Contact;

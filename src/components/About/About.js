@@ -1,8 +1,6 @@
 import React from 'react'
 
-const About = () => {
-
-return (
+const About = () => (
   <>
     <div className="mt-6 mx-6">
       <p className="text-xl sm:text-2xl md:text-3xl mb-6 tracking-widest">O nas</p>
@@ -20,7 +18,7 @@ return (
       <p className="text-sm uppercase mb-3 tracking-widest">reklamacje</p>
     </div>   
   </>  
-  )
-}
+);
+
 
 export default About;

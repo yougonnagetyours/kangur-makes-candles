@@ -4,8 +4,7 @@ import fb from '../../pics/facebook.png'
 
 
 
-export default function Footer() {
-  return (
+const Footer = () => (
       <div>
         <div className="my-3 w-full h-6 flex justify-center">
           <a href="https://www.instagram.com/?hl=en" className="block mr-6">
@@ -27,5 +26,6 @@ export default function Footer() {
           <p className="text-sm font-light tracking-widest">@2021, KangurMakesCandles</p>
         </div>
       </div>    
-  );
-}
+);
+
+export default Footer;

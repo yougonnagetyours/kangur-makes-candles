@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import AddressForm from '../AddressForm';
 import PaymentForm from '../PaymentForm';
 
+import Loader from '../../../ui/Loader';
 import CheckoutLoader from '../../../ui/CheckoutLoader';
 
 const steps = ['Adres dostawy', 'Szczegóły płatności'];
@@ -21,17 +22,19 @@ const Checkout = ({ order, onCaptureCheckout, error }) => {
   const history = useHistory();
 
   useEffect(() => {
-    const generateToken = async () => {
+    if (cart.id) {
+      const generateToken = async () => {
         try {
           const token = await commerce.checkout.generateToken(cart.id, { type: 'cart' });
-            
-          setCheckoutToken(token);
-        } catch (error) {
-              if (activeStep !== steps.length) history.push('/');
-        }
-    }
 
-    generateToken();
+          setCheckoutToken(token);
+        } catch {
+          if (activeStep !== steps.length) history.push('/');
+        }
+      };
+
+      generateToken();
+    }
   }, [cart]);
 
   const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -51,46 +54,60 @@ const Checkout = ({ order, onCaptureCheckout, error }) => {
 
   let Confirmation = () => order.customer ? (
     <>
-        <div>
-            <div className="text-2xl text-center tracking-widest">{order.customer.firstname}, Dziękujemy za zakup</div>
-            <div className="divide-y" />
-            <div className="text-center text-base tracking-widest">Nr zamówienia: {order.customer_reference}</div>
-            <Link to="/shop" className="text-center text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
-        </div>
+      <div>
+        <div className="text-2xl text-center tracking-widest">{order.customer.firstname}, Dziękujemy za zakup</div>
+        <div className="divide-y" />
+        <div className="text-center text-base tracking-widest">Nr zamówienia: {order.customer_reference}</div>
+        <Link to="/shop" className="text-center text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
+      </div>
     </>
   ) : isFinished ? (
     <>
-        <div className='my-10'>
-            <div className="text-2xl text-center tracking-widest">Dziękujemy za zakup</div>
-            <div className="divide-y" />
-            <div className="text-center text-base tracking-widest">Nr zamówienia: 345424534532</div>
-            <div className="text-center text-sm text-red-400 tracking-widest font-semibold mt-10">TEST VERSION !!!</div>
-            <div className='flex justify-center'>
-              <Link to="/shop" className="block w-max mt-10 mb-6 text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
-            </div>
-        </div> 
-        {/* ONLY FOR TEST VERSION !!! */}
+      <div className='my-10'>
+        <div className="text-2xl text-center tracking-widest">Dziękujemy za zakup</div>
+        <div className="divide-y" />
+        <div className="text-center text-base tracking-widest">Nr zamówienia: 345424534532</div>
+        <div className="text-center text-sm text-red-400 tracking-widest font-semibold mt-10">TEST VERSION !!!</div>
+        <div className='flex justify-center'>
+          <Link to="/shop" className="block w-max mt-10 mb-6 text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
+        </div>
+      </div> 
+      {/* ONLY FOR TEST VERSION !!! */}
     </>
   ) : (
     <CheckoutLoader />
   );
 
-  if (error) {
-      <>
-          <div className="text-2xl text-center tracking-widest">Error: {error}</div>
-          <br />
-          <Link to="/shop" className="text-center text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
-      </>
-  }
+  // Disabled for test version !!!
+  //
+  // if (error) {
+  //   Confirmation = () => (
+  //     <>
+  //       <div className="text-2xl text-center tracking-widest">Error: {error}</div>
+  //       <br />
+  //       <Link to="/shop" className="text-center text-base tracking-widest border-b-2 border-black" >Wróć do sklepu</Link>
+  //     </>
+  //   )
+  // }
   
   const Form = () => (activeStep === 0
-    ? <AddressForm checkoutToken={checkoutToken} next={next} />
-    : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} onCaptureCheckout={onCaptureCheckout} timeout={timeout} />)
+    ? <AddressForm 
+        checkoutToken={checkoutToken} 
+        next={next} 
+      />
+    : <PaymentForm 
+        shippingData={shippingData} 
+        checkoutToken={checkoutToken} 
+        nextStep={nextStep} 
+        backStep={backStep} 
+        onCaptureCheckout={onCaptureCheckout} 
+        timeout={timeout} 
+      />
+  );
 
   return (
     <>
-          {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form />}
-        
+      {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form />} 
     </>
   )
 }
