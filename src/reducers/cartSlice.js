@@ -72,6 +72,7 @@ export const handleEmptyCart = async (dispatch) => {
 }
 export const refreshCart = async (dispatch) => {
     const newCart = await commerce.cart.refresh();
-    dispatch({type: 'REFRESH_CART', payload: newCart})
+    dispatch({type: 'REFRESH_CART', payload: newCart});
+    console.log('refreshed!');
 }
 
