@@ -14,7 +14,6 @@ export default function productsReducer(state = initialState, { type, payload })
                 isLoaded: true,
             };
         default: 
-
             return state;
     }
 }
