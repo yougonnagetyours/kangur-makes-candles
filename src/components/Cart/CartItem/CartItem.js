@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { setIsBusy } from '../../../reducers/cartSlice';
 //reducers
 import { handleUpdateCartQty, handleRemoveFromCart } from '../../../reducers/cartSlice';
 
@@ -25,7 +26,7 @@ const CartItem = ({ item }) => {
         <button 
           className="mx-2 cursor-pointer" 
           onClick={() => {
-            dispatch({type: 'SET_IS_BUSY'});
+            dispatch(setIsBusy(true));
             dispatch(handleUpdateCartQty(item.id, item.quantity - 1));
           }}
         >-</button>
@@ -33,7 +34,7 @@ const CartItem = ({ item }) => {
         <button 
           className="mx-2 cursor-pointer" 
           onClick={() => {
-            dispatch({type: 'SET_IS_BUSY'});
+            dispatch(setIsBusy(true));
             dispatch(handleUpdateCartQty(item.id, item.quantity + 1));
           }}
           >+</button>
@@ -41,7 +42,7 @@ const CartItem = ({ item }) => {
       <div 
         className="text-center text-base tracking-widest border-2 border-black mt-2 p-2 cursor-pointer" 
         onClick={() => {
-          dispatch({type: 'SET_IS_BUSY'});
+          dispatch(setIsBusy(true));
           dispatch(handleRemoveFromCart(item.id));
         }}>
           <p>Usuń</p>

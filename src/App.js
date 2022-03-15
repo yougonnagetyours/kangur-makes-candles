@@ -30,9 +30,7 @@ function App() {
 
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState('');
-  const [q, setQ] = useState('');
-  const [isSearchActive, setIsSearchActive] = useState(false);
-  const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
+  // const [isSearchPanelActive, setIsSearchPanelActive] = useState(false);
 
   const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
     try {
@@ -46,31 +44,27 @@ function App() {
     }
 }
 
-  const handleSearchPanelActive = () => {
-    setIsSearchPanelActive(!isSearchPanelActive);
-  }
+  // const handleSearchPanelActive = () => {
+  //   setIsSearchPanelActive(!isSearchPanelActive);
+  // }
   
   useEffect(() => {
     dispatch(fetchProducts);
     dispatch(fetchCart);
   }, []);
 
+  console.log(products);
   return (
     <Router>
       {isLoaded ? (
         <div className="wrapper max-w-screen-lg mx-auto">
           <div className="w-full h-16 sm:hidden" />
-          <Nav1  
-            isSearchPanelActive={isSearchPanelActive}
-            handleSearchPanelActive={handleSearchPanelActive}
-            />
+          <Nav1 />
           <main>
             <Fragment>
               <ScrollToTop />
               {isSearchActivee 
-                ? (<SearchResults   
-                    handleSearchPanelActive={handleSearchPanelActive}
-                    />) 
+                ? (<SearchResults />) 
                 : (
               <Switch>
                 <Route exact path="/">

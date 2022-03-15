@@ -18,7 +18,7 @@ const navigation = [
 // const isActiveStyle = 'border-2 border-gray-900 text-black px-3 py-2 rounded-md text-lg tracking-widest';
 // const isNotActiveStyle = 'text-black hover:border-2 border-gray-700 hover:text-gray-700 hover:underline px-3 py-2 rounded-md text-lg tracking-widest'
 
-const Nav1 = ({ }) => {
+const Nav1 = () => {
   const cart = useSelector(state => state.cart.fetchedData);
   const q = useSelector(state => state.search.q);
   const isSearchActive = useSelector(state => state.search.isSearchActive);
