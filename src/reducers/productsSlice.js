@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 import { commerce } from '../lib/commerce';
 
 export const productsSlice = createSlice({
@@ -8,18 +8,18 @@ export const productsSlice = createSlice({
         isLoaded: false,
     },
     reducers: {
-        fetchProductsReducer: (state, action) => {
+        setProducts: (state, action) => {
             state.fetchedData = action.payload;
             state.isLoaded = true;
         }
     }
-});
+})
 
-export const { fetchProductsReducer } = productsSlice.actions;
+export const { setProducts } = productsSlice.actions;
 
 export const fetchProducts = async (dispatch) => {
     const { data } = await commerce.products.list();
-    dispatch(fetchProductsReducer(data));
+    dispatch(setProducts(data));
 }
 
 export default productsSlice.reducer;

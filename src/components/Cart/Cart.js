@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 //reducers
-import { handleEmptyCart } from '../../reducers/cartSlice';
+import { handleEmptyCart, setIsBusy } from '../../reducers/cartSlice';
 
 import CartItem from './CartItem/CartItem';
 
@@ -12,7 +12,7 @@ const Cart = () => {
   const cart = useSelector(state => state.cart.fetchedData);
   const dispatch = useDispatch();
   const handleEmptyCartFunc = () => {
-    dispatch({type: 'SET_IS_BUSY'});
+    dispatch(setIsBusy(true));
     dispatch(handleEmptyCart);
   }
 

@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 //reducers
 import { handleAddToCart } from "../../reducers/cartSlice";
+import { setIsBusy } from "../../reducers/cartSlice";
 
 const ProductDetails = ({ products }) => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const ProductDetails = ({ products }) => {
             <div key={product.id}>
               {
                 (handleAddToCartFunc = () => {
-                  dispatch({ type: "SET_IS_BUSY" });
+                  dispatch(setIsBusy(true));
                   dispatch(handleAddToCart(product.id, 1));
                 })
               }

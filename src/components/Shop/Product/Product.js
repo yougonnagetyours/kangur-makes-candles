@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
-import { handleAddToCart } from "../../../reducers/cartSlice";
+import { handleAddToCart, setIsBusy } from "../../../reducers/cartSlice";
 
 const Product = ({ product }) => {
   const dispatch = useDispatch();
   const handleAddToCartFunc = () => {
-    dispatch({ type: "SET_IS_BUSY" });
+    dispatch(setIsBusy(true));
     dispatch(handleAddToCart(product.id, 1));
   };
 

@@ -8,7 +8,7 @@ import {
 import { commerce } from './lib/commerce';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchProducts, fetchProductsReducer } from './reducers/productsSlice';
+import { fetchProducts } from './reducers/productsSlice';
 import { fetchCart, refreshCart } from './reducers/cartSlice';
 
 import { About, Cart, Checkout, Contact, Footer, MainSite, Nav1, ProductDetails, SearchResults, Shop } from './components';
