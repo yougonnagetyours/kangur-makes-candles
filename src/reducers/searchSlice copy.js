@@ -8,8 +8,14 @@ export const searchSlice = createSlice({
         isSearchPanelActive: false,
     },
     reducers: {
-        handleInput: (state, action) => {
+        setQ: (state, action) => {
             state.q = action.payload;
+        },
+        setIsSearchActive: (state, action) => {
+            state.isSearchActive = action.payload;
+        },
+        setIsSearchPanelActive: (state, action) => {
+            state.isSearchPanelActive = action.payload;
         },
     }
 })

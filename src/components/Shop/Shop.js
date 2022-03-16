@@ -4,8 +4,8 @@ import { useSelector } from "react-redux";
 import Product from "./Product/Product.js";
 import main2 from "../../pics/main2.jpg";
 
-const Shop = ({ clearInput, handleAddToCartPopup }) => {
-  const products = useSelector((state) => state.products.fetchedData);
+const Shop = () => {
+  const products = useSelector((state) => state.products.products);
 
   return (
     <>
@@ -31,8 +31,6 @@ const Shop = ({ clearInput, handleAddToCartPopup }) => {
             >
               <Product
                 product={product}
-                clearInput={clearInput}
-                handleAddToCartPopup={handleAddToCartPopup}
               />
             </div>
           ))}

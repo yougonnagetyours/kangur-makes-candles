@@ -1,38 +1,25 @@
-const initialState = {
-    q: '',
-    isSearchActive: false,
-    isSearchPanelActive: false,
-}
+import { createSlice } from '@reduxjs/toolkit';
 
-export default function searchReducer(state = initialState, { type, payload }) {
-    switch (type) {
-        case 'HANDLE_INPUT':
-            return {
-                ...state,
-                q: payload,
-            }
-        case 'CLEAR_INPUT':
-            return {
-                ...state,
-                q: '',
-                isSearchActive: false,
-            }     
-        case 'SET_SEARCH_ACTIVE':  
-            return {
-                ...state,
-                isSearchActive: true,
-            }        
-        case 'SET_SEARCH_INACTIVE':  
-            return {
-                ...state,
-                isSearchActive: false,
-            }  
-        case 'TOGGLE_SEARCH_PANEL_ACTIVE':  
-            return {
-                ...state,
-                isSearchPanelActive: payload,
-            }  
-        default:
-            return state;
+export const searchSlice = createSlice({
+    name: 'search',
+    initialState: {
+        q: '',
+        isSearchActive: false,
+        isSearchPanelActive: false,
+    },
+    reducers: {
+        setQ: (state, action) => {
+            state.q = action.payload;
+        },
+        setIsSearchActive: (state, action) => {
+            state.isSearchActive = action.payload;
+        },
+        setIsSearchPanelActive: (state, action) => {
+            state.isSearchPanelActive = action.payload;
+        },
     }
-}
+})
+
+export const { setQ, setIsSearchActive, setIsSearchPanelActive } = searchSlice.actions;
+
+export default searchSlice.reducer;

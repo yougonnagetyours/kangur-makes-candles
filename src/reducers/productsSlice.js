@@ -4,12 +4,12 @@ import { commerce } from '../lib/commerce';
 export const productsSlice = createSlice({
     name: 'products',
     initialState: {
-        fetchedData: [],
+        products: [],
         isLoaded: false,
     },
     reducers: {
         setProducts: (state, action) => {
-            state.fetchedData = action.payload;
+            state.products = action.payload;
             state.isLoaded = true;
         }
     }
