@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { Menu, Transition } from '@headlessui/react';
 import { MenuIcon, XIcon, ShoppingCartIcon, SearchIcon } from '@heroicons/react/outline';
+//reducers
+import { setQ, setIsSearchActive, setIsSearchPanelActive } from '../../reducers/searchSlice';
 
 import insta from '../../pics/instagram.png';
 import fb from '../../pics/facebook.png';
@@ -26,15 +28,20 @@ const Nav1 = () => {
   const dispatch = useDispatch();
 
   const handleInput = (e) => {
-    dispatch({type: 'HANDLE_INPUT', payload: e.target.value});
-    dispatch({type: 'SET_SEARCH_ACTIVE'});
+    dispatch(setQ(e.target.value));
+    dispatch(setIsSearchActive(true));
     if (e.target.value === ''){
-      dispatch({type: 'SET_SEARCH_INACTIVE'});
+      dispatch(setIsSearchActive(false));
     }
   };
 
   const handleSearchPanelActive = () => {
-    dispatch({type: 'TOGGLE_SEARCH_PANEL_ACTIVE', payload: !isSearchPanelActive})
+    dispatch(setIsSearchPanelActive(!isSearchPanelActive))
+  }
+
+  const clearInput = () => {
+    dispatch(setQ(''));
+    dispatch(setIsSearchActive(false));
   }
   
   return (
@@ -167,7 +174,7 @@ const Nav1 = () => {
         {isSearchActive 
           ? <button 
               className='absolute px-2 right-5' 
-              onClick={() => dispatch({type: 'CLEAR_INPUT'})}
+              onClick={clearInput}
             >
               <XIcon className="block h-6 w-6" aria-hidden="true" />
             </button> 
