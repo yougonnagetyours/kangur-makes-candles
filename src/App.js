@@ -55,7 +55,7 @@ function App() {
   return (
     <Router>
       {isLoaded ? (
-        <div className="wrapper max-w-screen-lg mx-auto">
+        <div className="wrapper max-w-screen-lg mx-auto sm:mt-6">
           <div className="w-full h-16 sm:hidden" />
           <Nav1 />
           <main>
