@@ -22,9 +22,7 @@ const navigation = [
 
 const Nav1 = () => {
   const cart = useSelector(state => state.cart.fetchedData);
-  const q = useSelector(state => state.search.q);
-  const isSearchActive = useSelector(state => state.search.isSearchActive);
-  const isSearchPanelActive = useSelector(state => state.search.isSearchPanelActive);
+  const { q, isSearchActive, isSearchPanelActive } = useSelector(state => state.search)
   const dispatch = useDispatch();
 
   const handleInput = (e) => {

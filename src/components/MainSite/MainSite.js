@@ -7,7 +7,7 @@ import main2 from '../../pics/main2.jpg';
 import main3 from '../../pics/main3.jpg';
 
 const MainSite = () => {
-  const products = useSelector((state) => state.products.fetchedData);
+  const products = useSelector((state) => state.products.products);
 
   return (
       <div>  

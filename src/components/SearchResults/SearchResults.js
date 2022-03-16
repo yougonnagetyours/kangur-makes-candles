@@ -6,9 +6,8 @@ import { setQ, setIsSearchActive, setIsSearchPanelActive } from '../../reducers/
 import Product from '../Shop/Product/Product';
 
 const SearchResults = () => {
-  const products = useSelector(state => state.products.fetchedData);
-  const isSearchPanelActive = useSelector(state => state.search.isSearchPanelActive);
-  const q = useSelector(state => state.search.q);
+  const products = useSelector(state => state.products.products);
+  const { isSearchPanelActive, q } = useSelector(state => state.search);
 
   const dispatch = useDispatch();
 

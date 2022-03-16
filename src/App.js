@@ -15,15 +15,13 @@ import { About, Cart, Checkout, Contact, Footer, MainSite, Nav1, ProductDetails,
 import ScrollToTop from './ui/scrollToTop.js';
 import Loader from './ui/Loader.js';
 import BusyLoader from './ui/BusyLoader.js';
-import CheckoutLoader from './ui/CheckoutLoader.js';
 import ShoppingPopup from './ui/ShoppingPopup.js';
 
 function App() {
   //REDUX
   const dispatch = useDispatch();
 
-  const products = useSelector((state) => state.products.fetchedData);
-  const isLoaded = useSelector((state) => state.products.isLoaded);
+  const {products, isLoaded} = useSelector((state) => state.products);
   const isAddedToCart = useSelector(state => state.cart.isAddedToCart);
   const isBusy = useSelector(state => state.cart.isBusy);
   const isSearchActivee = useSelector(state => state.search.isSearchActive)
